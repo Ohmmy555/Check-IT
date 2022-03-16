@@ -64,7 +64,7 @@ include('server.php');
     </div>
     <div>
         <div id="login-picture">
-            <img src="/picture/pic/search-login.jpg" alt="รูปปุ่มเสิร์ท" class="search-icon">
+            <img src="./picture/pic/search-login.jpg" alt="รูปปุ่มเสิร์ท" class="search-icon">
         </div>
     </div>
 </body>
