@@ -1,4 +1,8 @@
 <?php include('server.php');
+
+session_start();
+$_SESSION['error_login'] = "";
+$_SESSION['error_signin'] = "";
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +17,7 @@
 </head>
 <body>
     <div id="header-bar">
-        <h1>Check IT</h1>
+    <a href="/main.php"><h1>Check IT</h1></a>
         <div id="login-bar">
             <div class="menu-login">
                 <a href="#">

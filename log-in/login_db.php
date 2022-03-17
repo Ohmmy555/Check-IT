@@ -22,7 +22,7 @@
                 echo "<script>location.replace('./index.php');</script>";
             }else{
                 array_push($errors,"Wrong username or password combination");
-                $_SESSION['error']="Wrong username or password try again";
+                $_SESSION['error_login']="Wrong username or password try again";
                 echo "<script>location.replace('./login.php');</script>";
             }
     }

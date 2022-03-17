@@ -1,6 +1,8 @@
 <?php 
 session_start();
 include('server.php');
+
+$_SESSION['error_login'] = "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +17,7 @@ include('server.php');
 
 <body>
     <div id="header-bar">
-        <h1>Check IT</h1>
+        <a href="../main.php"><h1>Check IT</h1></a>
         <div id="login-bar">
             <div class="menu-login">
                 <a href="">
@@ -33,6 +35,12 @@ include('server.php');
         <h2>Sign Up</h2>
         <form action="register_db.php" method="POST">
             <?php include('errors.php')?>
+            <?php
+            session_start();
+                if($_SESSION['error_signin']!=""){
+                    echo '<p>'. $_SESSION["error_signin"].' </p>';
+                }
+            ?>
             <div id="text-card">
                 <div id="one-inside-card">
                     <p class="p">First name</p>

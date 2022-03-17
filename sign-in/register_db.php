@@ -37,12 +37,12 @@
             $_SESSION['username']= $username;
             $_SESSION['success']="You are now logged in";
             // location: หน้าแรกหลังจากล็อคอินเสร็จ
-            header('location: errors.php');
+            header('location: ');
 
 
         }else{
             array_push($errors,"Wrong username or password combination");
-            $_SESSION['error']="Wrong username or password try again";
+            $_SESSION['error_signin']="Wrong username or password try again";
             header("location: register.php");
         }
     ?>
