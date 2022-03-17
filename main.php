@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check IT</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
     
 </head>
 <body>
@@ -17,14 +17,14 @@
         <div id="login-bar">
             <div class="menu-login">
                 <a href="">
-                    <img src="/picture/icon/user.png" alt="ไอคอนล็อคอิน" class="login-icon">
+                    <img src="./picture/icon/user.png" alt="ไอคอนล็อคอิน" class="login-icon">
                     <p >Admin login</p>
                 </a>
                 
             </div>
             <div class="menu-login">
                 <a href=""  >
-                    <img src="/picture/icon/user.png" alt="ไอคอนล็อคอิน" class="login-icon">
+                    <img src="./picture/icon/user.png" alt="ไอคอนล็อคอิน" class="login-icon">
                     <p>TA login</p>
                 </a>
                 
@@ -38,7 +38,7 @@
             <p>Web helper for an Teaching assistant’s include grading, attendance, and report.</p>
         </div>
         <div id="login-picture">
-            <img src="/picture/pic/search-login.jpg" alt="รูปปุ่มเสิร์ท" class="search-icon">
+            <img src="./picture/pic/search-login.jpg" alt="รูปปุ่มเสิร์ท" class="search-icon">
         </div>
     </div>
 
