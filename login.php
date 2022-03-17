@@ -10,7 +10,7 @@ include('server.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check IT Login</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="./css/login.css">
    
 </head>
 
@@ -46,7 +46,7 @@ include('server.php');
     </div>
     <div>
         <div id="login-picture">
-            <img src="/picture/pic/search-login.jpg" alt="รูปปุ่มเสิร์ท" class="search-icon">
+            <img src="./picture/pic/search-login.jpg" alt="รูปปุ่มเสิร์ท" class="search-icon">
         </div>
     </div>
 
