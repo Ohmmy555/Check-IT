@@ -31,7 +31,7 @@ include('server.php');
     </div>
     <div>
         <h2>Sign Up</h2>
-        <form action="register_db.php" method="post">
+        <form action="register_db.php" method="POST">
             <?php include('errors.php')?>
             <div id="text-card">
                 <div id="one-inside-card">
