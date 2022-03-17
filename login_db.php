@@ -14,7 +14,7 @@
           }
           if(count($errors) == 0){
             $password = md5($password_1);
-            $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password' ";
+            $sql = "SELECT * FROM ta WHERE username = '$username' AND password = '$password' ";
             $result = mysqli_query($conn,$query);
             if(mysqli_num_rows($result)==1){
                 $_SESSION['username']=$username;
