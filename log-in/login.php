@@ -11,7 +11,7 @@ include('server.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check IT Login</title>
     <link rel="stylesheet" href="./css/login.css">
-   
+
 </head>
 
 <body>
@@ -38,7 +38,7 @@ include('server.php');
             <!-- ปุ่ม remember me ถ้าอยากใช้ต้องใช้การทำ cookie เข้ามาช่วย อันนี้ขอติดไว้ก่อน -->
             <input id="remember" type="checkbox" name="remember"  value="remember"> Remember me  <br>
             <button type="submit" name="login" id="login">Login</button>
-            <p id="dont"> Don't have an account? <a href="register.php
+            <p id="dont"> Don't have an account? <a href="../sign-in/register.php
                 " style="text-decoration: underline;"> Sign Up</a></p>
         </form>
 

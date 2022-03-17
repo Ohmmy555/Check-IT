@@ -58,7 +58,7 @@ include('server.php');
                 <input class="long-input" name="password_2" type="password" required>
             </div>
             <button type="submit" name="login" id="submit">Submit</button>
-            <p id="already"> Already have an account? <a href="login.php" style="text-decoration: underline;"> Login</a></p>
+            <p id="already"> Already have an account? <a href="../log-in/login.php" style="text-decoration: underline;"> Login</a></p>
         </form>
         
     </div>

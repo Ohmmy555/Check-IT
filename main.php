@@ -16,14 +16,14 @@
         <h1>Check IT</h1>
         <div id="login-bar">
             <div class="menu-login">
-                <a href="">
+                <a href="#">
                     <img src="./picture/icon/user.png" alt="ไอคอนล็อคอิน" class="login-icon">
                     <p >Admin login</p>
                 </a>
                 
             </div>
             <div class="menu-login">
-                <a href=""  >
+                <a href="./log-in/login.php"  >
                     <img src="./picture/icon/user.png" alt="ไอคอนล็อคอิน" class="login-icon">
                     <p>TA login</p>
                 </a>
