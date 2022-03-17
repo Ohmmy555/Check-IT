@@ -55,6 +55,10 @@ $_SESSION['error_login'] = "";
                 <p class="p">Username</p>
                 <input class="long-input" name="username" type="text" required>
             </div>
+            <div class="text-mini-card">
+                <p class="p">ID Student</p>
+                <input class="long-input" name="id-student-ta" type="text" required>
+            </div>
 
             <div class="text-mini-card">
                 <p class="p">Password</p>
