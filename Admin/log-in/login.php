@@ -35,7 +35,7 @@ if(isset($_SESSION['username'])){
                 </a>
             </div>
             <div class="menu-login">
-                <a href="../../sign-in/Admin/register.php">
+                <a href="../../Admin/sign-in/register.php">
                     <p id="sign-up-bt">Sign Up</p>
                 </a>
             </div>
@@ -57,7 +57,7 @@ if(isset($_SESSION['username'])){
             <button type="submit" name="login" id="login">Login</button>
 
 
-            <p id="dont"> Don't have an account? <a href="../../sign-in/Admin/register.php
+            <p id="dont"> Don't have an account? <a href="../../Admin/sign-in/register.php
                 " style="text-decoration: underline;"> Sign Up</a></p>
         </form>
 

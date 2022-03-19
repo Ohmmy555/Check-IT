@@ -21,7 +21,7 @@
             $password = md5($password_1);
             $sql = "INSERT INTO ta (idTA,fname,lname,username,password) VALUES ('$std_id','$fname','$lname','$username','$password')";
             mysqli_query($conn,$sql);
-            echo "<script>location.replace('../../log-in/Admin/login.php')</script>";
+            echo "<script>location.replace('../../TA/log-in/login.php')</script>";
 
 
         }else{

@@ -27,12 +27,12 @@ $_SESSION['error_login'] = "";
         </a>
         <div id="login-bar">
             <div class="menu-login">
-                <a href="../../log-in/Admin/login.php">
+                <a href="../../Admin/log-in/login.php">
                     <p id="login-bt">Login</p>
                 </a>
             </div>
             <div class="menu-login">
-                <a href="../../sign-in/Admin/register.php">
+                <a href="#">
                     <p id="sign-up-bt">Sign Up</p>
                 </a>
             </div>
@@ -81,7 +81,7 @@ $_SESSION['error_login'] = "";
             </div>
 
             <button type="submit" name="login" id="submit" class="btn-submit">Submit</button>
-            <p id="already"> Already have an account? <a href="../log-in/login.php" style="text-decoration: underline;"> Login</a></p>
+            <p id="already"> Already have an account? <a href="../../Admin/log-in/login.php" style="text-decoration: underline;"> Login</a></p>
         </form>
 
     </div>
