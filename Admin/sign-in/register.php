@@ -27,12 +27,12 @@ $_SESSION['error_login'] = "";
         </a>
         <div id="login-bar">
             <div class="menu-login">
-                <a href="">
+                <a href="../../log-in/Admin/login.php">
                     <p id="login-bt">Login</p>
                 </a>
             </div>
             <div class="menu-login">
-                <a href="">
+                <a href="../../sign-in/Admin/register.php">
                     <p id="sign-up-bt">Sign Up</p>
                 </a>
             </div>

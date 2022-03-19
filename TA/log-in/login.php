@@ -30,12 +30,12 @@ if(isset($_SESSION['username'])){
         </a>
         <div id="login-bar">
             <div class="menu-login">
-                <a href="login.php">
+                <a href="#">
                     <p id="login-bt">Login</p>
                 </a>
             </div>
             <div class="menu-login">
-                <a href="register.php">
+                <a href="../../sign-in/TA/register.php">
                     <p id="sign-up-bt">Sign Up</p>
                 </a>
             </div>
@@ -57,7 +57,7 @@ if(isset($_SESSION['username'])){
             <button type="submit" name="login" id="login">Login</button>
 
 
-            <p id="dont"> Don't have an account? <a href="../sign-in/register.php
+            <p id="dont"> Don't have an account? <a href="../../sign-in/TA/register.php
                 " style="text-decoration: underline;"> Sign Up</a></p>
         </form>
 
