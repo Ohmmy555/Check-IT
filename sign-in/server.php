@@ -5,8 +5,6 @@
     $dbname ="Users";
 
     //สร้างคอนเน็คชั่น
-    $conn =mysqli_connect($servername,$username,$password,$dbname);
-
-
+    $conn = mysqli_connect($servername,$username,$password,$dbname);
 
 ?>
