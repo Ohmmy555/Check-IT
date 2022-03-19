@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include('server.php');
 
@@ -17,7 +17,9 @@ $_SESSION['error_login'] = "";
 
 <body>
     <div id="header-bar">
-        <a href="../main.php"><h1>Check IT</h1></a>
+        <a href="../main.php">
+            <h1>Check IT</h1>
+        </a>
         <div id="login-bar">
             <div class="menu-login">
                 <a href="">
@@ -34,12 +36,12 @@ $_SESSION['error_login'] = "";
     <div>
         <h2>Sign Up</h2>
         <form action="register_db.php" method="POST">
-            <?php include('errors.php')?>
+            <?php include('errors.php') ?>
             <?php
             session_start();
-                if($_SESSION['error_signin']!=""){
-                    echo '<p>'. $_SESSION["error_signin"].' </p>';
-                }
+            if ($_SESSION['error_signin'] != "") {
+                echo '<p>' . $_SESSION["error_signin"] . ' </p>';
+            }
             ?>
             <div id="text-card">
                 <div id="one-inside-card">
@@ -50,29 +52,28 @@ $_SESSION['error_login'] = "";
                     <p class="p">Last name</p>
                     <input class="short-input" name="lname" type="text" required>
                 </div>
+
+                <div class="text-mini-card">
+                    <p class="p">ID Student</p>
+                    <input class="long-input" name="id-student-ta" type="text" required>
+                </div>
+
             </div>
             <div class="text-mini-card">
                 <p class="p">Username</p>
                 <input class="long-input" name="username" type="text" required>
             </div>
-            <div class="text-mini-card">
-                <p class="p">ID Student</p>
-                <input class="long-input" name="id-student-ta" type="text" required>
-            </div>
+
 
             <div class="text-mini-card">
                 <p class="p">Password</p>
                 <input class="long-input" name="password_1" type="password" required>
             </div>
 
-            <div class="text-mini-card">
-                <p class="p">Confirm Password</p>
-                <input class="long-input" name="password_2" type="password" required>
-            </div>
             <button type="submit" name="login" id="submit">Submit</button>
             <p id="already"> Already have an account? <a href="../log-in/login.php" style="text-decoration: underline;"> Login</a></p>
         </form>
-        
+
     </div>
     <div>
         <div id="login-picture">

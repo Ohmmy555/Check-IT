@@ -1,12 +1,16 @@
 <?php
-session_start(); 
+ob_start();
+session_start();
 include('server.php');
 $_SESSION['error_signin'] = "";
 
 //Cookies
-if(isset($_COOKIE[$cookie_username])){
+if ($_COOKIE['cookie_user'] != "") {
     echo "<script>location.replace('login_db.php');</script>";
-}
+}/*
+if(isset($_SESSION['username'])){
+    echo "<script>location.replace('index.php');</script>";
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +25,9 @@ if(isset($_COOKIE[$cookie_username])){
 
 <body>
     <div id="header-bar">
-    <a href="../main.php"><h1>Check IT</h1></a>
+        <a href="../main.php">
+            <h1>Check IT</h1>
+        </a>
         <div id="login-bar">
             <div class="menu-login">
                 <a href="login.php">
@@ -37,26 +43,25 @@ if(isset($_COOKIE[$cookie_username])){
     </div>
     <div>
         <h2>Login</h2>
-        <form  action="login_db.php" method="post">
-        <?php
+        <form action="login_db.php" method="post">
+            <?php
             session_start();
-                if($_SESSION['error_login']!=""){
-                    echo '<p>'. $_SESSION["error_login"].' </p>';
-                }
+            if ($_SESSION['error_login'] != "") {
+                echo '<p>' . $_SESSION["error_login"] . ' </p>';
+            }
             ?>
             <input id="username" type="text" class="form-control" name="username" aria-describedby="username" placeholder="Username" required> <br>
             <input id="password" type="password" class="form-control" name="password" placeholder="Password" required> <br>
-            <!-- ปุ่ม remember me ถ้าอยากใช้ต้องใช้การทำ cookie เข้ามาช่วย อันนี้ขอติดไว้ก่อน -->
-        
-            <input id="remember" type="checkbox" name="remember"  value="remember"> Remember me  <br>
+
+            <input id="remember" type="checkbox" name="remember" value="remember"> Remember me <br>
             <button type="submit" name="login" id="login">Login</button>
 
-            
+
             <p id="dont"> Don't have an account? <a href="../sign-in/register.php
                 " style="text-decoration: underline;"> Sign Up</a></p>
         </form>
 
-    
+
     </div>
     <div>
         <div id="login-picture">
@@ -64,6 +69,9 @@ if(isset($_COOKIE[$cookie_username])){
         </div>
     </div>
 
+    <?php
+    ob_end_flush();
+    ?>
 </body>
 
 </html>

@@ -1,3 +1,12 @@
+<?php
+session_start();
+ob_start();
+if(!$_SESSION['username']){
+    echo "<script>alert('"."คุณยังไม่เข้าสู่ระบบ!!!"."')</script>";
+echo "<script>location.replace('../main.php');</script>";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +28,15 @@
 </head>
 <body>
     <h1>Hello</h1>
+    <?php
+    echo "<p>Cookie</p>";
+    $user_unseria = unserialize($_COOKIE["cookie_user"]);
+    print($user_unseria);
+    echo "<br>";
+    echo "<p>Session</p>";
+    echo "<p>".$_SESSION['username']."</p>";
+    ob_end_flush();
+    ?>
     <button class="btn btn-primary"><a href="../log-out/logout.php" id="logout">Log out</a></button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
