@@ -123,32 +123,9 @@
   <div class="content">
     <h2>วิชาที่เปิดสอน</h2>
 
-    <div class="detail1"> 
-  
-      <div class="text">
-        <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
-      </div>
-      <div class="content1">
-        <p><span>วิชา : </span> Database Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo nihil nobis culpa ipsum eaque consequatur, ipsa praesentium tempora quisquam ducimus architecto saepe dicta dolore excepturi obcaecati at a incidunt cumque.</p>
-        <p><span>ผู้สอน : </span> พีพี</p>
-        <p><span>ปีการศึกษา : </span> 1 &nbsp; <span>ภาคเรียน : </span> 2564 </p>
-      </div>
-    </div>
-
-    <div id="line"></div>
-
-    <div class="detail2">
-      <div class="text">
-        <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
-      </div>
-      <div class="content1">
-        <p><span>วิชา : </span> Database</p>
-        <p><span>ผู้สอน : </span> พีพี</p>
-        <p><span>ปีการศึกษา : </span> 1 &nbsp; <span>ภาคเรียน : </span> 2564 </p>
-        <br>
-      </div>
-    </div>
-    <div id="line"></div>
+    <?php
+    include('./opensubj_db.php');
+    ?>
 
 
 
