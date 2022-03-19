@@ -51,30 +51,33 @@ $_SESSION['error_login'] = "";
             <div id="text-card">
                 <div id="one-inside-card">
                     <p class="p">First name</p>
-                    <input class="short-input" name="fname" type="text" required>
+                    <input class="short-input" name="fname" type="text" required id="fname"><br>
+                    <span id="massage_fname"></span>
                 </div>
                 <div id="two-inside-card">
                     <p class="p">Last name</p>
-                    <input class="short-input" name="lname" type="text" required>
+                    <input class="short-input" name="lname" type="text" required id="lname"><br>
+                    <span id="massage_lname"></span>
                 </div>
             </div>
 
                 <div class="text-mini-card">
                     <p class="p">ID Student</p>
-                    <input class="long-input" name="id-student-ta" type="text" required id='stdid'>
-                    <span></span>
+                    <input class="long-input" name="id-student-ta" type="text" required id='stdid'><br>
+                    <span id="massage_stdid"></span>
                 </div>
 
             <div class="text-mini-card">
                 <p class="p">Username</p>
-                <input class="long-input" name="username" type="text" required id="username">
+                <input class="long-input" name="username" type="text" required id="username"><br>
                 <span id="massage_username"></span>
             </div>
 
 
             <div class="text-mini-card">
                 <p class="p">Password</p>
-                <input class="long-input" name="password_1" type="password" required id="password">
+                <input class="long-input" name="password_1" type="password" required id="password"><br>
+                <span id="massage_password"></span>
             </div>
 
             <button type="submit" name="login" id="submit" class="btn-submit">Submit</button>

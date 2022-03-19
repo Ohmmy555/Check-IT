@@ -6,13 +6,13 @@
 
     //สร้างคอนเน็คชั่น
     $conn = mysqli_connect($servername,$username,$password,$dbname);
-            /*if($_GET['function'] == 'checkusername'){
-                $user = $_GET['datarow'];
-                $sql = "SELECT * FORM ta WHERE username = '$user'";
-                $query = mysqli_query($conn,$sql);
-                $row = mysqli_num_rows($query);
-                echo $row;
-                echo $_GET['value'];
+            /*if($_GET['id'] == 'check'){
+                $user = $_POST['datarow'];
+                //$user = 'Ohmmy_2001';
+                $user_check_query = "SELECT * FROM ta WHERE username = '$user'";
+                $queary = mysqli_query($conn,$user_check_query);
+                $result = mysqli_num_rows($queary);
+                    //echo "<p>".$result."</p>";
+                    echo $result;
             }*/
-            echo 1;
     ?>
