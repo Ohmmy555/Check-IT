@@ -2,6 +2,11 @@
 session_start(); 
 include('server.php');
 $_SESSION['error_signin'] = "";
+
+//Cookies
+if(isset($_COOKIE[$cookie_username])){
+    echo "<script>location.replace('login_db.php');</script>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +17,6 @@ $_SESSION['error_signin'] = "";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check IT Login</title>
     <link rel="stylesheet" href="./css/login.css">
-
 </head>
 
 <body>

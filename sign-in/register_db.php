@@ -5,6 +5,7 @@
         $fname =mysqli_real_escape_string($conn,$_POST['fname']);
         $lname =mysqli_real_escape_string($conn,$_POST['lname']);
         $username =mysqli_real_escape_string($conn,$_POST['username']);
+        $std_id =mysqli_real_escape_string($conn,$_POST['id-student-ta']);
         $password_1=mysqli_real_escape_string($conn,$_POST['password_1']);
         $password_2=mysqli_real_escape_string($conn,$_POST['password_2']);
 
@@ -32,7 +33,7 @@
         }
         if(count($errors) == 0){
             $password = md5($password_1);
-            $sql = "INSERT INTO ta (fname ,lname,username,password) VALUES ('$fname','$lname','$username','$password')";
+            $sql = "INSERT INTO ta (idTA,fname,lname,username,password) VALUES ('$std_id','$fname','$lname','$username','$password')";
             mysqli_query($conn,$sql);
             $_SESSION['username']= $username;
             $_SESSION['success']="You are now logged in";
