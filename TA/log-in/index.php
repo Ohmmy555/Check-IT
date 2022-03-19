@@ -37,7 +37,7 @@ echo "<script>location.replace('../main.php');</script>";
     echo "<p>".$_SESSION['username']."</p>";
     ob_end_flush();
     ?>
-    <button class="btn btn-primary"><a href="../log-out/logout.php" id="logout">Log out</a></button>
+    <button class="btn btn-primary"><a href="../../log-out/logout.php" id="logout">Log out</a></button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

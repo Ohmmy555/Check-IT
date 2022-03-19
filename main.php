@@ -20,14 +20,14 @@ $_SESSION['error_signin'] = "";
     <a href="/main.php"><h1>Check IT</h1></a>
         <div id="login-bar">
             <div class="menu-login">
-                <a href="#">
+                <a href="./Admin/log-in/login.php">
                     <img src="./picture/icon/user.png" alt="ไอคอนล็อคอิน" class="login-icon">
                     <p >Admin login</p>
                 </a>
                 
             </div>
             <div class="menu-login">
-                <a href="./log-in/login.php"  >
+                <a href="./TA/log-in/login.php">
                     <img src="./picture/icon/user.png" alt="ไอคอนล็อคอิน" class="login-icon">
                     <p>TA login</p>
                 </a>
@@ -45,6 +45,5 @@ $_SESSION['error_signin'] = "";
             <img src="./picture/pic/search-login.jpg" alt="รูปปุ่มเสิร์ท" class="search-icon">
         </div>
     </div>
-
 </body>
 </html>
