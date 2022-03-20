@@ -10,8 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="nav.css">
@@ -86,7 +85,8 @@
       top: -2rem;
       width: 40%;
     }
-    .cd-popup-container h2{
+
+    .cd-popup-container h2 {
       position: relative;
       top: 50px;
       color: rgb(255, 0, 0);
@@ -141,26 +141,35 @@
 
   <div class="content">
     <h2>วิชาที่ลบ</h2>
+    //ยังไม่เสร็จ
 
+    <?php
+    include('conn.php');
+    $sql = "SELECT * FROM Subject JOIN Subject_detail1 ON(subject.idSubject=Subject_detail1.idSubject) JOIN ta ON(ta.idTA=Subject_detail1.idTA) JOIN term ON(term.idterm=Subject_detail1.idterm) WHERE Subject_detail1.idAdmin='$Admin[0]' AND Subject_detail1.delete_at<>'0000-00-00 00:00:00'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+      while ($subj_delete = mysqli_fetch_assoc($result)) {
+        echo '';
+      }
+    } else {
+      echo "<tr><td colspan=4>" . "ไม่มีรายวิชาที่เคยลบ" . "</td></tr>";
+    }
+    ?>
     <div class="detail1">
 
       <div class="text">
         <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
       </div>
       <div class="content1">
-        <p><span>วิชา : </span> Database Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo nihil nobis
-          culpa ipsum eaque consequatur, ipsa praesentium tempora quisquam ducimus architecto saepe dicta dolore
-          excepturi obcaecati at a incidunt cumque.</p>
-        <p><span>ผู้สอน : </span> พีพี</p>
-        <p><span>ปีการศึกษา : </span> 1 &nbsp; <span>ภาคเรียน : </span> 2564 </p>
+        <p><span>วิชา :' . $row['Subject_name'] . '</p>
+        <p><span>ผู้สอน : </span> ' . $row['TA_fname'].' ' . $row['TA_lname'] . '</p>
+        <p><span>ปีการศึกษา : </span> ' . $row['idyear'] . ' &nbsp; <span>ภาคเรียน : </span>' . $row['term_num'] . '</p>
         <p class="date">24 วัน</p>
       </div>
 
       <div class="btn1">
-        <a href="#edit<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-primary"><span
-            class="glyphicon glyphicon-edit"></span> กู้คืน</a>
-        <a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span
-            class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
+        <a href="#edit<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> กู้คืน</a>
+        <a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
         <?php include('roomaction.php'); ?>
       </div>
     </div>
@@ -179,10 +188,8 @@
         <br>
       </div>
       <div class="btn1">
-        <a href="#edit<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-primary"><span
-            class="glyphicon glyphicon-edit"></span> กู้คืน</a>
-        <a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span
-            class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
+        <a href="#edit<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> กู้คืน</a>
+        <a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
         <?php include('roomaction.php'); ?>
       </div>
     </div>
@@ -207,13 +214,12 @@
 
 
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
   </script>
-   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="./script.js"></script>
 
   <!-- Part Java Script -->
   <script>
@@ -230,7 +236,7 @@
     var i;
 
     for (i = 0; i < dropdown.length; i++) {
-      dropdown[i].addEventListener("click", function () {
+      dropdown[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var dropdownContent = this.nextElementSibling;
         if (dropdownContent.style.display === "block") {
@@ -245,7 +251,7 @@
     var header = document.getElementById("nav");
     var btns = header.getElementsByClassName("btn");
     for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function () {
+      btns[i].addEventListener("click", function() {
         var current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
@@ -253,27 +259,27 @@
     }
 
     //ปอปอัพ
-    jQuery(document).ready(function($){
-	//open popup
-	$('.cd-popup-trigger').on('click', function(event){
-		event.preventDefault();
-		$('.cd-popup').addClass('is-visible');
-	});
-	
-	//close popup
-	$('.cd-popup').on('click', function(event){
-		if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
-			event.preventDefault();
-			$(this).removeClass('is-visible');
-		}
-	});
-	//close popup when clicking the esc keyboard button
-	$(document).keyup(function(event){
-    	if(event.which=='27'){
-    		$('.cd-popup').removeClass('is-visible');
-	    }
+    jQuery(document).ready(function($) {
+      //open popup
+      $('.cd-popup-trigger').on('click', function(event) {
+        event.preventDefault();
+        $('.cd-popup').addClass('is-visible');
+      });
+
+      //close popup
+      $('.cd-popup').on('click', function(event) {
+        if ($(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup')) {
+          event.preventDefault();
+          $(this).removeClass('is-visible');
+        }
+      });
+      //close popup when clicking the esc keyboard button
+      $(document).keyup(function(event) {
+        if (event.which == '27') {
+          $('.cd-popup').removeClass('is-visible');
+        }
+      });
     });
-});
   </script>
 
 </body>
