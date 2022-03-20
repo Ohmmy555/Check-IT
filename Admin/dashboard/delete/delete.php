@@ -146,15 +146,16 @@ include('../conn.php');
 
   <div class="content">
     <h2>วิชาที่ลบ</h2>
-    //ยังไม่เสร็จ
+    //ยังไม่เสร็จ'j;',kd w,jws;'
 
     <?php
-    include('conn.php');
+    include('delete_day_db.php');
     $sql = "SELECT * FROM Subject JOIN Subject_detail1 ON(subject.idSubject=Subject_detail1.idSubject) JOIN ta ON(ta.idTA=Subject_detail1.idTA) JOIN term ON(term.idterm=Subject_detail1.idterm) WHERE Subject_detail1.idAdmin='$Admin[0]' AND Subject_detail1.delete_at<>'0000-00-00 00:00:00'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
       while ($subj_delete = mysqli_fetch_assoc($result)) {
-        echo '';
+        $totalday = Calday($subj_delete['delete_at']);
+        echo $subj_delete;
       }
     } else {
       echo "<tr><td colspan=4>" . "ไม่มีรายวิชาที่เคยลบ" . "</td></tr>";
@@ -166,10 +167,10 @@ include('../conn.php');
         <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
       </div>
       <div class="content1">
-        <p><span>วิชา :' . $row['Subject_name'] . '</p>
-        <p><span>ผู้สอน : </span> ' . $row['TA_fname'].' ' . $row['TA_lname'] . '</p>
-        <p><span>ปีการศึกษา : </span> ' . $row['idyear'] . ' &nbsp; <span>ภาคเรียน : </span>' . $row['term_num'] . '</p>
-        <p class="date">24 วัน</p>
+        <p><span>วิชา :' . $subj_delete['Subject_name'] . '</p>
+        <p><span>ผู้สอน : </span> ' . $subj_delete['TA_fname'].' ' . $subj_delete['TA_lname'] . '</p>
+        <p><span>ปีการศึกษา : </span> ' . $subj_delete['idyear'] . ' &nbsp; <span>ภาคเรียน : </span>' . $subj_delete['term_num'] . '</p>
+        <p class="date">'.$totalday.' วัน</p>
       </div>
 
       <div class="btn1">
@@ -181,24 +182,7 @@ include('../conn.php');
 
     <div id="line"></div>
 
-    <div class="detail2">
-      <div class="text">
-        <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
-      </div>
-      <div class="content1">
-        <p><span>วิชา : </span> Database</p>
-        <p><span>ผู้สอน : </span> พีพี</p>
-        <p><span>ปีการศึกษา : </span> 1 &nbsp; <span>ภาคเรียน : </span> 2564 </p>
-        <p class="date">24 วัน</p>
-        <br>
-      </div>
-      <div class="btn1">
-        <a href="#edit<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> กู้คืน</a>
-        <a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
-        <?php include('roomaction.php'); ?>
-      </div>
-    </div>
-    <div id="line"></div>
+   
 
 
 
