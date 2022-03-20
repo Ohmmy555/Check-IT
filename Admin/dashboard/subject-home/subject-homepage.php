@@ -1,3 +1,8 @@
+<?php
+include('../../../Route/route_admin.php');
+include('../conn.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +16,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="firstpage.css">
-    <link rel="stylesheet" href="subject-homepage.css">
-    <link rel="stylesheet" href="editprofile.js">
+    <link rel="stylesheet" href="../firstpage.css">
+    <link rel="stylesheet" href="./subject-homepage.css">
+    <link rel="stylesheet" href="../editprofile/editprofile.css">
 
 </head>
 <body>
@@ -63,8 +68,8 @@
   <div class="menu">
     <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
     <h3 class="username">พิชามล บุญศรี</h3>
-      <a href="#" id="edit">Edit Profile</a><br>
-    <button class="sign-out" type="button">Sign out</button>
+      <a href="./editprofile.html" id="edit">Edit Profile</a><br>
+    <a href="../../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
   </div>
   
 </div>
@@ -74,17 +79,12 @@
   <div class="main">
       <h1>  Database Analysis and Design   </h1>
   </div>
-<<<<<<< Updated upstream
   <div id="profile-detail">
-=======
-  <div>
->>>>>>> Stashed changes
     <div class="profile-pic-div">
         <img src="img/test.jpg" id="photo">
         <input type="file" id="file">
         <label for="file" id="uploadBtn">Choose Photo</label>
     </div>
-<<<<<<< Updated upstream
     <div>
       <p><span>วิชา :</span> Database Analysis 
         and Design</p>
@@ -124,9 +124,6 @@
     </div>
   </div>
   
-=======
-  </div>
->>>>>>> Stashed changes
 </div>
 
 

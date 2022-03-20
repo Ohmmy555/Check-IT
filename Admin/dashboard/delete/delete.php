@@ -1,3 +1,8 @@
+<?php
+include('../../../Route/route_admin.php');
+include('../conn.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +10,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>open subject</title>
+  <title>วิชาที่ลบ</title>
+  <link rel="stylesheet" href="popup.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Bootstrap CSS -->
@@ -13,7 +19,7 @@
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="../nav.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
@@ -22,10 +28,10 @@
       padding: 0;
       font-family: kanit;
       color: #624DCE;
-     
+
     }
 
-   .content h2 {
+    .content h2 {
       color: #624DCE;
       position: relative;
       left: 450px;
@@ -45,7 +51,7 @@
       left: 550px;
       top: -80px;
       width: 50%;
-     
+
     }
 
     .text img {
@@ -69,9 +75,27 @@
       margin-top: 10px;
 
     }
-    .roundpic{
-    border-radius: 50%;
-}
+
+    .roundpic {
+      border-radius: 50%;
+    }
+
+    .date {
+      color: red;
+      font-size: 18px;
+    }
+
+    .btn1 {
+      position: relative;
+      left: 50rem;
+      top: -2rem;
+      width: 40%;
+    }
+    .cd-popup-container h2{
+      position: relative;
+      top: 50px;
+      color: rgb(255, 0, 0);
+    }
   </style>
 
 </head>
@@ -80,7 +104,7 @@
 
   <div class="sidenav">
     <div class="logo">
-      <img src="img/logo.png" alt="Avatar" style="width:110px">
+      <img src="../img/logo.png" alt="Avatar" style="width:110px">
       <h2>check it</h2>
     </div>
 
@@ -100,7 +124,7 @@
       <ul class="dropdown-container">
         <a href="#">อาจารย์</a>
         <a href="#">ผู้ช่วยสอน</a>
-        
+
       </ul>
     </div>
   </div>
@@ -108,27 +132,82 @@
 
   <div class="action">
     <div class="profile" onclick="menuToggle();">
-      <img src="img/test.jpg" alt="profile-pic" class="profile-pic">
+      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic">
     </div>
     <div class="menu">
       <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
       <h3 class="username">พิชามล บุญศรี</h3>
       <a href="#" id="edit">Edit Profile</a><br>
-      <button class="sign-out" type="button">Sign out</button>
+      <button class="../sign-out" type="button">Sign out</button>
     </div>
 
   </div>
 
 
   <div class="content">
-    <h2>วิชาที่เปิดสอน</h2>
+    <h2>วิชาที่ลบ</h2>
 
-    <?php
-    include('./opensubj_db.php');
-    ?>
+    <div class="detail1">
+
+      <div class="text">
+        <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
+      </div>
+      <div class="content1">
+        <p><span>วิชา : </span> Database Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo nihil nobis
+          culpa ipsum eaque consequatur, ipsa praesentium tempora quisquam ducimus architecto saepe dicta dolore
+          excepturi obcaecati at a incidunt cumque.</p>
+        <p><span>ผู้สอน : </span> พีพี</p>
+        <p><span>ปีการศึกษา : </span> 1 &nbsp; <span>ภาคเรียน : </span> 2564 </p>
+        <p class="date">24 วัน</p>
+      </div>
+
+      <div class="btn1">
+        <a href="#edit<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-primary"><span
+            class="glyphicon glyphicon-edit"></span> กู้คืน</a>
+        <a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span
+            class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
+        <?php include('roomaction.php'); ?>
+      </div>
+    </div>
+
+    <div id="line"></div>
+
+    <div class="detail2">
+      <div class="text">
+        <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
+      </div>
+      <div class="content1">
+        <p><span>วิชา : </span> Database</p>
+        <p><span>ผู้สอน : </span> พีพี</p>
+        <p><span>ปีการศึกษา : </span> 1 &nbsp; <span>ภาคเรียน : </span> 2564 </p>
+        <p class="date">24 วัน</p>
+        <br>
+      </div>
+      <div class="btn1">
+        <a href="#edit<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-primary"><span
+            class="glyphicon glyphicon-edit"></span> กู้คืน</a>
+        <a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span
+            class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
+        <?php include('roomaction.php'); ?>
+      </div>
+    </div>
+    <div id="line"></div>
 
 
 
+  </div>
+
+
+  <div class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+      <h2>ยืนยันการลบวิชาหรือไม่</h2>
+      <p>342233/2564 Database Analysis and Design </p>
+      <ul class="cd-buttons">
+        <li><a href="#0">ยืนยัน</a></li>
+        <li><a href="#0">ยกเลิก</a></li>
+      </ul>
+      <a href="#0" class="cd-popup-close img-replace">Close</a>
+    </div> <!-- cd-popup-container -->
   </div>
 
 
@@ -139,6 +218,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
   </script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
 
   <!-- Part Java Script -->
   <script>
@@ -176,6 +256,29 @@
         this.className += " active";
       });
     }
+
+    //ปอปอัพ
+    jQuery(document).ready(function($){
+	//open popup
+	$('.cd-popup-trigger').on('click', function(event){
+		event.preventDefault();
+		$('.cd-popup').addClass('is-visible');
+	});
+	
+	//close popup
+	$('.cd-popup').on('click', function(event){
+		if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+			event.preventDefault();
+			$(this).removeClass('is-visible');
+		}
+	});
+	//close popup when clicking the esc keyboard button
+	$(document).keyup(function(event){
+    	if(event.which=='27'){
+    		$('.cd-popup').removeClass('is-visible');
+	    }
+    });
+});
   </script>
 
 </body>

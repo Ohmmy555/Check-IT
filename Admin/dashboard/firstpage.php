@@ -1,3 +1,8 @@
+<?php
+include('../../Route/route_admin.php');
+include('./conn.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +17,6 @@
     <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="firstpage.css">
-
 </head>
 <body>
 
@@ -61,8 +65,8 @@
   <div class="menu">
     <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
     <h3 class="username">พิชามล บุญศรี</h3>
-      <a href="#" id="edit">Edit Profile</a><br>
-    <button class="sign-out" type="button">Sign out</button>
+      <a href="./editprofile/editprofile.html" id="edit">Edit Profile</a><br>
+    <a href="../../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
   </div>
   
 </div>
@@ -73,9 +77,9 @@
       <h1>ยินดีต้อนรับ CHECK IT</h1>
       <div class="subject-btn">
         <div class="container">
-          <button class="add-subject" type="button">เพิ่มวิชา</button>
-          <button class="add-subject" type="button">เพิ่มวิชา</button>
-          <button class="add-subject" type="button">เพิ่มวิชา</button>
+          <a href="./create/create.php"><button class="add-subject" type="button">เพิ่มวิชา</button></a>
+          <a href="./create/create.php"></a><button class="add-subject" type="button">เพิ่มวิชา</button></a>
+          <a href="./create/create.php"></a><button class="add-subject" type="button">เพิ่มวิชา</button></a>
         </div>
       </div>
       

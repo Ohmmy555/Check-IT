@@ -22,7 +22,7 @@ $_SESSION['error_login'] = "";
 
 <body>
     <div id="header-bar">
-        <a href="../main.php">
+        <a href="../../main.php">
             <h1>Check IT</h1>
         </a>
         <div id="login-bar">
@@ -40,7 +40,7 @@ $_SESSION['error_login'] = "";
     </div>
     <div>
         <h2>Sign Up</h2>
-        <form action="register_db.php" method="POST" id="user_form">
+        <form action="../sign-in/register_db.php" method="POST" id="user_form">
             <?php include('errors.php') ?>
             <?php
             session_start();
@@ -63,7 +63,7 @@ $_SESSION['error_login'] = "";
 
                 <div class="text-mini-card">
                     <p class="p">ID Student</p>
-                    <input class="long-input" name="id-student-ta" type="text" required id='stdid'><br>
+                    <input class="long-input" name="id-admin" type="text" required id='stdid'><br>
                     <span id="massage_stdid"></span>
                 </div>
 

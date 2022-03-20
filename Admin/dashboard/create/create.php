@@ -1,3 +1,9 @@
+<?php
+include('../../../Route/route_admin.php');
+include('../conn.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +18,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="../nav.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
@@ -80,7 +86,7 @@
 
   <div class="sidenav">
     <div class="logo">
-      <img src="img/logo.png" alt="Avatar" style="width:110px">
+      <img src="../img/logo.png" alt="Avatar" style="width:110px">
       <h2>check it</h2>
     </div>
 
@@ -109,10 +115,10 @@
 
   <div class="action">
     <div class="profile" onclick="menuToggle();">
-      <img src="img/test.jpg" alt="profile-pic" class="profile-pic">
+      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic">
     </div>
     <div class="menu">
-      <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
+      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
       <h3 class="username">พิชามล บุญศรี</h3>
       <a href="#" id="edit">Edit Profile</a><br>
       <button class="sign-out" type="button">Sign out</button>

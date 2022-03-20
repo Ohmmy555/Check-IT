@@ -4,28 +4,27 @@
         $fname =mysqli_real_escape_string($conn,$_POST['fname']);
         $lname =mysqli_real_escape_string($conn,$_POST['lname']);
         $username =mysqli_real_escape_string($conn,$_POST['username']);
-        $std_id =mysqli_real_escape_string($conn,$_POST['id-student-ta']);
+        $admin_id =mysqli_real_escape_string($conn,$_POST['id-admin']);
         $password_1=mysqli_real_escape_string($conn,$_POST['password_1']);
 
-        $user_check_query = "SELECT * FROM Admin WHERE username = '$username'";
+        $user_check_query = "SELECT * FROM Admin WHERE Admin_username = '$username'";
         $queary = mysqli_query($conn,$user_check_query);
         $result = mysqli_fetch_assoc($queary);
 
         if($result){
-            if($result['username'] === $username){
+            if($result['Admin_username'] === $username){
                 $_SESSION['error_signin']="Username already exists";
-                header("location: register.php");
+                echo "<script>location.replace('./register.php')</script>";
+            }if($result['idAdmin'] === $admin_id){
+                $_SESSION['error_signin']="Student ID already exists";
+                echo "<script>location.replace('./register.php')</script>";
             }
-        }
-        if(count($errors) == 0){
+        }else{
             $password = md5($password_1);
-            $sql = "INSERT INTO Admin (idTA,fname,lname,username,password) VALUES ('$std_id','$fname','$lname','$username','$password')";
+            $sql = "INSERT INTO Admin (idAdmin,Admin_fname,Admin_lname,Admin_username,Admin_password) VALUES ('$admin_id','$fname','$lname','$username','$password')";
             mysqli_query($conn,$sql);
             echo "<script>location.replace('../../Admin/log-in/login.php')</script>";
-
-
-        }else{
-            $_SESSION['error_signin']="Wrong username or password try again";
-            header("location: register.php");
+            //$_SESSION['error_signin']="Wrong username or password try again";
+            //echo "<script>location.replace('./register.php')</script>";
         }
     ?>

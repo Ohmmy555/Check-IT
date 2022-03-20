@@ -12,18 +12,19 @@ if ($_COOKIE['cookie_user'] != "") {
 }
 
 $password = md5($password_1);
-$sql = "SELECT * FROM Admin WHERE username = '$username' AND password = '$password' ";
+$sql = "SELECT * FROM Admin WHERE Admin_username = '$username' AND Admin_password = '$password' ";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) == 1) {
-  $_SESSION['username']=$username;
-  echo "<script>location.replace('./index.php');</script>";
+  $_SESSION['Admin_username']=$username;
 
   //Cookies
   if ($_POST['remember'] == 'remember') {
     $user_seria = ['username' => $username, 'password' => $password_1];
     $user_seria = serialize($user);
-    setcookie("cookie_user", $user_seria, time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie("cookie_admin", $user_seria, time() + (86400 * 30), "/"); // 86400 = 1 day
   }
+
+  echo "<script>location.replace('../dashboard/firstpage.html');</script>";
 } else {
   $_SESSION['error_login'] = "Wrong username or password try again";
   echo "<script>location.replace('./login.php');</script>";
