@@ -1,4 +1,4 @@
-.profile-pic-div{
+.profile-pic-div {
     justify-content: center;
     position: relative;
     width: 17rem;
@@ -6,18 +6,21 @@
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
-}
-
-#photo{
-    width:100%;
-    height:100%;
-}
-
-#file{
+    margin-left: 32%;
+  
+  }
+  
+  #photo {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #file {
     display: none;
-}
-
-#uploadBtn{
+  }
+  
+  
+  #uploadBtn {
     height: 40px;
     width: 100%;
     position: absolute;
@@ -32,13 +35,13 @@
     font-size: 15px;
     cursor: pointer;
     display: none;
-<<<<<<< Updated upstream
-}
-/* ---------- switch เปิดปิด วิชา ----------*/
-.toggle {
-    --width: 80px;
+  }
+  
+  /* ---------- switch เปิดปิด วิชา ----------*/
+  .toggle {
+    --width: 200px;
     --height: calc(var(--width) / 3);
-
+  
     position: relative;
     display: inline-block;
     width: var(--width);
@@ -47,11 +50,11 @@
     border-radius: var(--height);
     cursor: pointer;
   }
-
+  
   .toggle input {
     display: none;
   }
-
+  
   .toggle .slider {
     position: absolute;
     top: 0;
@@ -62,7 +65,7 @@
     background-color: #ccc;
     transition: all 0.4s ease-in-out;
   }
-
+  
   .toggle .slider::before {
     content: '';
     position: absolute;
@@ -75,57 +78,159 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease-in-out;
   }
-
+  
   .toggle input:checked+.slider {
-    background-color: lime;
+    background-color: #4DCE56;
   }
-
+  
   .toggle input:checked+.slider::before {
     transform: translateX(calc(var(--width) - var(--height)));
   }
-
+  
   .toggle .labels {
     position: absolute;
-    top: 8px;
-    left: 0;
+    top: 12px;
+    left: 9px;
     width: 100%;
     height: 100%;
-    font-size: 12px;
+    font-size: 20pt;
+  
     font-family: sans-serif;
+  
     transition: all 0.4s ease-in-out;
   }
-
+  
   .toggle .labels::after {
     content: attr(data-off);
     position: absolute;
-    right: 5px;
+    right: 25px;
     color: #4d4d4d;
+  
     opacity: 1;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
     transition: all 0.4s ease-in-out;
   }
-
+  
   .toggle .labels::before {
     content: attr(data-on);
     position: absolute;
     left: 5px;
-    
+  
     color: #ffffff;
     opacity: 0;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
     transition: all 0.4s ease-in-out;
   }
-
+  
   .toggle input:checked~.labels::after {
     opacity: 0;
   }
-
+  
   .toggle input:checked~.labels::before {
     opacity: 1;
   }
-  /* ---------- switch เปิดปิด วิชา ----------*/
-
   
-=======
-}
->>>>>>> Stashed changes
+  /* ---------- switch เปิดปิด วิชา ----------*/
+  
+  #subject-detail {
+    margin-left: 51%;
+    margin-top: -13%;
+    font-size: 20pt;
+    color: #624DCE;
+  }
+  
+  .bold {
+    font-weight: bolder;
+  }
+  
+  #side-box {
+    margin-left: 74%;
+    margin-top: -13%;
+    text-align: center;
+  }
+  
+  #all-student {
+    font-size: 18pt;
+    color: #624DCE;
+  }
+  
+  #class-tottal {
+    border-radius: 50%;
+    background-color: white;
+    width: 180px;
+    color: #624DCE;
+    padding: 5%;
+    border: 3px solid #624DCE;
+  
+    margin-left: 33%;
+  }
+  
+  #section {
+    font-size: 18pt;
+  }
+  
+  #number-of-student {
+    font-size: 28pt;
+  }
+  
+  .small {
+    font-size: 13pt;
+  
+  }
+  
+  #techer-box {
+    background-color: #624DCE;
+    font-size: 20pt;
+    width: 40%;
+    padding: 1%;
+    border-radius: 25px;
+    margin-left: 30%;
+  }
+  
+  #ta-box {
+    background-color: #3ECBFE;
+    font-size: 20pt;
+    width: 40%;
+    padding: 1%;
+    border-radius: 25px;
+    margin-left: 30%;
+  }
+  
+  #student-box {
+    background-color: #FBAA10;
+    font-size: 20pt;
+    width: 40%;
+    padding: 1%;
+    border-radius: 25px;
+    margin-left: 30%;
+    margin-bottom: 8%;
+  }
+  
+  #delete-box {
+    background-color: #F7333C;
+    font-size: 20pt;
+    width: 40%;
+    padding: 1%;
+    border-radius: 25px;
+    margin-left: 30%;
+    margin-top: 5%;
+  }
+  
+  #delete-botton {}
+  
+  a.side-link {
+    color: white;
+    text-decoration: none;
+  }
+  #description-bold{
+    font-size: 29pt;
+  }
+  #sub-description{
+    color: #624DCE;
+    font-size: 19pt;
+    width: 65%;
+  }
+  #description-of-subject{
+    margin-left: 32%;
+    margin-top: -13%
+  }
