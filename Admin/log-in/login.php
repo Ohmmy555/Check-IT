@@ -7,10 +7,10 @@ $_SESSION['error_signin'] = "";
 //Cookies
 if ($_COOKIE['cookie_user'] != "") {
     echo "<script>location.replace('login_db.php');</script>";
-}/*
+}
 if(isset($_SESSION['username'])){
     echo "<script>location.replace('index.php');</script>";
-}*/
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
