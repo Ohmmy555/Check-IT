@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="firstpage.css">
   <link rel="stylesheet" href="subject-homepage-after.css">
   <link rel="stylesheet" href="editprofile.js">
+  <link rel="stylesheet" href="popup.css">
 
 </head>
 
@@ -86,6 +87,7 @@
       <div id="subject-detail">
         <p class="detail" name="subject-name"><span class="bold">วิชา :</span> Database Analysis
           and Design</p>
+          <p class="detail" name="code-subject-name"><span class="bold">รหัสวิชา :</span> 342233</p>
         <p class="detail" name="teacher-name"><span class="bold">ผู้สอน :</span> พี่พจน์55555</p>
         <p class="detail" name="study-year"><span class="bold">ปีการศึกษา :</span> 2564</p>
         <p class="detail" name="semi-study-year"><span class="bold">ภาคเรียน :</span> 2</p>
@@ -119,7 +121,7 @@
           <label class="toggle">
             <input type="checkbox">
             <span class="slider"></span>
-            <span class="labels" data-on="เปิดวิชา" data-off="ปิดวิชา"></span>
+            <span class="labels cd-popup-trigger" data-on="ปิดวิชา" data-off="เปิดวิชา"></span>
           </label>
         </div>
         <div id="delete-box">
@@ -136,6 +138,18 @@
     </div>
 
   </div>
+</div>
+<div class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <h2>ยืนยันการปิดวิชาหรือไม่</h2>
+        <p>342233/2564 Database Analysis and Design </p>
+        <ul class="cd-buttons">
+            <li><a href="subject-homepage-before.html">ยืนยัน</a></li>
+            <li><a href="subject-homepage-after.html">ยกเลิก</a></li>
+        </ul>
+        <a href="subject-homepage-after.html" class="cd-popup-close img-replace">Close</a>
+    </div> <!-- cd-popup-container -->
+</div>
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -181,6 +195,27 @@
         this.className += " active";
       });
     }
+    jQuery(document).ready(function ($) {
+            //open popup
+            $('.cd-popup-trigger').on('click', function (event) {
+                event.preventDefault();
+                $('.cd-popup').addClass('is-visible');
+            });
+
+            //close popup
+            $('.cd-popup').on('click', function (event) {
+                if ($(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup')) {
+                    event.preventDefault();
+                    $(this).removeClass('is-visible');
+                }
+            });
+            //close popup when clicking the esc keyboard button
+            $(document).keyup(function (event) {
+                if (event.which == '27') {
+                    $('.cd-popup').removeClass('is-visible');
+                }
+            });
+        });
   </script>
   <script src="editprofile.js"></script>
   <!-- Option 1: Bootstrap Bundle with Popper -->
