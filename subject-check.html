@@ -78,23 +78,41 @@
     <div class="main">
       <h1> เช็คชื่อ </h1>
     </div>
-    <div>
-      <input type="date"> <input type="text"> <img src="img/loupe.png" alt="">
+    <div id="top-bar">
+      <input type="date" id="calender"> <input type="text" id="search" placeholder="รหัสนักศึกษา"> <a href="#"><img src="img/loupe.png" class="icon" alt="search icon"></a>
+    </div>
+    <div id="next-bar">
+      <a id="show" href="#" >show</a> <img src="img/excel.png" class="icon" alt="excel icon">
+    </div>
+    <div id="table-check">
+      <table>
+        <tr>
+          <td>เลขที่</td>
+          <td id="student-number">รหัสนักศึกษา</td>
+          <td id="name">ชื่อ-นามสกุล</td>
+          <td class="calls">มา</td>
+          <td class="calls">สาย</td>
+          <td class="calls">ขาด</td>
+          <td class="calls">ลา</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>633020924-7</td>
+          <td>เพชรมณี ติ๊บปาละ</td>
+          <td><input type="radio" name="checked" id="present"></td>
+          <td><input type="radio" name="checked" id="late"></td>
+          <td><input type="radio" name="checked" id="absent"></td>
+          <td><input type="radio" name="checked" id="leave"></td>
+        </tr>
+        
+      </table>
+      <div id="botton-save">
+        <input type="submit" name="save" id="save" value="Save">
+      </div>
     </div>
     
 
   </div>
-</div>
-<div class="cd-popup" role="alert">
-    <div class="cd-popup-container">
-        <h2>ยืนยันการปิดวิชาหรือไม่</h2>
-        <p>342233/2564 Database Analysis and Design </p>
-        <ul class="cd-buttons">
-            <li><a href="subject-homepage-before.html">ยืนยัน</a></li>
-            <li><a href="subject-homepage-after.html">ยกเลิก</a></li>
-        </ul>
-        <a href="subject-homepage-after.html" class="cd-popup-close img-replace">Close</a>
-    </div> <!-- cd-popup-container -->
 </div>
 
 
@@ -141,27 +159,7 @@
         this.className += " active";
       });
     }
-    jQuery(document).ready(function ($) {
-            //open popup
-            $('.cd-popup-trigger').on('click', function (event) {
-                event.preventDefault();
-                $('.cd-popup').addClass('is-visible');
-            });
-
-            //close popup
-            $('.cd-popup').on('click', function (event) {
-                if ($(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup')) {
-                    event.preventDefault();
-                    $(this).removeClass('is-visible');
-                }
-            });
-            //close popup when clicking the esc keyboard button
-            $(document).keyup(function (event) {
-                if (event.which == '27') {
-                    $('.cd-popup').removeClass('is-visible');
-                }
-            });
-        });
+  
   </script>
   <script src="editprofile.js"></script>
   <!-- Option 1: Bootstrap Bundle with Popper -->

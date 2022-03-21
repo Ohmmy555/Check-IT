@@ -37,200 +37,71 @@
   display: none;
 }
 
-/* ---------- switch เปิดปิด วิชา ----------*/
-.toggle {
-  --width: 200px;
-  --height: calc(var(--width) / 3);
-
-  position: relative;
-  display: inline-block;
-  width: var(--width);
-  height: var(--height);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-  border-radius: var(--height);
-  cursor: pointer;
+img.icon{
+  width: 30px;
+  height: auto;
+  margin-left: 0.5%;
 }
-
-.toggle input {
-  display: none;
-}
-
-.toggle .slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--height);
-  background-color:  #4DCE56;
-  transition: all 0.4s ease-in-out;
-}
-
-.toggle .slider::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(var(--height));
-  height: calc(var(--height));
-  border-radius: calc(var(--height) / 2);
-  background-color: #fff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease-in-out;
-}
-
-.toggle input:checked+.slider {
-  background-color: #ccc;
-}
-
-.toggle input:checked+.slider::before {
-  transform: translateX(calc(var(--width) - var(--height)));
-}
-
-.toggle .labels {
-  position: absolute;
-  top: 15px;
-  left: 9px;
-  width: 100%;
-  height: 100%;
-  font-size: 20pt;
-
+#top-bar{
+  padding-top: 4%;
+  padding-left: 29%;
   
-
-  transition: all 0.4s ease-in-out;
+}
+/* #search{
+  margin-left: 0.5%;
+} */
+#next-bar{
+  margin-left: 85%;
 }
 
-.toggle .labels::after {
-  content: attr(data-off);
-  position: absolute;
-  right: 25px;
-  color: #ffffff;
-
-  opacity: 1;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  transition: all 0.4s ease-in-out;
-}
-
-.toggle .labels::before {
-  content: attr(data-on);
-  position: absolute;
-  left: 5px;
-
-  color:  #4d4d4d;
-  opacity: 0;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
-  transition: all 0.4s ease-in-out;
-}
-
-.toggle input:checked~.labels::after {
-  opacity: 0;
-}
-
-.toggle input:checked~.labels::before {
-  opacity: 1;
-}
-
-/* ---------- switch เปิดปิด วิชา ----------*/
-
-#subject-detail {
-  margin-left: 51%;
-  margin-top: -13%;
-  font-size: 20pt;
-  color: #624DCE;
-}
-
-.bold {
-  font-weight: bolder;
-}
-
-#side-box {
-  margin-left: 74%;
-  margin-top: -13%;
+table{
   text-align: center;
-}
-
-#all-student {
-  font-size: 18pt;
-  color: #624DCE;
-}
-
-#class-tottal {
-  border-radius: 50%;
+  border: 1px solid gray;
   background-color: white;
-  width: 180px;
-  color: #624DCE;
-  padding: 5%;
-  border: 3px solid #624DCE;
-
-  margin-left: 33%;
+ width: 60%;
+ margin-left: 29%;
+ color: gray;
 }
-
-#section {
-  font-size: 18pt;
-}
-
-#number-of-student {
-  font-size: 28pt;
-}
-
-.small {
-  font-size: 13pt;
-
-}
-
-#techer-box {
-  background-color: #624DCE;
-  font-size: 20pt;
-  width: 40%;
+tr{
+  border: 1px solid gray;
   padding: 1%;
-  border-radius: 25px;
-  margin-left: 30%;
+  
 }
-
-#ta-box {
-  background-color: #3ECBFE;
-  font-size: 20pt;
-  width: 40%;
-  padding: 1%;
-  border-radius: 25px;
-  margin-left: 30%;
+td{
+  padding: 3%;
+  
 }
-
-#student-box {
-  background-color: #FBAA10;
-  font-size: 20pt;
-  width: 40%;
-  padding: 1%;
-  border-radius: 25px;
-  margin-left: 30%;
-  margin-bottom: 8%;
+td#student-number{
+  width: 20%;
 }
-
-#delete-box {
-  background-color: #F7333C;
-  font-size: 20pt;
-  width: 40%;
-  padding: 1%;
-  border-radius: 25px;
-  margin-left: 30%;
-  margin-top: 5%;
+td#name{
+  width: 26%
 }
-
-#delete-botton {}
-
-a.side-link {
+td.calls{
+  width: 10%;
+}
+#calender,#search{
+  border: 1px solid gray;
+  border-radius: 25px;
+  padding: 0.5% 1%;
+}
+#top-bar a{
+  margin: 0;
+}
+div#next-bar #show{
+  color:#624DCE;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+#botton-save{
+  margin-left: 85%;
+    margin-top: 1%;
+}
+#save{
   color: white;
-  text-decoration: none;
-}
-#description-bold{
-  font-size: 29pt;
-}
-#sub-description{
-  color: #624DCE;
-  font-size: 19pt;
-  width: 65%;
-}
-#description-of-subject{
-  margin-left: 32%;
-  margin-top: -13%
+  background-color: #624DCE;
+  border: none;
+  border-radius: 25px;
+  padding: 1% 7%;
+  font-size: 1.3rem;
 }
