@@ -1,5 +1,5 @@
 <?php
-	include('conn.php');
+	include('../../../Databast/database.php');
 	$idSubject=$_GET['idSubject'];
     $idyear=$_GET['idyear'];
     $term_num=$_GET['term_num'];
