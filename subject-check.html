@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First Page</title>
+  <title>เช็กชื่อ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Bootstrap CSS -->
@@ -13,7 +13,7 @@
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="firstpage.css">
+  <link rel="stylesheet" href="nav.css">
   <link rel="stylesheet" href="subject-check.css">
   <link rel="stylesheet" href="editprofile.js">
   <link rel="stylesheet" href="popup.css">
@@ -24,39 +24,18 @@
 
   <div class="sidenav">
     <div class="logo">
-      <img src="img/logo.png" alt="logo" style="width:110px">
+      <img src="img/logo.png" alt="Avatar" style="width:110px">
       <h2>check it</h2>
     </div>
 
     <div id="nav">
-      <li><a href="firstpage.html">หน้าแรก</a></li>
-
-      <li class="dropdown-btn">วิชา
-        <i class="fa fa-caret-down"></i>
-      </li>
-      <ul class="dropdown-container">
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-      </ul>
-      <li class="dropdown-btn">เช็คชื่อ
-        <i class="fa fa-caret-down"></i>
-      </li>
-      <ul class="dropdown-container">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </ul>
-      <li class="dropdown-btn">คะแนน
-        <i class="fa fa-caret-down"></i>
-      </li>
-      <ul class="dropdown-container">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </ul>
-      <li><a id="delete" href="#">ลบวิชา</a></li>
+        <a href="firstpage.html">หน้าแรก</a>
+        <a href="firstpage.html">วิชา</a>
+        <a href="firstpage.html">เช็คชื่อ</a>
+        <a href="ta_std.html">นักศึกษา</a>
+  
     </div>
+    
   </div>
 
 
@@ -73,7 +52,6 @@
 
   </div>
 
-
   <div class="content">
     <div class="main">
       <h1> เช็คชื่อ </h1>
@@ -82,7 +60,7 @@
       <input type="date" id="calender"> <input type="text" id="search" placeholder="รหัสนักศึกษา"> <a href="#"><img src="img/loupe.png" class="icon" alt="search icon"></a>
     </div>
     <div id="next-bar">
-      <a id="show" href="#" >show</a> <img src="img/excel.png" class="icon" alt="excel icon">
+      <a id="show" href="#" >show</a> <a href="#" id="excel"><img src="img/excel.png" class="icon" alt="excel icon"></a>
     </div>
     <div id="table-check">
       <table>
