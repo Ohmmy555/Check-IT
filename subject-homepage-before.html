@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Page</title>
+    <title>Database Analysis and Design</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap CSS -->
@@ -13,7 +13,7 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="firstpage.css">
+<link rel="stylesheet" href="nav.css">    
     <link rel="stylesheet" href="subject-homepage-before.css">
     <link rel="stylesheet" href="editprofile.js">
     <link rel="stylesheet" href="popup.css">
@@ -24,54 +24,45 @@
 
     <div class="sidenav">
         <div class="logo">
-            <img src="img/logo.png" alt="logo" style="width:110px">
-            <h2>check it</h2>
+          <img src="img/logo.png" alt="Avatar" style="width:110px">
+          <h2>check it</h2>
         </div>
-
+    
         <div id="nav">
-            <li><a href="firstpage.html">หน้าแรก</a></li>
-
-            <li class="dropdown-btn">วิชา
-                <i class="fa fa-caret-down"></i>
-            </li>
-            <ul class="dropdown-container">
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-            </ul>
-            <li class="dropdown-btn">เช็คชื่อ
-                <i class="fa fa-caret-down"></i>
-            </li>
-            <ul class="dropdown-container">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </ul>
-            <li class="dropdown-btn">คะแนน
-                <i class="fa fa-caret-down"></i>
-            </li>
-            <ul class="dropdown-container">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </ul>
-            <li><a id="delete" href="#">ลบวิชา</a></li>
+          <a href="firstpage.html">หน้าแรก</a>
+          <li class="dropdown-btn">วิชา
+            <i class="fa fa-caret-down"></i>
+          </li>
+          <ul class="dropdown-container">
+            <li><a href="create.html">วิชาที่สร้าง</a></li>
+            <li><a href="opensubject.html">วิชาที่เปิด</a></li>
+            <li><a href="delete.html">วิชาที่่ลบ</a></li>
+          </ul>
+          <li class="dropdown-btn">User
+            <i class="fa fa-caret-down"></i>
+          </li>
+          <ul class="dropdown-container">
+            <a href="#">อาจารย์</a>
+            <a href="#">ผู้ช่วยสอน</a>
+            <a href="#">นักศึกษา</a>
+            
+          </ul>
         </div>
-    </div>
-
-
-    <div class="action">
+      </div>
+    
+    
+      <div class="action">
         <div class="profile" onclick="menuToggle();">
-            <img src="img/test.jpg" alt="profile-pic" class="profile-pic">
+          <img src="img/test.jpg" alt="profile-pic" class="profile-pic">
         </div>
         <div class="menu">
-            <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
-            <h3 class="username">พิชามล บุญศรี</h3>
-            <a href="#" id="edit">Edit Profile</a><br>
-            <button class="sign-out" type="button">Sign out</button>
+          <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
+          <h3 class="username">พิชามล บุญศรี</h3>
+          <a href="#" id="edit">Edit Profile</a><br>
+          <button class="sign-out" type="button">Sign out</button>
         </div>
-
-    </div>
+    
+      </div>
 
 
     <div class="content">
