@@ -155,13 +155,43 @@ include('../conn.php');
     if (mysqli_num_rows($result) > 0) {
       while ($subj_delete = mysqli_fetch_assoc($result)) {
         $totalday = Calday($subj_delete['delete_at']);
-        echo $subj_delete;
+        echo '<div class="detail1">
+
+        <div class="text">
+          <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
+        </div>
+        <div class="content1">
+          <p><span>วิชา :' . $subj_delete['Subject_name'] . '</p>
+          <p><span>ผู้สอน : </span> ' . $subj_delete['TA_fname'] . ' ' . $subj_delete['TA_lname'] . '</p>
+          <p><span>ปีการศึกษา : </span> ' . $subj_delete['idyear'] . ' &nbsp; <span>ภาคเรียน : </span>' . $subj_delete['term_num'] . '</p>
+          <p class="date">' . $totalday . ' วัน</p>
+        </div>
+  
+        <div class="btn1">
+          <a href="recovery_db.php?idSubject="' . $subj_delete['idSubject'] . '"&idyear="' . $subj_delete['idyear'] . '"&term_num="' . $subj_delete['term_num'] . '" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> กู้คืน</a>
+          <a href="#" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
+        </div>
+      </div>
+  
+      <div id="line"></div>
+
+      <div class="cd-popup" role="alert">
+      <div class="cd-popup-container">
+        <h2>ยืนยันการลบวิชาหรือไม่</h2>
+        <p>342233/2564 Database Analysis and Design </p>
+        <ul class="cd-buttons">
+          <li><a href="delete_real.php?idSubject="' . $subj_delete['idSubject'] . '"&idyear="' . $subj_delete['idyear'] . '"&term_num="' . $subj_delete['term_num'] . '">ยืนยัน</a></li>
+          <li><a href="#0">ยกเลิก</a></li>
+        </ul>
+        <a href="#0" class="cd-popup-close img-replace">Close</a>
+      </div> <!-- cd-popup-container -->
+    </div>';
       }
     } else {
-      echo "<tr><td colspan=4>" . "ไม่มีรายวิชาที่เคยลบ" . "</td></tr>";
+      echo "ไม่มีรายวิชาที่เคยลบ";
     }
     ?>
-    <div class="detail1">
+    <!-- <div class="detail1">
 
       <div class="text">
         <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
@@ -174,32 +204,31 @@ include('../conn.php');
       </div>
 
       <div class="btn1">
-        <a href="#edit<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> กู้คืน</a>
-        <a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
-        <?php include('roomaction.php'); ?>
+        <a href="deleteroom.php?idSubject=<?php echo $subj_delete['idSubject']; ?>&idyear=<?php echo $subj_delete['idyear']; ?>&term_num=<?php echo $subj_delete['term_num']; ?>" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> กู้คืน</a>
+        <a href="delete_real.php?idSubject=<?php echo $subj_delete['idSubject']; ?>&idyear=<?php echo $subj_delete['idyear']; ?>&term_num=<?php echo $subj_delete['term_num']; ?>" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
       </div>
     </div>
 
-    <div id="line"></div>
-
-   
+    <div id="line"></div> -->
 
 
 
+
+    //ปิดแท็กcontent
   </div>
 
 
-  <div class="cd-popup" role="alert">
+  <!-- <div class="cd-popup" role="alert">
     <div class="cd-popup-container">
       <h2>ยืนยันการลบวิชาหรือไม่</h2>
       <p>342233/2564 Database Analysis and Design </p>
       <ul class="cd-buttons">
-        <li><a href="#0">ยืนยัน</a></li>
+        <li><a href="delete_real.php?idSubject="' . $subj_delete['idSubject'] . '"&idyear="' . $subj_delete['idyear'] . '"&term_num="' . $subj_delete['term_num'] . '"'>ยืนยัน</a></li>
         <li><a href="#0">ยกเลิก</a></li>
       </ul>
       <a href="#0" class="cd-popup-close img-replace">Close</a>
-    </div> <!-- cd-popup-container -->
-  </div>
+    </div>  cd-popup-container 
+  </div> -->
 
 
 
