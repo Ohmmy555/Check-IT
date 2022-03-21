@@ -3,14 +3,7 @@ ob_start();
 session_start();
 include('server.php');
 $_SESSION['error_signin'] = "";
-
-//Cookies
-if ($_COOKIE['cookie_user'] != "") {
-    echo "<script>location.replace('login_db.php');</script>";
-}
-if(isset($_SESSION['username'])){
-    echo "<script>location.replace('index.php');</script>";
-}
+include('../../Route/route_ta.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">

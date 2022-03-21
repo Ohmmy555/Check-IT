@@ -1,7 +1,7 @@
 <?php
 session_start();
 ob_start();
-include('server.php');
+include('../../Databast/database.php');
 $username = mysqli_real_escape_string($conn, $_POST['username']);
 $password_1 = mysqli_real_escape_string($conn, $_POST['password']);
 
