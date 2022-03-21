@@ -3,7 +3,6 @@ ob_start();
 session_start();
 include('server.php');
 $_SESSION['error_signin'] = "";
-include('../../Route/route_ta.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +27,7 @@ include('../../Route/route_ta.php')
                 </a>
             </div>
             <div class="menu-login">
-                <a href="../../TA/sign-in/register.php">
+                <a href="../sign-in/register.php">
                     <p id="sign-up-bt">Sign Up</p>
                 </a>
             </div>

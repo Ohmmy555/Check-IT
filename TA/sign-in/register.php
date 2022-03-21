@@ -1,7 +1,5 @@
 <?php
 session_start();
-include('server.php');
-include('register_check.php');
 $_SESSION['error_login'] = "";
 ?>
 <!DOCTYPE html>
@@ -40,7 +38,7 @@ $_SESSION['error_login'] = "";
     </div>
     <div>
         <h2>Sign Up</h2>
-        <form action="register_db.php" method="POST" id="user_form">
+        <form action="./register_db.php" method="POST" id="user_form">
             <?php include('errors.php') ?>
             <?php
             session_start();

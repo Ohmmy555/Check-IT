@@ -12,11 +12,13 @@ if ($_COOKIE['cookie_user'] != "") {
 }
 
 $password = md5($password_1);
-$sql = "SELECT * FROM ta WHERE username = '$username' AND password = '$password' ";
+$sql = "SELECT * FROM TA WHERE username = '$username' AND password = '$password' ";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) == 1) {
   $_SESSION['username']=$username;
-  echo "<script>location.replace('./index.php');</script>";
+  $_SESSION['name'] = $result['TA_fname']||$result['TA_lname'];
+  $_SESSION['stdid'] = $result['idTA'];
+  echo "<script>location.replace('../firstpage.php');</script>";
 
   //Cookies
   if ($_POST['remember'] == 'remember') {
