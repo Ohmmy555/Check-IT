@@ -1,6 +1,6 @@
 <!-- ลบทิพย์กู้ได้ -->
 <?php 
-include('conn.php');
+include('../../../Databast/database.php');
 date_default_timezone_set('Asia/Bangkok');
 $c_date = date('Y-m-d H:i:s', time());
 //echo $c_date;
