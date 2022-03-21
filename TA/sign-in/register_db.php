@@ -16,9 +16,10 @@
                 $_SESSION['error_signin']="Username already exists";
                 header("location: register.php");
             }
-        }*/
+        }
             $password = md5($password_1);
             $sql = "INSERT INTO TA (idTA,TA_fname,TA_lname,TA_username,TA_password) VALUES ('$std_id','$fname','$lname','$username','$password')";
             mysqli_query($conn,$sql);
             //echo "<script>location.replace('../log-in/login.php')</script>";
+            */
     ?>
