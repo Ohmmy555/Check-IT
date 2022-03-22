@@ -27,9 +27,14 @@
 		</div>
 		<div class="menu">
 			<img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
-			<h3 class="username">พิชามล บุญศรี</h3>
-			<a href="./editprofile/editprofile.html" id="edit">Edit Profile</a><br>
-			<a href="../../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
+			<h3 class="username"><?php session_start();
+
+				if (isset($_SESSION['username'])) {
+				  $username = $_SESSION['username'];
+				  echo $username;
+				} ?></h3>
+<a href="./editprofile.html" id="edit">Edit Profile</a><br>
+<a href="../../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
 		</div>
 	</div>
 
