@@ -47,17 +47,17 @@ include('../Databast/database.php');
 
 
   <div class="action">
-    <div class="profile" onclick="menuToggle();">
-      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic">
-    </div>
-    <div class="menu">
-      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
-      <h3 class="username">พิชามล บุญศรี</h3>
-      <a href="#" id="edit">Edit Profile</a><br>
-      <a href="../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
-    </div>
-
+  <div class="profile" onclick="menuToggle();">
+    <img src="../img/test.jpg" alt="profile-pic" class="profile-pic">
+  </div>  
+  <div class="menu">
+    <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
+    <h3 class="username"><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+      <a href="./editprofile/editprofile.html" id="edit">Edit Profile</a><br>
+    <a href="./log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
   </div>
+  
+</div>
 
   <div class="content">
     <div class="main">

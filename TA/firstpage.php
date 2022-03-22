@@ -28,34 +28,13 @@ include('../Databast/database.php');
     </div>
     
     <div id="nav">
-      <li><a href="firstpage.html">หน้าแรก</a></li>
-      
-      <li class="dropdown-btn">วิชา 
-        <i class="fa fa-caret-down"></i>
-      </li>
-      <ul class="dropdown-container">
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-      </ul>
-      <li class="dropdown-btn">เช็คชื่อ 
-        <i class="fa fa-caret-down"></i>
-      </li>
-      <ul class="dropdown-container">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </ul>
-      <li class="dropdown-btn">คะแนน
-        <i class="fa fa-caret-down"></i>
-      </li>
-      <ul class="dropdown-container">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </ul>
-      <li><a id="delete" href="#">ลบวิชา</a></li>
+      <a href="./firstpage.php">หน้าแรก</a>
+      <a href="./opensubTA.php">วิชา</a>
+      <a href="./subject-check.php">เช็คชื่อ</a>
+      <a href="ta_std.html">นักศึกษา</a>
+
     </div>
+    
 </div>
 
 
@@ -90,7 +69,7 @@ include('../Databast/database.php');
 
 //Database SQL
 $stdid = $_SESSION['stdid'];
-$sql = "SELECT Subject.Subject_name,TA_has_Subject.section 
+$sql = "SELECT Subject.Subject_name,TA_has_Subject.section,TA_has_Subject.idSubject 
     FROM TA_has_Subject JOIN Subject_detail ON (TA_has_Subject.idSubject = Subject_detail.idSubject) 
     JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
     WHERE TA_has_Subject.idTA = '$stdid'";
@@ -99,7 +78,7 @@ foreach($result as $data){
 ?>
 
           <p>
-            <a href=""><i class="fa fa-solid fa-folder" style="float: left;"></i><?php echo $data['Subject_name']." ".$data['section']; ?></a>
+            <a href="./subject-homepage-after-TA.php?sub_id=<?php echo $data["idSubject"]; ?>"><i class="fa fa-solid fa-folder" style="float: left;"></i><?php echo $data['Subject_name']." ".$data['section']; ?></a>
             <a href="#"><i class="fa fa-solid fa-trash"></i></a>
             <a href="#"><i class="fa fa-light fa-pen"></i></a>
           </p><hr>
