@@ -60,15 +60,41 @@ body {
 .short-input{
     height: 40px;
     width: 250px;
-    padding: 1% 10% 1% 10%;
+    padding: 1% 4%;
     border-radius: 18px;
     border: 1px solid rgb(170, 170, 170);
     font-size: larger;
 }
+#pass,#confirm_pass{
+    height: 40px;
+    width: 250px;
+    padding: 1% 4%;
+    border-radius: 18px;
+    border: 1px solid rgb(170, 170, 170);
+    font-size: larger;
+}
+.pass{
+    margin-top: 15%;
+}
+#save-profile{
+    float: right;
+    margin-top: -5%;
+    height: 50px;
+    width: 120px;
+    border-radius: 60px;
+    background-color: #624DCE;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 1.4rem;
+}
+#save-profile:hover{
+    pointer-events: auto;
+    background-color: #5844b8;
+}
 
 #save{
     float: right;
-    margin-top: 20%;
     height: 50px;
     width: 120px;
     border-radius: 60px;
@@ -80,8 +106,7 @@ body {
 }
 #back{
     float: right;
-    margin-top: 20%;
-    margin-right: 10px;
+    margin-right: 20px;
     height: 50px;
     width: 120px;
     border-radius: 60px;
