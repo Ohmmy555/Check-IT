@@ -38,7 +38,7 @@ include('../Databast/database.php');
     <div id="nav">
       <a href="./firstpage.php">หน้าแรก</a>
       <a href="./opensubTA.php">วิชา</a>
-      <a href="./subject-check.php">เช็คชื่อ</a>
+      <a href="./opensub-check.php">เช็คชื่อ</a>
       <a href="ta_std.html">นักศึกษา</a>
 
     </div>
@@ -89,10 +89,9 @@ include('../Databast/database.php');
 
           <?php
           /******************************************************** */
-          $sub_id = 342233;
-          $sub_term = 1;
-          $sub_sec = 1;
-          $sub_ta = '633020334-8';
+          $sub_id = $_GET['sub_id'];
+          $sub_term = $_GET['sub_term'];
+          $sub_sec = $_GET['sub_sec'];
           $date = $_POST['date'];
           if (isset($_POST['sub_date'])) {
             if (isset($_POST['date'])) {
@@ -205,7 +204,7 @@ include('../Databast/database.php');
       foreach ($data1 as $pro) {
         foreach ($_POST[$pro] as $data2) {
           $sql4 = "INSERT INTO Checked(status,idSubject,idTA,idSection,idStudent,trem,check_day) 
-      VALUES ('$data2','$sub_id','$sub_ta',$sub_sec,'$pro',$sub_term,'$time')";
+      VALUES ('$data2','$sub_id','$username',$sub_sec,'$pro',$sub_term,'$time')";
           mysqli_query($conn, $sql4);
         }
       }

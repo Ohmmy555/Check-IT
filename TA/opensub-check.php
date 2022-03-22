@@ -88,9 +88,9 @@ include('../Route/route_ta.php');
     </div>
 
     <div id="nav">
-      <a href="firstpage.html">หน้าแรก</a>
-      <a href="firstpage.html">วิชา</a>
-      <a href="firstpage.html">เช็คชื่อ</a>
+      <a href="./firstpage.php">หน้าแรก</a>
+      <a href="./opensubTA.php">วิชา</a>
+      <a href="./opensub-check.php">เช็คชื่อ</a>
       <a href="ta_std.html">นักศึกษา</a>
 
     </div>
@@ -112,12 +112,12 @@ include('../Route/route_ta.php');
 
 
   <div class="content">
-    <h2>วิชาที่เปิดสอน</h2>
+    <h2>เช็คชื่อ</h2>
     <?php
     include('../Databast/database.php');
     session_start();
     $stdid = $_SESSION['stdid'];
-    $sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num 
+    $sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num,TA_has_Subject.section 
     FROM TA_has_Subject JOIN Subject_detail ON (TA_has_Subject.idSubject = Subject_detail.idSubject) 
     JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
     JOIN Teacher ON (Subject_detail.idTeacher = Teacher.idTeacher) 
@@ -129,6 +129,7 @@ include('../Route/route_ta.php');
     } else {
       foreach ($result as $data) {
     ?>
+    <a href="./subject-check.php?sub_id=<?php echo $data["idSubject"];?>&sub_term=<?php echo $data["term_num"];?>&sub_sec=<?php echo $data["section"];?>">
         <div class="detail1">
           <div class="text">
             <img class="roundpic" src="../img/logo.png" alt="pic">
@@ -139,7 +140,7 @@ include('../Route/route_ta.php');
             <p><span>ปีการศึกษา : </span><?php echo $data["year"];  ?> &nbsp; <span>ภาคเรียน : </span><?php echo $data["term_num"];  ?> </p>
           </div>
         </div>
-
+        </a>
         <div id="line"></div>
   </div>
 
