@@ -87,19 +87,19 @@ include('../Databast/database.php');
       <div class="subject">
           <b>Latest Subject</b><br><hr>
 <?php
+
+//Database SQL
 $stdid = $_SESSION['stdid'];
-$sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num,TA_has_Subject.section 
+$sql = "SELECT Subject.Subject_name,TA_has_Subject.section 
     FROM TA_has_Subject JOIN Subject_detail ON (TA_has_Subject.idSubject = Subject_detail.idSubject) 
     JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
-    JOIN Teacher ON (Subject_detail.idTeacher = Teacher.idTeacher) 
-    JOIN Term ON (Subject_detail.idTerm = Term.idTerm) 
     WHERE TA_has_Subject.idTA = '$stdid'";
 $result = mysqli_query($conn, $sql);
 foreach($result as $data){
 ?>
 
           <p>
-            <a href="#"><i class="fa fa-solid fa-folder" style="float: left;"></i><?php echo $data['Subject_name']." ".$data['section']; ?></a>
+            <a href=""><i class="fa fa-solid fa-folder" style="float: left;"></i><?php echo $data['Subject_name']." ".$data['section']; ?></a>
             <a href="#"><i class="fa fa-solid fa-trash"></i></a>
             <a href="#"><i class="fa fa-light fa-pen"></i></a>
           </p><hr>
