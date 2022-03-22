@@ -1,6 +1,6 @@
 .profile-pic-div {
     justify-content: center;
-    position: relative;
+    /* position: relative; */
     width: 17rem;
     height: 17rem;
     border-radius: 50%;
@@ -217,7 +217,7 @@
     margin-top: 5%;
   }
   
-  #delete-botton {}
+  /* #delete-botton {} */
   
   a.side-link {
     color: white;

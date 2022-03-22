@@ -88,6 +88,7 @@ div.text-mini-card{
   .action .menu.active{
       visibility: visible;
       opacity: 1;
+      text-align: center;
   }
   .action .menu::before{
       content: '';
