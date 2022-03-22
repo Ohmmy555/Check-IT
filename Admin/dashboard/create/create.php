@@ -19,6 +19,9 @@
   <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="../nav.css">
+  <link rel="stylesheet" href="../nav.css">
+
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
@@ -72,12 +75,14 @@
       position: relative;
       left: 35em;
       margin-top: 10px;
+      z-index: -999;
 
     }
 
     .roundpic {
       border-radius: 50%;
     }
+
   </style>
 
 </head>
@@ -115,10 +120,10 @@
 
   <div class="action">
     <div class="profile" onclick="menuToggle();">
-      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic">
+      <img src="../img/student.png" alt="profile-pic" class="profile-pic">
     </div>
     <div class="menu">
-      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
+      <img src="../img/student.png" alt="profile-pic" class="profile-pic" style="width:180px;">
       <h3 class="username">พิชามล บุญศรี</h3>
       <a href="#" id="edit">Edit Profile</a><br>
       <button class="sign-out" type="button">Sign out</button>
@@ -136,7 +141,7 @@
 
     <!-- <div class="detail2">
       <div class="text">
-        <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
+        <img class="roundpic" src="../img/E4eLarNVEAM7n4T.jfif" alt="pic">
       </div>
       <div class="content1">
         <p><span>วิชา : </span> Database</p>
@@ -144,8 +149,9 @@
         <p><span>ปีการศึกษา : </span> 1 &nbsp; <span>ภาคเรียน : </span> 2564 </p>
         <br>
       </div>
-    </div>
-    <div id="line"></div> -->
+      <div id="line"></div>
+    </div> -->
+    
 
 
 
