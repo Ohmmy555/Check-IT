@@ -22,6 +22,8 @@ body {
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
+    border: #636363 1px solid;
+
 }
 
 #photo{

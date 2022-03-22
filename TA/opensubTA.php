@@ -68,6 +68,7 @@ include('../Route/route_ta.php');
       position: relative;
       left: 35em;
       margin-top: 10px;
+      z-index: -999;
 
     }
 

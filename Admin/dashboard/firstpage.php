@@ -1,7 +1,10 @@
 <?php
 //include('../../Route/route_admin.php');
+<<<<<<< HEAD
 //include('./conn.php');
+=======
 include('../../Databast/database.php');
+>>>>>>> 36749b4db214dc5cc3bfae587556c374c0cf5d99
 ?>
 
 <!DOCTYPE html>

@@ -33,7 +33,7 @@
         <h2>ยืนยันการลบวิชาหรือไม่</h2>
         <p>342233/2564 Database Analysis and Design </p>
         <ul class="cd-buttons">
-          <li><a href="delete_real.php?idSubject="' . $subj_delete['Subject_name'] . '"&year="' . $subj_delete['year'] . '"&term_num="' . $subj_delete['term_num'] . '">ยืนยัน</a></li>
+          <li><a href="delete_real.php?idSubject="' . $subj_delete['idSubject'] . '"&year="' . $subj_delete['year'] . '"&term_num="' . $subj_delete['term_num'] . '">ยืนยัน</a></li>
           <li><a href="#0">ยกเลิก</a></li>
         </ul>
         <a href="#0" class="cd-popup-close img-replace">Close</a>
