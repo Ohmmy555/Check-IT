@@ -69,7 +69,7 @@ include('../Databast/database.php');
 
 //Database SQL
 $stdid = $_SESSION['stdid'];
-$sql = "SELECT Subject.Subject_name,TA_has_Subject.section 
+$sql = "SELECT Subject.Subject_name,TA_has_Subject.section,TA_has_Subject.idSubject 
     FROM TA_has_Subject JOIN Subject_detail ON (TA_has_Subject.idSubject = Subject_detail.idSubject) 
     JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
     WHERE TA_has_Subject.idTA = '$stdid'";
@@ -78,7 +78,7 @@ foreach($result as $data){
 ?>
 
           <p>
-            <a href=""><i class="fa fa-solid fa-folder" style="float: left;"></i><?php echo $data['Subject_name']." ".$data['section']; ?></a>
+            <a href="./subject-homepage-after-TA.php?sub_id=<?php echo $data["idSubject"]; ?>"><i class="fa fa-solid fa-folder" style="float: left;"></i><?php echo $data['Subject_name']." ".$data['section']; ?></a>
             <a href="#"><i class="fa fa-solid fa-trash"></i></a>
             <a href="#"><i class="fa fa-light fa-pen"></i></a>
           </p><hr>

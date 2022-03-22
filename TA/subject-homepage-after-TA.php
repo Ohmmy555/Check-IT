@@ -1,3 +1,6 @@
+<?php
+include('../Route/route_ta.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Database Analysis and Design</title>
+  <title>CHECK IT</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Bootstrap CSS -->
@@ -53,6 +56,21 @@
   
 </div>
 
+<?php
+include('../Databast/database.php');
+session_start();
+$stdid = $_SESSION['stdid'];
+$sub_id = $_GET['sub_id'];
+$sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num,Subject.Subject_description 
+FROM TA_has_Subject JOIN Subject_detail ON (TA_has_Subject.idSubject = Subject_detail.idSubject) 
+JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
+JOIN Teacher ON (Subject_detail.idTeacher = Teacher.idTeacher) 
+JOIN Term ON (Subject_detail.idTerm = Term.idTerm) 
+WHERE TA_has_Subject.idTA = '$stdid' AND TA_has_Subject.idSubject = '$sub_id'";
+$result = mysqli_query($conn, $sql);
+$data = mysqli_fetch_array($result);
+?>
+
 
   <div class="content">
     <div class="main">
@@ -65,12 +83,11 @@
         <label for="file" id="uploadBtn">Choose Photo</label>
       </div>
       <div id="subject-detail">
-        <p class="detail" name="subject-name"><span class="bold">วิชา :</span> Database Analysis
-          and Design</p>
-          <p class="detail" name="code-subject-name"><span class="bold">รหัสวิชา :</span> 342233</p>
-        <p class="detail" name="teacher-name"><span class="bold">ผู้สอน :</span> พี่พจน์55555</p>
-        <p class="detail" name="study-year"><span class="bold">ปีการศึกษา :</span> 2564</p>
-        <p class="detail" name="semi-study-year"><span class="bold">ภาคเรียน :</span> 2</p>
+        <p class="detail" name="subject-name"><span class="bold">วิชา :</span> <?php echo $data["Subject_name"];  ?></p>
+          <p class="detail" name="code-subject-name"><span class="bold">รหัสวิชา :</span> <?php echo $sub_id ?></p>
+        <p class="detail" name="teacher-name"><span class="bold">ผู้สอน :</span> <?php echo $data["Teacher_name"];  ?></p>
+        <p class="detail" name="study-year"><span class="bold">ปีการศึกษา :</span> <?php echo $data["year"];  ?></p>
+        <p class="detail" name="semi-study-year"><span class="bold">ภาคเรียน :</span> <?php echo $data["term_num"];  ?></p>
       </div>
       <div id="side-box">
         <div id="all-link-boxs">
@@ -84,22 +101,11 @@
     </div>
     <div id="description-of-subject">
       <b id="description-bold">คำอธิบายรายวิชา :</b><p id="sub-description">
-        แนวความคิดการโต้ตอบระหว่างมนุษย์กับคอมพิวเตอร์ในการออกแบบและการพัฒนาส่วนต่อประสานกับผู้ใช้ 
+      <?php echo $data["Subject_description"];  ?> 
       </p>
     </div>
 
   </div>
-</div>
-<div class="cd-popup" role="alert">
-    <div class="cd-popup-container">
-        <h2>ยืนยันการปิดวิชาหรือไม่</h2>
-        <p>342233/2564 Database Analysis and Design </p>
-        <ul class="cd-buttons">
-            <li><a href="subject-homepage-before.html">ยืนยัน</a></li>
-            <li><a href="subject-homepage-after.html">ยกเลิก</a></li>
-        </ul>
-        <a href="subject-homepage-after.html" class="cd-popup-close img-replace">Close</a>
-    </div> <!-- cd-popup-container -->
 </div>
 
 
