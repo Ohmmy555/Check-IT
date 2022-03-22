@@ -1,6 +1,6 @@
 <?php
-include('../../../Route/route_admin.php');
-include('../conn.php');
+//include('../../../Route/route_admin.php');
+//include('../conn.php');
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ include('../conn.php');
 
 <div class="sidenav">
     <div class="logo">
-        <img src="img/logo.png" alt="logo" style="width:110px">
+        <img src="../img/logo.png" alt="logo" style="width:110px">
         <h2>check it</h2>
     </div>
     
@@ -66,7 +66,7 @@ include('../conn.php');
     <img src="img/test.jpg" alt="profile-pic" class="profile-pic">
   </div>  
   <div class="menu">
-    <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
+    <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
     <h3 class="username">พิชามล บุญศรี</h3>
       <a href="./editprofile.html" id="edit">Edit Profile</a><br>
     <a href="../../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
@@ -81,7 +81,7 @@ include('../conn.php');
   </div>
   <div id="profile-detail">
     <div class="profile-pic-div">
-        <img src="img/test.jpg" id="photo">
+        <img src="pic/test.jpg" id="photo">
         <input type="file" id="file">
         <label for="file" id="uploadBtn">Choose Photo</label>
     </div>

@@ -26,7 +26,7 @@
               <div class="row justify-content-center g-0 col-md-5 mt-5 ">
                 <div class="profile-pic-div">
                     <img src="../img/test.jpg" id="photo">
-                    <input type="file" id="file">
+                    <input type="file" id="file" name="imgfile">
                     <label for="file" id="uploadBtn">Choose Photo</label>
                 </div>
               </div>
