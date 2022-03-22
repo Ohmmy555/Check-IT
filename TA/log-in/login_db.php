@@ -12,12 +12,14 @@ if ($_COOKIE['cookie_user'] != "") {
 }
 
 $password = md5($password_1);
-$sql = "SELECT * FROM TA WHERE username = '$username' AND password = '$password' ";
+$sql = "SELECT * FROM TA WHERE TA_username = '$username' AND TA_password = '$password' ";
 $result = mysqli_query($conn, $sql);
+$data = mysqli_fetch_array($result);
 if (mysqli_num_rows($result) == 1) {
   $_SESSION['username']=$username;
-  $_SESSION['name'] = $result['TA_fname']||$result['TA_lname'];
-  $_SESSION['stdid'] = $result['idTA'];
+  $_SESSION['fname'] = $data['TA_fname'];
+  $_SESSION['lname'] = $data['TA_lname'];
+  $_SESSION['stdid'] = $data['idTA'];
   echo "<script>location.replace('../firstpage.php');</script>";
 
   //Cookies
@@ -30,5 +32,4 @@ if (mysqli_num_rows($result) == 1) {
   $_SESSION['error_login'] = "Wrong username or password try again";
   echo "<script>location.replace('./login.php');</script>";
 }
-
 ob_end_flush();

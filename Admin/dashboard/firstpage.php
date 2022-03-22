@@ -1,6 +1,10 @@
 <?php
-include('../../Route/route_admin.php');
-include('./conn.php');
+//include('../../Route/route_admin.php');
+<<<<<<< HEAD
+//include('./conn.php');
+=======
+include('../../Databast/database.php');
+>>>>>>> 36749b4db214dc5cc3bfae587556c374c0cf5d99
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +19,7 @@ include('./conn.php');
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
-
+  <link rel="stylesheet" href="">
     <link rel="stylesheet" href="firstpage.css">
 </head>
 <body>
@@ -60,10 +64,10 @@ include('./conn.php');
 
 <div class="action">
   <div class="profile" onclick="menuToggle();">
-    <img src="img/test.jpg" alt="profile-pic" class="profile-pic">
+    <img src="/img/test.jpg" alt="profile-pic" class="profile-pic">
   </div>  
   <div class="menu">
-    <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
+    <img src="/img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
     <h3 class="username">พิชามล บุญศรี</h3>
       <a href="./editprofile/editprofile.html" id="edit">Edit Profile</a><br>
     <a href="../../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
@@ -78,19 +82,13 @@ include('./conn.php');
       <div class="subject-btn">
         <div class="container">
           <a href="./create/create.php"><button class="add-subject" type="button">เพิ่มวิชา</button></a>
-          <a href="./create/create.php"></a><button class="add-subject" type="button">เพิ่มวิชา</button></a>
-          <a href="./create/create.php"></a><button class="add-subject" type="button">เพิ่มวิชา</button></a>
+          <?php include('first_block_db.php'); ?>
         </div>
       </div>
       
       <div class="subject">
           <b>Latest Subject</b><br><hr>
-          <p>
-            <a href="#"><i class="fa fa-solid fa-folder" style="float: left;"></i>วิชา Database</a>
-            <a href="#"><i class="fa fa-solid fa-trash"></i></a>
-            <a href="#"><i class="fa fa-light fa-pen"></i></a>
-          </p><hr>
-          
+          <?php include('first_db.php'); ?>
       </div>
 
   </div>

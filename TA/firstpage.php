@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('../Route/route_ta.php');
-include('../Databast');
+include('../Databast/database.php');
 ?>
 
 <!DOCTYPE html>
@@ -65,9 +65,9 @@ include('../Databast');
   </div>  
   <div class="menu">
     <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
-    <h3 class="username"><?php echo $_SESSION['name']; ?></h3>
+    <h3 class="username"><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
       <a href="./editprofile/editprofile.html" id="edit">Edit Profile</a><br>
-    <a href="../../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
+    <a href="./log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
   </div>
   
 </div>
@@ -76,28 +76,30 @@ include('../Databast');
 <div class="content">
   <div class="main">
       <h1>ยินดีต้อนรับ CHECK IT</h1>
-      <div class="subject-btn">
+      <!-- <div class="subject-btn">
         <div class="container">
           <a href="./create/create.php"><button class="add-subject" type="button">เพิ่มวิชา</button></a>
           <a href="./create/create.php"></a><button class="add-subject" type="button">เพิ่มวิชา</button></a>
           <a href="./create/create.php"></a><button class="add-subject" type="button">เพิ่มวิชา</button></a>
         </div>
-      </div>
+      </div> -->
       
       <div class="subject">
           <b>Latest Subject</b><br><hr>
 <?php
+
+//Database SQL
 $stdid = $_SESSION['stdid'];
-$sql = "SELECT Subject.Subject_name,Subject_detail.idSubject,Subject_detail.section 
-FROM Subject_detail 
-JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
-WHERE (SELECT idSubject FROM TA_has_Subject WHERE idTA = '$stdid')";
+$sql = "SELECT Subject.Subject_name,TA_has_Subject.section 
+    FROM TA_has_Subject JOIN Subject_detail ON (TA_has_Subject.idSubject = Subject_detail.idSubject) 
+    JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
+    WHERE TA_has_Subject.idTA = '$stdid'";
 $result = mysqli_query($conn, $sql);
 foreach($result as $data){
 ?>
 
           <p>
-            <a href="#"><i class="fa fa-solid fa-folder" style="float: left;"></i><?php echo $data['Subject_name'].$data['section']; ?></a>
+            <a href=""><i class="fa fa-solid fa-folder" style="float: left;"></i><?php echo $data['Subject_name']." ".$data['section']; ?></a>
             <a href="#"><i class="fa fa-solid fa-trash"></i></a>
             <a href="#"><i class="fa fa-light fa-pen"></i></a>
           </p><hr>

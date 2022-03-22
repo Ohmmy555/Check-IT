@@ -1,7 +1,6 @@
 <?php
 session_start();
-include('server.php');
-include('register_check.php');
+include('../../Databast/database.php');
 $_SESSION['error_login'] = "";
 ?>
 <!DOCTYPE html>

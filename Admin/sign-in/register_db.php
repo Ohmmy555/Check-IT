@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include('server.php');
+    include('../../Databast/database.php');
         $fname =mysqli_real_escape_string($conn,$_POST['fname']);
         $lname =mysqli_real_escape_string($conn,$_POST['lname']);
         $username =mysqli_real_escape_string($conn,$_POST['username']);
@@ -23,8 +23,8 @@
             $password = md5($password_1);
             $sql = "INSERT INTO Admin (idAdmin,Admin_fname,Admin_lname,Admin_username,Admin_password) VALUES ('$admin_id','$fname','$lname','$username','$password')";
             mysqli_query($conn,$sql);
-            echo "<script>location.replace('../../Admin/log-in/login.php')</script>";
-            //$_SESSION['error_signin']="Wrong username or password try again";
+            echo "<script>location.replace('../log-in/login.php')</script>";
+            $_SESSION['error_signin']="Wrong username or password try again";
             //echo "<script>location.replace('./register.php')</script>";
         }
     ?>

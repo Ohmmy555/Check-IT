@@ -1,4 +1,6 @@
-<?php function Calday($deleteday){
+<?php 
+
+function Calday($deleteday){
         $now = strtotime("now");
         $delete = strtotime($deleteday);
         $diff = $now-$delete;

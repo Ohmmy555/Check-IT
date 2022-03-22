@@ -1,3 +1,8 @@
+<?php
+include('../Databast/database.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,10 +18,10 @@
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="nav-TA-fixed.css">
-  <link rel="stylesheet" href="subject-check.css">
-  <link rel="stylesheet" href="editprofile.js">
-  <link rel="stylesheet" href="popup-TA-fixed.css">
+  <link rel="stylesheet" href="./css/nav-TA-fixed.css">
+  <link rel="stylesheet" href="./css/subject-check.css">
+  <link rel="stylesheet" href="./css/editprofile.js">
+  <link rel="stylesheet" href="./css/popup-TA-fixed.css">
 
 </head>
 
@@ -73,6 +78,14 @@
           <td class="calls">ขาด</td>
           <td class="calls">ลา</td>
         </tr>
+
+        <?php
+        //
+        $sql = "";
+
+?>
+
+
         <tr>
           <td>1</td>
           <td>633020924-7</td>
