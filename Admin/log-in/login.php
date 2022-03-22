@@ -14,7 +14,6 @@ if(isset($_SESSION['Admin_username'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +21,6 @@ if(isset($_SESSION['Admin_username'])){
     <title>Check IT Login</title>
     <link rel="stylesheet" href="./css/login.css">
 </head>
-
 <body>
     <div id="header-bar">
         <a href="../../main.php">
@@ -52,16 +50,11 @@ if(isset($_SESSION['Admin_username'])){
             ?>
             <input id="username" type="text" class="form-control" name="username" aria-describedby="username" placeholder="Username" required> <br>
             <input id="password" type="password" class="form-control" name="password" placeholder="Password" required> <br>
-
             <input id="remember" type="checkbox" name="remember" value="remember"> Remember me <br>
             <button type="submit" name="login" id="login">Login</button>
-
-
             <p id="dont"> Don't have an account? <a href="../../Admin/sign-in/register.php
                 " style="text-decoration: underline;"> Sign Up</a></p>
         </form>
-
-
     </div>
     <div>
         <div id="login-picture">
