@@ -11,14 +11,15 @@
         $queary = mysqli_query($conn,$user_check_query);
         $result = mysqli_fetch_assoc($queary);
 
-        /*if($result){
+        if($result){
             if($result['TA_username'] === $username){
                 $_SESSION['error_signin']="Username already exists";
-                header("location: register.php");
+                echo "<script>location.replace('./register.php')</script>";
             }
-        }*/
+        }
             $password = md5($password_1);
             $sql = "INSERT INTO TA (idTA,TA_fname,TA_lname,TA_username,TA_password) VALUES ('$std_id','$fname','$lname','$username','$password')";
             mysqli_query($conn,$sql);
-            //echo "<script>location.replace('../log-in/login.php')</script>";
+            echo "<script>location.replace('../log-in/login.php')</script>";
+            
     ?>

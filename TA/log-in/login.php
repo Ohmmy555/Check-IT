@@ -1,7 +1,6 @@
 <?php
 ob_start();
 session_start();
-include('server.php');
 $_SESSION['error_signin'] = "";
 ?>
 <!DOCTYPE html>
