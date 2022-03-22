@@ -103,7 +103,7 @@
       <ul class="dropdown-container">
         <li><a href="create.php">วิชาที่สร้าง</a></li>
         <li><a href="./opensubject.php">วิชาที่เปิด</a></li>
-        <li><a href="./delete.php">วิชาที่่ลบ</a></li>
+        <li><a href="./delete.php">วิชาที่ลบ</a></li>
       </ul>
       <li class="dropdown-btn">User
         <i class="fa fa-caret-down"></i>

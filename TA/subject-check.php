@@ -65,11 +65,14 @@ include('../Databast/database.php');
     </div>
     <div id="top-bar">
       <form action="./subject-check.php" method="post">
-        <input type="date" id="calender" name="date"> <input type="text" id="search" name="stdid" placeholder="รหัสนักศึกษา"> <input type="submit" name="sub_date">
+      <input type="date" id="calender" name="date">  
+      <button type="submit" id="bt-search-pic">
+        <img id="search-icon" src="/img/loupe.png" />
+      </button>
       </form>
     </div>
     <div id="next-bar">
-      <a id="show" href="#">show</a> <a href="#" id="excel"><img src="../img/excel.png" class="icon" alt="excel icon"></a>
+      <input type="text" id="date-now" placeholder="วันที่"><a id="show" href="#">show</a> <a href="#" id="excel"><img src="../img/excel.png" class="icon" alt="excel icon"></a>
     </div>
     <div id="table-check">
       <form action="./subject-check.php" method="POST">
