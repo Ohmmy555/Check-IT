@@ -41,16 +41,16 @@ include('../../Databast/database.php');
         <i class="fa fa-caret-down"></i>
       </li>
       <ul class="dropdown-container">
-        <li><a href="#">วิชาที่สร้าง</a></li>
-        <li><a href="opensubject.html">วิชาที่เปิด</a></li>
-        <li><a href="delete.html">วิชาที่ลบ</a></li>
+        <li><a href="create.php">วิชาที่สร้าง</a></li>
+        <li><a href="./opensubject.php">วิชาที่เปิด</a></li>
+        <li><a href="./delete.php">วิชาที่ลบ</a></li>
       </ul>
       <li class="dropdown-btn">User
         <i class="fa fa-caret-down"></i>
       </li>
       <ul class="dropdown-container">
-        <a href="#">อาจารย์</a>
-        <a href="#">ผู้ช่วยสอน</a>
+        <a href="../userAdmin/teacher.html">อาจารย์</a>
+        <a href="../userAdmin/ta.html">ผู้ช่วยสอน</a>
 
       </ul>
     </div>
