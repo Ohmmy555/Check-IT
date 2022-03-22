@@ -1,6 +1,10 @@
 <?php
 //include('../../Route/route_admin.php');
+<<<<<<< HEAD
+//include('./conn.php');
+=======
 include('../../Databast/database.php');
+>>>>>>> 36749b4db214dc5cc3bfae587556c374c0cf5d99
 ?>
 
 <!DOCTYPE html>
@@ -78,19 +82,13 @@ include('../../Databast/database.php');
       <div class="subject-btn">
         <div class="container">
           <a href="./create/create.php"><button class="add-subject" type="button">เพิ่มวิชา</button></a>
-          <a href="./create/create.php"></a><button class="add-subject" type="button">เพิ่มวิชา</button></a>
-          <a href="./create/create.php"></a><button class="add-subject" type="button">เพิ่มวิชา</button></a>
+          <?php include('first_block_db.php'); ?>
         </div>
       </div>
       
       <div class="subject">
           <b>Latest Subject</b><br><hr>
-          <p>
-            <a href="#"><i class="fa fa-solid fa-folder" style="float: left;"></i>วิชา Database</a>
-            <a href="#"><i class="fa fa-solid fa-trash"></i></a>
-            <a href="#"><i class="fa fa-light fa-pen"></i></a>
-          </p><hr>
-          
+          <?php include('first_db.php'); ?>
       </div>
 
   </div>
