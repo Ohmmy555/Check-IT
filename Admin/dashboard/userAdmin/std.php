@@ -9,8 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Bootstrap CSS -->
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+=======
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
   <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="side-bar.css">
   <link rel="stylesheet" href="nav.css">
@@ -103,7 +107,11 @@
     }
 
     tr {
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+      border: 1px solid;
+=======
      border: 1px solid;
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
 
     }
 
@@ -116,7 +124,12 @@
     }
 
 
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+    table th,
+    table td {
+=======
     table th, table td {
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
       padding: 10px 65px 10px 65px;
     }
 
@@ -124,9 +137,16 @@
       display: block;
       line-height: 20px;
     }
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+
+
+    .cd-popup-container h2,
+    .add-popup-container h2 {
+=======
     
 
     .cd-popup-container h2 ,.add-popup-container h2{
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
       position: relative;
       top: 50px;
       color: rgb(255, 0, 0);
@@ -138,7 +158,12 @@
       left: -1rem;
 
     }
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+
+    .add-popup p {
+=======
     .add-popup p{
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
       margin: 20px;
       margin-left: 70px;
       text-align: left;
@@ -194,10 +219,24 @@
   <h3>342233/2564 Database Analysis and Design </h3>
   <div class="content">
     <p class="text">เพิ่ม-ลบ รายชื่อนักศึกษา</p>
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+    <?php
+    include('../../../Databast/database.php');
+    $query = mysqli_query($conn, "SELECT * FROM Student JOIN Enroll ON(Student.idStudent=Enroll.idStudent)");
+    while ($row = mysqli_fetch_array($query)) {
+      // echo $row['idStudent']; 
+    }
+    ?>
+    <a class="add add-popup-trigger" href="#"><img src="add-free-icon-font.png" alt="iconadd">
+      <p>เพิ่มข้อมูลนักศึกษา</p>
+    </a>
+
+=======
     <a class="add add-popup-trigger" href="#del"><img src="add-free-icon-font.png" alt="iconadd">
       <p>เพิ่มข้อมูลนักศึกษา</p>
     </a>
     <?php include('roomaction.php'); ?>
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
 
     <div class="number">
       <p>แสดง
@@ -207,11 +246,19 @@
           <option value="3">3</option>
           <option value="4">4</option>
         </select>
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+        ราการ
+      </p>
+    </div>
+    <div class="excel">
+      <a href="#"><img style="width: 20px;" src="excel.png" alt="excel"></a> ค้นหาข้อมูล <input style="height: 25px; width: 120px;" type="text">
+=======
         ราการ </p>
     </div>
     <div class="excel">
       <a href="#"><img style="width: 20px;" src="excel.png" alt="excel"></a> ค้นหาข้อมูล <input style="height: 25px; width: 120px;"
       type="text"> 
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
     </div>
 
     <table>
@@ -223,6 +270,28 @@
       </thead>
       <tbody>
         <?php
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+
+
+        $query = mysqli_query($conn, "SELECT * from Enroll JOIN Student ON(Enroll.idStudent=Student.idStudent)");
+        while ($row = mysqli_fetch_array($query)) {
+        ?>
+          <tr>
+            <td><?php echo $row['idStudent']; ?></td>
+            <td><?php echo $row['Student_name']; ?></td>
+            <td><?php echo $row['idSection']; ?></td>
+
+            <td>
+              <a href="#del<?php echo $row['Student_name']; ?>" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span class="glyphicon glyphicon-trash"></span><img style="width: 18px;" src="bin.png" alt="bin"></a>
+
+            </td>
+          </tr>
+        <?php
+        }
+
+        ?>
+
+=======
             include('conn.php');
             
             $query=mysqli_query($conn,"select * from room");
@@ -245,6 +314,7 @@
           
           ?>
           
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
       </tbody>
 
 
@@ -257,6 +327,29 @@
     <div id="student-detail">
     </div>
     <div id="all-link-boxs">
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+      <div class="link-boxs">
+        <a href="#" class="side-link">
+          <p id="techer-box"><span class="small">รายชื่อ </span><br> อาจารย์ </p>
+        </a>
+      </div>
+      <div class="link-boxs">
+        <a href="#" class="side-link">
+          <p id="ta-box"><span class="small">รายชื่อ </span><br> TA </p>
+        </a>
+      </div>
+      <div class="link-boxs">
+        <a href="#" class="side-link">
+          <p id="student-box"><span class="small">รายชื่อ </span><br> นักศึกษา </p>
+        </a>
+      </div>
+    </div>
+
+    <div id="delete-box">
+      <a href="#" class="side-link">
+        <p id="delete-botton">ลบวิชา</p>
+      </a>
+=======
         <div class="link-boxs">
             <a href="#" class="side-link">
                 <p id="techer-box"><span class="small">รายชื่อ </span><br> อาจารย์ </p>
@@ -278,11 +371,27 @@
         <a href="#" class="side-link">
             <p id="delete-botton">ลบวิชา</p>
         </a>
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
     </div>
 
   </div>
 
   <!-- side-bar-link -->
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+  <?php
+
+
+$query = mysqli_query($conn, "SELECT * from Enroll JOIN Student ON(Enroll.idStudent=Student.idStudent)");
+$row = mysqli_fetch_array($query)
+?>
+  <div class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+      <h2>ยืนยันการลบรายชื่อนักศึกษา</h2>
+ 
+      <p>342233/2564 Database Analysis and Design </p>
+      <ul class="cd-buttons">
+        <li><a href="std_delete.php?Student_name='<?php echo $row['Student_name']; ?>'&idSubject='<?php echo $row['idSubject']; ?>'">ยืนยัน</a></li>
+=======
 
   <div class="cd-popup" role="alert">
     <div class="cd-popup-container">
@@ -290,6 +399,7 @@
       <p>342233/2564 Database Analysis and Design </p>
       <ul class="cd-buttons">
         <li><a href="#0">ยืนยัน</a></li>
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
         <li><a href="#0">ยกเลิก</a></li>
       </ul>
       <a href="#0" class="cd-popup-close img-replace">Close</a>
@@ -299,8 +409,12 @@
   <div class="add-popup" role="alert">
     <div class="add-popup-container">
       <h2>เพิ่มข้อมูลนักศึกษา</h2>
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+      <p> Username <br> <input style="height: 25px; width: 300px;" type="text"> </p>
+=======
       <p > Username <br> <input style="height: 25px; width: 300px;"
         type="text"> </p>
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
       <ul class="cd-buttons">
         <li><a href="#0">ยืนยัน</a></li>
         <li><a href="#0">ยกเลิก</a></li>
@@ -310,11 +424,17 @@
   </div>
 
 
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+=======
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="./script.js"></script>
@@ -334,7 +454,11 @@
     var i;
 
     for (i = 0; i < dropdown.length; i++) {
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+      dropdown[i].addEventListener("click", function() {
+=======
       dropdown[i].addEventListener("click", function () {
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
         this.classList.toggle("active");
         var dropdownContent = this.nextElementSibling;
         if (dropdownContent.style.display === "block") {
@@ -349,7 +473,11 @@
     var header = document.getElementById("nav");
     var btns = header.getElementsByClassName("btn");
     for (var i = 0; i < btns.length; i++) {
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+      btns[i].addEventListener("click", function() {
+=======
       btns[i].addEventListener("click", function () {
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
         var current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
@@ -358,22 +486,36 @@
 
 
     //ปอปอัพลบ
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+    jQuery(document).ready(function($) {
+      //open popup
+      $('.cd-popup-trigger').on('click', function(event) {
+=======
     jQuery(document).ready(function ($) {
       //open popup
       $('.cd-popup-trigger').on('click', function (event) {
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
         event.preventDefault();
         $('.cd-popup').addClass('is-visible');
       });
 
       //close popup
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+      $('.cd-popup').on('click', function(event) {
+=======
       $('.cd-popup').on('click', function (event) {
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
         if ($(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup')) {
           event.preventDefault();
           $(this).removeClass('is-visible');
         }
       });
       //close popup when clicking the esc keyboard button
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+      $(document).keyup(function(event) {
+=======
       $(document).keyup(function (event) {
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
         if (event.which == '27') {
           $('.cd-popup').removeClass('is-visible');
         }
@@ -381,22 +523,36 @@
     });
 
     //ปอปอัพเพิ่มมมมม
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+    jQuery(document).ready(function($) {
+      //open popup
+      $('.add-popup-trigger').on('click', function(event) {
+=======
     jQuery(document).ready(function ($) {
       //open popup
       $('.add-popup-trigger').on('click', function (event) {
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
         event.preventDefault();
         $('.add-popup').addClass('is-visible');
       });
 
       //close popup
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+      $('.add-popup').on('click', function(event) {
+=======
       $('.add-popup').on('click', function (event) {
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
         if ($(event.target).is('.cd-popup-close') || $(event.target).is('.add-popup')) {
           event.preventDefault();
           $(this).removeClass('is-visible');
         }
       });
       //close popup when clicking the esc keyboard button
+<<<<<<< HEAD:Admin/dashboard/userAdmin/std.php
+      $(document).keyup(function(event) {
+=======
       $(document).keyup(function (event) {
+>>>>>>> d835f298b53325584986cde24f03056585273869:Admin/dashboard/userAdmin/std.html
         if (event.which == '27') {
           $('.add-popup').removeClass('is-visible');
         }
