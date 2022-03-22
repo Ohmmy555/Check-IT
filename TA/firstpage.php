@@ -1,6 +1,6 @@
 <?php
 session_start();
-//include('../Route/route_ta.php');
+include('../Route/route_ta.php');
 include('../Databast/database.php');
 ?>
 
