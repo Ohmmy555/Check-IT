@@ -13,13 +13,8 @@
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
 
-<<<<<<< HEAD
   <link rel="stylesheet" href="./css/nav.css">
   <link rel="stylesheet" href="./css/popup.css">
-=======
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/popup.css">
->>>>>>> 6572eb769f6f6f29a8bffd6ff7369da5bafe1826
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
@@ -204,18 +199,18 @@
   </div>
 
 
-  <div class="action">
-    <div class="profile" onclick="menuToggle();">
-      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic">
-    </div>
-    <div class="menu">
-      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
-      <h3 class="username">พิชามล บุญศรี</h3>
-      <a href="#" id="edit">Edit Profile</a><br>
-      <button class="sign-out" type="button">Sign out</button>
-    </div>
-
+<div class="action">
+  <div class="profile" onclick="menuToggle();">
+    <img src="../img/test.jpg" alt="profile-pic" class="profile-pic">
+  </div>  
+  <div class="menu">
+    <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
+    <h3 class="username"><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+      <a href="./editprofile/editprofile.html" id="edit">Edit Profile</a><br>
+    <a href="./log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
   </div>
+  
+</div>
 
   <h3>342233/2564 Database Analysis and Design </h3>
   <div class="content">
