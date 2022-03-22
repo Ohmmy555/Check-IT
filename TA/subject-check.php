@@ -66,13 +66,13 @@ include('../Databast/database.php');
     <div id="top-bar">
       <form action="./subject-check.php" method="post">
       <input type="date" id="calender" name="date">  
-      <button type="submit" id="bt-search-pic">
-        <img id="search-icon" src="/img/loupe.png" />
+      <button type="submit" id="bt-search-pic" name="sub_date">
+        <img id="search-icon" src="../img/loupe.png" />
       </button>
       </form>
     </div>
     <div id="next-bar">
-      <input type="text" id="date-now" placeholder="วันที่"><a id="show" href="#">show</a> <a href="#" id="excel"><img src="../img/excel.png" class="icon" alt="excel icon"></a>
+      <input type="text" id="date-now" placeholder="วันที่" value="<?php $_POST['date']?>" readonly><a id="show" href="#">show</a> <a href="#" id="excel"><img src="../img/excel.png" class="icon" alt="excel icon"></a>
     </div>
     <div id="table-check">
       <form action="./subject-check.php" method="POST">
@@ -83,8 +83,8 @@ include('../Databast/database.php');
             <td id="name">ชื่อ-นามสกุล</td>
             <td class="calls">มา</td>
             <td class="calls">สาย</td>
-            <td class="calls">ขาด</td>
             <td class="calls">ลา</td>
+            <td class="calls">ขาด</td>
           </tr>
 
           <?php
@@ -104,8 +104,8 @@ include('../Databast/database.php');
                 foreach ($result as $data) { ?>
                   <tr>
                     <td><?php echo $num1; ?></td>
-                    <td><input type="text" name="stdid[]" value="<?php echo $data['idStudent']; ?>" readonly></td>
-                    <td><input type="text" name="std_name" value="<?php echo $data['Student_name']; ?>" readonly></td>
+                    <td><input type="text" id="calender" name="stdid[]" value="<?php echo $data['idStudent']; ?>" readonly></td>
+                    <td><input type="text" id="calender" name="std_name" value="<?php echo $data['Student_name']; ?>" readonly></td>
 
                     <?php switch ($data['status']) {
                       case "1": ?>
@@ -155,12 +155,12 @@ include('../Databast/database.php');
                   <tr>
 
                     <td><?php echo $num; ?></td>
-                    <td><input type="text" name="stdid[]" value="<?php echo $data['idStudent']; ?>" readonly></td>
-                    <td><input type="text" name="std_name" value="<?php echo $data['Student_name']; ?>" readonly></td>
+                    <td><input type="text" id="calender" name="stdid[]" value="<?php echo $data['idStudent']; ?>" readonly></td>
+                    <td><input type="text" id="calender" name="std_name" value="<?php echo $data['Student_name']; ?>" readonly></td>
                     <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="present" value="1"></td>
                     <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="late" value="2"></td>
                     <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="absent" value="3"></td>
-                    <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="leave" value="4"></td>
+                    <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="leave" value="4" checked></td>
                   </tr>
           <?php $num = $num + 1;
                 }
