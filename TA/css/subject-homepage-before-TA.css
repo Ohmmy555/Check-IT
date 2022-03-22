@@ -134,7 +134,7 @@
   
   #subject-detail {
     margin-left: 52%;
-    margin-top: -13%;
+    margin-top: -17%;
     font-size: 20pt;
     color: #624DCE;
   }
@@ -145,7 +145,7 @@
   
   #side-box {
     margin-left: 76%;
-    margin-top: -13%;
+    margin-top: -6%;
     text-align: center;
   }
   
@@ -204,6 +204,7 @@
     border-radius: 25px;
     margin-left: 30%;
     margin-bottom: 8%;
+    
   }
   
   #delete-box {
@@ -233,5 +234,5 @@
   }
   #description-of-subject{
     margin-left: 32%;
-    margin-top: 14%
+    margin-top: 12%
   }
