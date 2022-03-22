@@ -76,13 +76,13 @@ include('../Databast/database.php');
 <div class="content">
   <div class="main">
       <h1>ยินดีต้อนรับ CHECK IT</h1>
-      <div class="subject-btn">
+      <!-- <div class="subject-btn">
         <div class="container">
           <a href="./create/create.php"><button class="add-subject" type="button">เพิ่มวิชา</button></a>
           <a href="./create/create.php"></a><button class="add-subject" type="button">เพิ่มวิชา</button></a>
           <a href="./create/create.php"></a><button class="add-subject" type="button">เพิ่มวิชา</button></a>
         </div>
-      </div>
+      </div> -->
       
       <div class="subject">
           <b>Latest Subject</b><br><hr>

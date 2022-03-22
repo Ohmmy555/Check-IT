@@ -19,7 +19,7 @@ include('../../Databast/database.php');
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
-
+  <link rel="stylesheet" href="">
     <link rel="stylesheet" href="firstpage.css">
 </head>
 <body>
@@ -64,10 +64,10 @@ include('../../Databast/database.php');
 
 <div class="action">
   <div class="profile" onclick="menuToggle();">
-    <img src="img/test.jpg" alt="profile-pic" class="profile-pic">
+    <img src="/img/test.jpg" alt="profile-pic" class="profile-pic">
   </div>  
   <div class="menu">
-    <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
+    <img src="/img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
     <h3 class="username">พิชามล บุญศรี</h3>
       <a href="./editprofile/editprofile.html" id="edit">Edit Profile</a><br>
     <a href="../../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
