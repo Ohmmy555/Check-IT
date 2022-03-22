@@ -127,3 +127,6 @@ h2{
     font-size: 1.1rem;
     color: gray;
 }
+#error-alert{
+    text-align: center;
+}
