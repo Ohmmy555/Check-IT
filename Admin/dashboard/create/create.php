@@ -1,6 +1,6 @@
 <?php
-include('../../../Route/route_admin.php');
-include('../conn.php');
+//include('../../../Route/route_admin.php');
+//include('../conn.php');
 ?>
 
 
