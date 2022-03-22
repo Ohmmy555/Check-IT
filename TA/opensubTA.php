@@ -1,3 +1,6 @@
+<?php
+include('../Route/route_ta.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,11 +114,14 @@
     <h2>วิชาที่เปิดสอน</h2>
     <?php
     include('../Databast/database.php');
+    session_start();
+    $stdid = $_SESSION['stdid'];
     $sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num 
-FROM Subject_detail 
-JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
-JOIN Teacher ON (Subject_detail.idTeacher = Teacher.idTeacher) 
-JOIN Term ON (Subject_detail.idTerm = Term.idTerm)";
+    FROM TA_has_Subject JOIN Subject_detail ON (TA_has_Subject.idSubject = Subject_detail.idSubject) 
+    JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
+    JOIN Teacher ON (Subject_detail.idTeacher = Teacher.idTeacher) 
+    JOIN Term ON (Subject_detail.idTerm = Term.idTerm) 
+    WHERE TA_has_Subject.idTA = '$stdid'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) == 0) {
       echo "<h1>ไม่มีวิชาที่เปิดสอน</h1>";
@@ -124,7 +130,7 @@ JOIN Term ON (Subject_detail.idTerm = Term.idTerm)";
     ?>
         <div class="detail1">
           <div class="text">
-            <img class="roundpic" src="./img/E4eLarNVEAM7n4T.jfif" alt="pic">
+            <img class="roundpic" src="../img/logo.png" alt="pic">
           </div>
           <div class="content1">
             <p><span>วิชา : </span><?php echo $data["Subject_name"];  ?> </p>
