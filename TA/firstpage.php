@@ -65,9 +65,9 @@ include('../Databast/database.php');
   </div>  
   <div class="menu">
     <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
-    <h3 class="username"><?php echo $_SESSION['name']; ?></h3>
+    <h3 class="username"><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
       <a href="./editprofile/editprofile.html" id="edit">Edit Profile</a><br>
-    <a href="../../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
+    <a href="./log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
   </div>
   
 </div>
@@ -91,13 +91,13 @@ $stdid = $_SESSION['stdid'];
 $sql = "SELECT Subject.Subject_name,Subject_detail.idSubject,Subject_detail.section 
 FROM Subject_detail 
 JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
-WHERE (SELECT idSubject FROM TA_has_Subject WHERE idTA = '$stdid')";
+WHERE (SELECT idSubject FROM TA_has_Subject WHERE idTA ='$stdid')";
 $result = mysqli_query($conn, $sql);
 foreach($result as $data){
 ?>
 
           <p>
-            <a href="#"><i class="fa fa-solid fa-folder" style="float: left;"></i><?php echo $data['Subject_name'].$data['section']; ?></a>
+            <a href="#"><i class="fa fa-solid fa-folder" style="float: left;"></i><?php echo $data['Subject_name']." ".$data['section']; ?></a>
             <a href="#"><i class="fa fa-solid fa-trash"></i></a>
             <a href="#"><i class="fa fa-light fa-pen"></i></a>
           </p><hr>
