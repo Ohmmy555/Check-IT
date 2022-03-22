@@ -12,7 +12,7 @@ if ($_COOKIE['cookie_user'] != "") {
 }
 
 $password = md5($password_1);
-$sql = "SELECT * FROM TA WHERE username = '$username' AND password = '$password' ";
+$sql = "SELECT * FROM TA WHERE TA_username = '$username' AND TA_password = '$password_1' ";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) == 1) {
   $_SESSION['username']=$username;

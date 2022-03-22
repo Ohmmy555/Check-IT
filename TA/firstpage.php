@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('../Route/route_ta.php');
-include('../Databast');
+//include('../Route/route_ta.php');
+include('../Databast/database.php');
 ?>
 
 <!DOCTYPE html>
