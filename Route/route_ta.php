@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['username'])){
+/*if(!isset($_SESSION['username'])){
     echo "<script>alert('"."คุณยังไม่เข้าสู่ระบบ!!!"."')</script>";
     echo "<script>location.replace('../TA/log-in/login.php');</script>";
 }

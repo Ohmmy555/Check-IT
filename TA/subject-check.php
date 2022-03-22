@@ -63,13 +63,47 @@ include('../Databast/database.php');
       <h1> เช็คชื่อ </h1>
     </div>
     <div id="top-bar">
-      <form action="../TA/test.php" method="post">
+      <form action="./subject-check.php" method="post">
       <input type="date" id="calender" name="date"> <input type="text" id="search" name="stdid" placeholder="รหัสนักศึกษา"> <input type="submit" src="/img/loupe.png">
       </form>
     </div>
     <div id="next-bar">
       <a id="show" href="#">show</a> <a href="#" id="excel"><img src="/img/excel.png" class="icon" alt="excel icon"></a>
     </div>
+<?php
+  if(!isset($_POST['date'])){
+?>
+<div id="table-check">
+      <form action="" method="get">
+        <table>
+          <tr>
+            <td>เลขที่</td>
+            <td id="student-number">รหัสนักศึกษา</td>
+            <td id="name">ชื่อ-นามสกุล</td>
+            <td class="calls">มา</td>
+            <td class="calls">สาย</td>
+            <td class="calls">ขาด</td>
+            <td class="calls">ลา</td>
+          </tr>
+          <?php
+          $sub_id = 342233;
+          $sub_term = 1;
+          $sub_sec = 1;
+          $sql1 = "SELECT Student.Student_name,Student.idStudent FROM Enroll JOIN Student ON (Enroll.idStudent=Student.idStudent)
+        WHERE Enroll.idSubject = '$sub_id' AND Enroll.idTerm = $sub_term AND Enroll.idSection = $sub_sec";
+            $result = mysqli_query($conn, $sql1);
+            $num = 1;
+?>
+
+
+
+
+
+
+
+<?php
+  }else{
+?>
     <div id="table-check">
       <form action="" method="get">
         <table>
@@ -82,40 +116,11 @@ include('../Databast/database.php');
             <td class="calls">ขาด</td>
             <td class="calls">ลา</td>
           </tr>
-
           <?php
-
           $sub_id = 342233;
           $sub_term = 1;
           $sub_sec = 1;
-
-          echo $date = $_POST['data'];
-          //
-          if(isset($_POST['data'])){
-            $date = $_POST['data'];
-          $sql2 = "SELECT check_day FROM Check WHERE check_day = '$date'";
-          $result = mysqli_query($conn, $sql2);
-          $num1 = 1;
-          if(mysqli_num_rows($result) > 0){
-            $sql3 = "SELECT Student.Student_name,Check.idStudent,Check.status FROM Enroll JOIN Student ON (Enroll.idStudent=Student.idStudent)
-            JOIN Check ON (Enroll.idStudent=Check.idStudent) WHERE check_day = '$date'";
-            $result = mysqli_query($conn, $sql3);
-            ?>
-          <tr>
-            <td><?php echo $num; ?></td>
-            <td><?php echo $data['idStudent']; ?></td>
-            <td><?php echo $data['Student_name']; ?></td>
-            <td><input type="radio" name="checked[]" id="present"></td>
-            <td><input type="radio" name="checked[]" id="late"></td>
-            <td><input type="radio" name="checked[]" id="absent"></td>
-            <td><input type="radio" name="checked[]" id="leave"></td>
-          </tr>
-          <?php $num1 = $num1 + 1; ?>
-<?php
-            }
-          }
-
-          /*$sql1 = "SELECT Student.Student_name,Student.idStudent FROM Enroll JOIN Student ON (Enroll.idStudent=Student.idStudent)
+          $sql1 = "SELECT Student.Student_name,Student.idStudent FROM Enroll JOIN Student ON (Enroll.idStudent=Student.idStudent)
         WHERE Enroll.idSubject = '$sub_id' AND Enroll.idTerm = $sub_term AND Enroll.idSection = $sub_sec";
             $result = mysqli_query($conn, $sql1);
             $num = 1;
@@ -129,24 +134,20 @@ include('../Databast/database.php');
             <td><input type="radio" name="checked[]" id="late"></td>
             <td><input type="radio" name="checked[]" id="absent"></td>
             <td><input type="radio" name="checked[]" id="leave"></td>
-          </tr>*/
-         //<?php $num = $num + 1; ?>
-<?php
-          //  }
+          </tr>
+        <?php $num = $num + 1;
+            }
          // }
-
 ?>
-
-          
         </table>
-      
       <div id="botton-save">
         <input type="submit" name="save" id="save" value="Save">
       </div>
       </form>
     </div>
-
-
+<?php
+  }
+?>
   </div>
   </div>
 
