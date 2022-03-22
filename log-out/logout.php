@@ -5,6 +5,4 @@ $_SESSION = array();
 session_destroy();
 echo "<script>alert('"."ออกจากระบบเรียบร้อย"."')</script>";
 echo "<script>location.replace('../main.php');</script>";
-
-
 ?>

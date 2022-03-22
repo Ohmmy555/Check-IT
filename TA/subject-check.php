@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$username = $_SESSION['stdid'];
 include('../Databast/database.php');
 ?>
 
@@ -30,14 +30,14 @@ include('../Databast/database.php');
 
   <div class="sidenav">
     <div class="logo">
-      <img src="/img/logo.png" alt="Avatar" style="width:110px">
+      <img src="../img/logo.png" alt="Avatar" style="width:110px">
       <h2>check it</h2>
     </div>
 
     <div id="nav">
-      <a href="firstpage.html">หน้าแรก</a>
-      <a href="firstpage.html">วิชา</a>
-      <a href="firstpage.html">เช็คชื่อ</a>
+      <a href="./firstpage.php">หน้าแรก</a>
+      <a href="./opensubTA.php">วิชา</a>
+      <a href="./subject-check.php">เช็คชื่อ</a>
       <a href="ta_std.html">นักศึกษา</a>
 
     </div>
@@ -47,13 +47,13 @@ include('../Databast/database.php');
 
   <div class="action">
     <div class="profile" onclick="menuToggle();">
-      <img src="/img/test.jpg" alt="profile-pic" class="profile-pic">
+      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic">
     </div>
     <div class="menu">
-      <img src="/img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
+      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
       <h3 class="username">พิชามล บุญศรี</h3>
       <a href="#" id="edit">Edit Profile</a><br>
-      <button class="sign-out" type="button">Sign out</button>
+      <a href="../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
     </div>
 
   </div>
@@ -64,48 +64,14 @@ include('../Databast/database.php');
     </div>
     <div id="top-bar">
       <form action="./subject-check.php" method="post">
-      <input type="date" id="calender" name="date"> <input type="text" id="search" name="stdid" placeholder="รหัสนักศึกษา"> <input type="submit" src="/img/loupe.png">
+        <input type="date" id="calender" name="date"> <input type="text" id="search" name="stdid" placeholder="รหัสนักศึกษา"> <input type="submit" name="sub_date">
       </form>
     </div>
     <div id="next-bar">
-      <a id="show" href="#">show</a> <a href="#" id="excel"><img src="/img/excel.png" class="icon" alt="excel icon"></a>
+      <a id="show" href="#">show</a> <a href="#" id="excel"><img src="../img/excel.png" class="icon" alt="excel icon"></a>
     </div>
-<?php
-  if(!isset($_POST['date'])){
-?>
-<div id="table-check">
-      <form action="" method="get">
-        <table>
-          <tr>
-            <td>เลขที่</td>
-            <td id="student-number">รหัสนักศึกษา</td>
-            <td id="name">ชื่อ-นามสกุล</td>
-            <td class="calls">มา</td>
-            <td class="calls">สาย</td>
-            <td class="calls">ขาด</td>
-            <td class="calls">ลา</td>
-          </tr>
-          <?php
-          $sub_id = 342233;
-          $sub_term = 1;
-          $sub_sec = 1;
-          $sql1 = "SELECT Student.Student_name,Student.idStudent FROM Enroll JOIN Student ON (Enroll.idStudent=Student.idStudent)
-        WHERE Enroll.idSubject = '$sub_id' AND Enroll.idTerm = $sub_term AND Enroll.idSection = $sub_sec";
-            $result = mysqli_query($conn, $sql1);
-            $num = 1;
-?>
-
-
-
-
-
-
-
-<?php
-  }else{
-?>
     <div id="table-check">
-      <form action="" method="get">
+      <form action="./subject-check.php" method="POST">
         <table>
           <tr>
             <td>เลขที่</td>
@@ -116,40 +82,132 @@ include('../Databast/database.php');
             <td class="calls">ขาด</td>
             <td class="calls">ลา</td>
           </tr>
+
           <?php
+          /******************************************************** */
           $sub_id = 342233;
           $sub_term = 1;
           $sub_sec = 1;
-          $sql1 = "SELECT Student.Student_name,Student.idStudent FROM Enroll JOIN Student ON (Enroll.idStudent=Student.idStudent)
-        WHERE Enroll.idSubject = '$sub_id' AND Enroll.idTerm = $sub_term AND Enroll.idSection = $sub_sec";
-            $result = mysqli_query($conn, $sql1);
-            $num = 1;
-            foreach($result as $data){
-          ?>
-          <tr>
-            <td><?php echo $num; ?></td>
-            <td><?php echo $data['idStudent']; ?></td>
-            <td><?php echo $data['Student_name']; ?></td>
-            <td><input type="radio" name="checked[]" id="present"></td>
-            <td><input type="radio" name="checked[]" id="late"></td>
-            <td><input type="radio" name="checked[]" id="absent"></td>
-            <td><input type="radio" name="checked[]" id="leave"></td>
-          </tr>
-        <?php $num = $num + 1;
+          $sub_ta = '633020334-8';
+          $date = $_POST['date'];
+          if (isset($_POST['sub_date'])) {
+            if (isset($_POST['date'])) {
+              $sql2 = "SELECT Checked.idStudent,Student.Student_name,Checked.status FROM Enroll JOIN Checked ON (Enroll.idStudent=Checked.idStudent)
+            JOIN Student ON (Enroll.idStudent=Student.idStudent) WHERE Checked.idSubject = '$sub_id'AND Checked.trem = '$sub_term' AND Checked.check_day = '$date' AND Checked.idSection = '$sub_sec'";
+              $result = mysqli_query($conn, $sql2);
+              $num1 = 1;
+              if (mysqli_num_rows($result) > 0) {
+                foreach ($result as $data) { ?>
+                  <tr>
+                    <td><?php echo $num1; ?></td>
+                    <td><input type="text" name="stdid[]" value="<?php echo $data['idStudent']; ?>" readonly></td>
+                    <td><input type="text" name="std_name" value="<?php echo $data['Student_name']; ?>" readonly></td>
+
+                    <?php switch ($data['status']) {
+                      case "1": ?>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="present" value="1" checked></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="late" value="2"></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="absent" value="3"></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="leave" value="4"></td>
+
+                      <?php
+                        break;
+                      case "2":
+                      ?>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="present" value="1"></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="late" value="2" checked></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="absent" value="3"></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="leave" value="4"></td>
+
+                      <?php
+                        break;
+                      case "3":
+                      ?>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="present" value="1"></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="late" value="2"></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="absent" value="3" checked></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="leave" value="4"></td>
+
+                      <?php
+                        break;
+                      case "4":
+                      ?>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="present" value="1"></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="late" value="2"></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="absent" value="3"></td>
+                        <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="leave" value="4" checked></td>
+                    <?php break;} ?>
+                  </tr>
+                <?php
+                  $num1 = $num1 + 1;
+                }
+              } else {
+                $sql1 = "SELECT Student.Student_name,Student.idStudent FROM Enroll JOIN Student ON (Enroll.idStudent=Student.idStudent)
+          WHERE Enroll.idSubject = '$sub_id' AND Enroll.idTerm = $sub_term AND Enroll.idSection = $sub_sec";
+                $result = mysqli_query($conn, $sql1);
+                $num = 1;
+                foreach ($result as $data) {
+                ?>
+                  <tr>
+
+                    <td><?php echo $num; ?></td>
+                    <td><input type="text" name="stdid[]" value="<?php echo $data['idStudent']; ?>" readonly></td>
+                    <td><input type="text" name="std_name" value="<?php echo $data['Student_name']; ?>" readonly></td>
+                    <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="present" value="1"></td>
+                    <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="late" value="2"></td>
+                    <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="absent" value="3"></td>
+                    <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="leave" value="4"></td>
+                  </tr>
+          <?php $num = $num + 1;
+                }
+              }
             }
-         // }
-?>
+          }
+          /******************************************************* */
+          ?>
         </table>
-      <div id="botton-save">
-        <input type="submit" name="save" id="save" value="Save">
-      </div>
+        <div id="botton-save">
+          <input type="submit" name="save" id="save" value="Save">
+        </div>
       </form>
     </div>
-<?php
+
+
+  </div>
+  </div>
+
+
+  <?php
+  if (isset($_POST['save'])) {
+    $date = $_POST['date'];
+    $sql2 = "SELECT Checked.idStudent,Student.Student_name,Checked.status FROM Enroll JOIN Checked ON (Enroll.idStudent=Checked.idStudent)
+  JOIN Student ON (Enroll.idStudent=Student.idStudent) WHERE Checked.idSubject = '$sub_id'AND Checked.trem = '$sub_term' AND Checked.check_day = '$date' AND Checked.idSection = '$sub_sec'";
+    $result = mysqli_query($conn, $sql2);
+    if (mysqli_num_rows($result) > 0) {
+
+      $data1 = $_POST['stdid'];
+      foreach ($data1 as $pro) {
+        foreach ($_POST[$pro] as $data2) {
+          $sql3 = "UPDATE Checked SET status = '$data2' WHERE idSubject = '$sub_id' AND idStudent = '$pro' AND trem = '$sub_term' AND check_day = '$date' AND idSection = '$sub_sec'";
+          mysqli_query($conn, $sql3);
+        }
+      }
+    }
+    if (mysqli_num_rows($result) == 0) {
+      $t=time();
+      $time=(date("Y-m-d",$t));
+      $data1 = $_POST['stdid'];
+      foreach ($data1 as $pro) {
+        foreach ($_POST[$pro] as $data2) {
+          $sql4 = "INSERT INTO Checked(status,idSubject,idTA,idSection,idStudent,trem,check_day) 
+      VALUES ('$data2','$sub_id','$sub_ta',$sub_sec,'$pro',$sub_term,'$time')";
+          mysqli_query($conn, $sql4);
+        }
+      }
+    }
   }
-?>
-  </div>
-  </div>
+
+  ?>
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -198,6 +256,7 @@ include('../Databast/database.php');
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
-<!-- <a href="testproject/enroll/?id='subjectid'">www</a> -->
+  <!-- <a href="testproject/enroll/?id='subjectid'">www</a> -->
 </body>
+
 </html>
