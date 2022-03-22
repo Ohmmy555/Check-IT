@@ -83,8 +83,8 @@ include('../Databast/database.php');
             <td id="name">ชื่อ-นามสกุล</td>
             <td class="calls">มา</td>
             <td class="calls">สาย</td>
-            <td class="calls">ขาด</td>
             <td class="calls">ลา</td>
+            <td class="calls">ขาด</td>
           </tr>
 
           <?php
@@ -160,7 +160,7 @@ include('../Databast/database.php');
                     <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="present" value="1"></td>
                     <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="late" value="2"></td>
                     <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="absent" value="3"></td>
-                    <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="leave" value="4"></td>
+                    <td><input type="radio" name='<?php echo $data['idStudent']; ?>[]' id="leave" value="4" checked></td>
                   </tr>
           <?php $num = $num + 1;
                 }
