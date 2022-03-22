@@ -88,6 +88,7 @@ div.text-mini-card{
   .action .menu.active{
       visibility: visible;
       opacity: 1;
+      text-align: center;
   }
   .action .menu::before{
       content: '';
@@ -121,11 +122,9 @@ div.text-mini-card{
   .action .menu a{
     text-decoration: none;
     color: #8C8C8C;
-    text-align: center;
   }
   .sign-out{
     margin-top: 10px;
-    margin-left: 35px;
     background-color: #FFFFFF;
     border-color:#624DCE;
     color: #624DCE;
@@ -134,9 +133,7 @@ div.text-mini-card{
     text-decoration: none;
     font-size: 20px;
   }
-  #edit{
-    margin-left: 50px;
-  }
+
   .sign-out:hover{
     background-color: #624DCE;
     color: white;
