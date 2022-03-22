@@ -20,7 +20,7 @@ h1{
 #login-bar{
     display: inline-flex;
     position: relative;
-    right: -1130px;
+    right: -74%;
 }
 .menu-login{
     display: inline-flex;
@@ -44,12 +44,13 @@ a{
 }
 a:link{
 color: #624DCE;
+text-decoration: none;
 }
 a:visited{
     color: #624DCE;
 }
-a:hover{
-    color: gainsboro;
+h1:hover{
+    color: #624DCE;
 }
 a:active{
     color: #624DCE;
@@ -65,8 +66,8 @@ a:active{
     border:#624DCE 1px solid ;
 }
 #login-bt:hover{
-    background-color: #624DCE;
-    color: white;
+    
+    color: #624DCE;
     padding: 6px;
     border:#624DCE 1px solid ;
 }
@@ -82,13 +83,13 @@ h2{
     clear: left;
     top: 140px;
     margin-left: 38%;
-    position: fixed;
+    position: relative;
 }
 .search-icon{
     width: 620px;
     height: 380px;
-    margin-left: 150px;
-    
+    margin-top: -160%;
+    margin-left: -25%;
 }
 div#text-card ,div.text-mini-card{
     margin-left: 13%;

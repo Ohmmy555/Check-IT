@@ -18,6 +18,7 @@ h1{
     margin-left: 20px;
     font-weight: bold;
 }
+
 #login-bar{
     display: inline-flex;
     position: relative;
@@ -49,8 +50,8 @@ color: #624DCE;
 a:visited{
     color: #624DCE;
 }
-a:hover{
-    color: gainsboro;
+h1:hover{
+    color: #624DCE;
 }
 a:active{
     color: #624DCE;
@@ -66,8 +67,7 @@ a:active{
     border:#624DCE 1px solid ;
 }
 #login-bt:hover{
-    background-color: #624DCE;
-    color: white;
+    color: #624DCE;
     padding: 6px;
     border:#624DCE 1px solid ;
 }

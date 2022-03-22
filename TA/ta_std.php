@@ -14,8 +14,8 @@
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/0fb7422e9d.js" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="./css/nav.css">
+  <link rel="stylesheet" href="./css/popup.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
@@ -35,6 +35,7 @@
       font-size: 40px;
       width: 100%;
       font-weight: bold;
+      z-index: -999;
 
     }
 
@@ -46,6 +47,7 @@
       border-radius: 20px;
       padding: 5px;
       color: #624DCE;
+      z-index: -999;
     }
 
     .text {
@@ -86,6 +88,7 @@
       position: relative;
       left: 350px;
       top: 60px;
+      z-index: -999;
     }
 
     .number {
@@ -183,7 +186,7 @@
 
   <div class="sidenav">
     <div class="logo">
-      <img src="img/logo.png" alt="Avatar" style="width:110px">
+      <img src="../img/logo.png" alt="Avatar" style="width:110px">
       <h2>check it</h2>
     </div>
 
@@ -197,23 +200,23 @@
   </div>
 
 
-  <div class="action">
-    <div class="profile" onclick="menuToggle();">
-      <img src="img/test.jpg" alt="profile-pic" class="profile-pic">
-    </div>
-    <div class="menu">
-      <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
-      <h3 class="username">พิชามล บุญศรี</h3>
-      <a href="#" id="edit">Edit Profile</a><br>
-      <button class="sign-out" type="button">Sign out</button>
-    </div>
-
+<div class="action">
+  <div class="profile" onclick="menuToggle();">
+    <img src="../img/test.jpg" alt="profile-pic" class="profile-pic">
+  </div>  
+  <div class="menu">
+    <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;"> 
+    <h3 class="username"><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+      <a href="./editprofile/editprofile.html" id="edit">Edit Profile</a><br>
+    <a href="./log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
   </div>
+  
+</div>
 
   <h3>342233/2564 Database Analysis and Design </h3>
   <div class="content">
     <p class="text">เพิ่ม-ลบ-แก้ไข รายชื่อนักศึกษา</p>
-    <a class="add add-popup-trigger" href="#del"><img src="add-free-icon-font.png" alt="iconadd">
+    <a class="add add-popup-trigger" href="#del"><img src="img/add-free-icon-font.png" alt="iconadd">
       <p>เพิ่มข้อมูลนักศึกษา</p>
     </a>
     <?php include('roomaction.php'); ?>
@@ -229,7 +232,7 @@
         ราการ </p>
     </div>
     <div class="excel">
-      <a href="#"><img style="width: 20px;" src="excel.png" alt="excel"></a> ค้นหาข้อมูล <input style="height: 25px; width: 120px;"
+      <a href="#"><img style="width: 20px;" src="../img/excel.png" alt="excel"></a> ค้นหาข้อมูล <input style="height: 25px; width: 120px;"
       type="text"> 
     </div>
 
@@ -257,13 +260,13 @@
           <td class="btn1">
             <a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal"
               class="btn btn-primary edit-popup-trigger"><span class="glyphicon glyphicon-trash"></span><img
-                style="width: 20px;" src="edit-text.png" alt="bin"></a>
+                style="width: 20px;" src="img/edit-text.png" alt="bin"></a>
             <?php include('roomaction.php'); ?>
           </td>
           <td class="btn2">
             <a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal"
               class="btn btn-danger cd-popup-trigger"><span class="glyphicon glyphicon-trash"></span><img
-                style="width: 18px;" src="bin.png" alt="bin"></a>
+                style="width: 18px;" src="img/bin.png" alt="bin"></a>
             <?php include('roomaction.php'); ?>
           </td>
         </tr>

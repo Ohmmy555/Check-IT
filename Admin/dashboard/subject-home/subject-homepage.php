@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First Page</title>
+  <title>หน้าวิชา</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Bootstrap CSS -->
@@ -32,43 +32,33 @@
     </div>
 
     <div id="nav">
-      <li><a href="firstpage.html">หน้าแรก</a></li>
-
+      <a href="firstpage.html">หน้าแรก</a>
       <li class="dropdown-btn">วิชา
         <i class="fa fa-caret-down"></i>
       </li>
       <ul class="dropdown-container">
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
+        <li><a href="create.php">วิชาที่สร้าง</a></li>
+        <li><a href="./opensubject.php">วิชาที่เปิด</a></li>
+        <li><a href="./delete.php">วิชาที่ลบ</a></li>
       </ul>
-      <li class="dropdown-btn">เช็คชื่อ
+      <li class="dropdown-btn">User
         <i class="fa fa-caret-down"></i>
       </li>
       <ul class="dropdown-container">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a href="#">อาจารย์</a>
+        <a href="#">ผู้ช่วยสอน</a>
+
       </ul>
-      <li class="dropdown-btn">คะแนน
-        <i class="fa fa-caret-down"></i>
-      </li>
-      <ul class="dropdown-container">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </ul>
-      <li><a id="delete" href="#">ลบวิชา</a></li>
     </div>
   </div>
 
 
   <div class="action">
     <div class="profile" onclick="menuToggle();">
-      <img src="img/test.jpg" alt="profile-pic" class="profile-pic">
+      <img src="/img/test.jpg" alt="profile-pic" class="profile-pic">
     </div>
     <div class="menu">
-      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
+      <img src="/img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
       <h3 class="username"><?php session_start();
 
                             if (isset($_SESSION['username'])) {

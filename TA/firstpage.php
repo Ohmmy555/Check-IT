@@ -28,34 +28,13 @@ include('../Databast/database.php');
     </div>
     
     <div id="nav">
-      <li><a href="firstpage.html">หน้าแรก</a></li>
-      
-      <li class="dropdown-btn">วิชา 
-        <i class="fa fa-caret-down"></i>
-      </li>
-      <ul class="dropdown-container">
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-      </ul>
-      <li class="dropdown-btn">เช็คชื่อ 
-        <i class="fa fa-caret-down"></i>
-      </li>
-      <ul class="dropdown-container">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </ul>
-      <li class="dropdown-btn">คะแนน
-        <i class="fa fa-caret-down"></i>
-      </li>
-      <ul class="dropdown-container">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </ul>
-      <li><a id="delete" href="#">ลบวิชา</a></li>
+      <a href="./firstpage.php">หน้าแรก</a>
+      <a href="./opensubTA.php">วิชา</a>
+      <a href="./subject-check.php">เช็คชื่อ</a>
+      <a href="ta_std.html">นักศึกษา</a>
+
     </div>
+    
 </div>
 
 

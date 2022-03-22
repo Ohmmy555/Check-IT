@@ -116,7 +116,7 @@
       <ul class="dropdown-container">
         <li><a href="#">วิชาที่สร้าง</a></li>
         <li><a href="opensubject.html">วิชาที่เปิด</a></li>
-        <li><a href="delete.html">วิชาที่่ลบ</a></li>
+        <li><a href="delete.html">วิชาที่ลบ</a></li>
       </ul>
       <li class="dropdown-btn">User
         <i class="fa fa-caret-down"></i>
