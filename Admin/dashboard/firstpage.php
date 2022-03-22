@@ -1,10 +1,15 @@
 <?php
+<<<<<<< Updated upstream
 //include('../../Route/route_admin.php');
 <<<<<<< HEAD
 //include('./conn.php');
 =======
 include('../../Databast/database.php');
 >>>>>>> 36749b4db214dc5cc3bfae587556c374c0cf5d99
+=======
+// include('../../Route/route_admin.php');
+// include('./conn.php');
+>>>>>>> Stashed changes
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +36,7 @@ include('../../Databast/database.php');
     </div>
     
     <div id="nav">
+<<<<<<< Updated upstream
       <li><a href="firstpage.html">หน้าแรก</a></li>
       
       <li class="dropdown-btn">วิชา 
@@ -48,16 +54,25 @@ include('../../Databast/database.php');
         <a href="#">Link 1</a>
         <a href="#">Link 2</a>
         <a href="#">Link 3</a>
-      </ul>
-      <li class="dropdown-btn">คะแนน
+=======
+      <a href="firstpage.html">หน้าแรก</a>
+      <li class="dropdown-btn">วิชา
         <i class="fa fa-caret-down"></i>
       </li>
       <ul class="dropdown-container">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <li><a href="create.php">วิชาที่สร้าง</a></li>
+        <li><a href="./opensubject.php">วิชาที่เปิด</a></li>
+        <li><a href="./delete.php">วิชาที่ลบ</a></li>
+>>>>>>> Stashed changes
       </ul>
-      <li><a id="delete" href="#">ลบวิชา</a></li>
+      <li class="dropdown-btn">User
+        <i class="fa fa-caret-down"></i>
+      </li>
+      <ul class="dropdown-container">
+        <a href="#">อาจารย์</a>
+        <a href="#">ผู้ช่วยสอน</a>
+
+      </ul>
     </div>
 </div>
 
