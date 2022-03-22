@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Open Subject</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+		integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<script src="src/jquery.tagsinput-revisited.js"></script>
+	<link rel="stylesheet" href="src/jquery.tagsinput-revisited.css" />
+	<link rel="stylesheet" href="open_sub.css">
+
+</head>
+
+<body>
+
+	<div class="action">
+		<div class="profile" onclick="menuToggle();">
+			<img src="img/test.jpg" alt="profile-pic" class="profile-pic">
+		</div>
+		<div class="menu">
+			<img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
+			<h3 class="username">พิชามล บุญศรี</h3>
+			<a href="./editprofile/editprofile.html" id="edit">Edit Profile</a><br>
+			<a href="../../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
+		</div>
+	</div>
+
+	<div>
+
+		<form action="#" method="POST" id="open_sub">
+			<h2>เปิดวิชา</h2>
+			<div id="form-child">
+				<div class="text-mini-card">
+					<p class="p">Subject name</p>
+					<input class="long-input" name="Subject_name" type="text" disabled><br>
+					<span id="massage_Subject_name"></span>
+				</div>
+
+				<div class="text-mini-card">
+					<p class="p">Subject ID</p>
+					<input class="long-input" name="Subject_ID" type="text" disabled><br>
+					<span id="massage_Subject_ID"></span>
+				</div>
+
+				<div class="text-mini-card">
+					<p class="p">Section</p>
+					<input class="short-input" name="Subject_name" type="text" required><br>
+					<span id="massage_Subject_name"></span>
+				</div>
+
+				<div id="input-group" >
+					<div class="text-mini-card">
+						<p class="p">Semester</p>
+						<span id="massage_Semester"></span>
+						<select class="short-input" name="Semester" type="text" required><br>
+							<option>1</option>
+							<option>2</option>
+						</select>
+					</div>
+
+					<div class="text-mini-card">
+						<p class="p">Year</p>
+						<input class="short-input" name="Subject_ID" type="text"><br>
+						<span id="massage_Subject_ID"></span>
+					</div>
+				</div>					
+			</div>
+
+			<div id="form-child2">
+
+				<div class="text-mini-card">
+					<p class="p">Day</p>
+
+					<span id="massage_Day"></span>
+					<select class="short-input" name="Day" type="text" required><br>
+						<option>Monday</option>
+						<option>Tuesday</option>
+						<option>Wednesday</option>
+						<option>Thursday</option>
+						<option>Friday</option>
+					</select>
+			
+				</div>
+
+				<div id="input-group" >
+					<div class="text-mini-card">
+						<p class="p">Start Time</p>
+						<input type="time" class="short-input" name="Start_Time" required><br>
+						<span id="massage_Start_Time"></span>
+					</div>
+				</div>
+				<div class="text-mini-card">
+					<p class="p">End Time</p>
+					<input type="time" class="short-input" name="End_Time" required><br>
+					<span id="massage_End_Time"></span>
+				</div>
+
+
+				<div id="form-tag">
+					<p class="p">Teacher Enroll</p>
+					<input id="form-tags-2" name="Teacher_Enroll" type="text" value="">
+
+					<p class="p">TA Enroll</p>
+					<input id="form-tags-3" name="TA_Enroll" type="text" value="">
+				</div>
+
+			</div>
+
+			<div class="group-button">
+				<button type="submit" name="save" id="save">
+					save
+				</button>
+				<button onclick="history.back()" name="back" id="back">
+					Back
+				</button>
+			</div>
+
+		</form>
+
+
+	</div>
+		<div>
+			<div id="login-picture">
+				<img src="img/management.jpg" alt="รูปปุ่มเสิร์ท" class="search-icon">
+			</div>
+		</div>
+
+
+	<script type="text/javascript">
+		$(function () {
+			/* $('#form-tags-1').tagsInput(); */
+
+			$('#form-tags-2').tagsInput({
+				'onAddTag': function (input, value) {
+					console.log('tag added', input, value);
+				},
+				'onRemoveTag': function (input, value) {
+					console.log('tag removed', input, value);
+				},
+				'onChange': function (input, value) {
+					console.log('change triggered', input, value);
+				}
+			});
+
+			$('#form-tags-3').tagsInput({
+				'onAddTag': function (input, value) {
+					console.log('tag added', input, value);
+				},
+				'onRemoveTag': function (input, value) {
+					console.log('tag removed', input, value);
+				},
+				'onChange': function (input, value) {
+					console.log('change triggered', input, value);
+				}
+			});
+
+		});
+	</script>
+	<!-- Part Java Script -->
+	<script>
+
+		/* action profile */
+		function menuToggle() {
+			const toggleMenu = document.querySelector('.menu');
+			toggleMenu.classList.toggle('active')
+		}
+
+		/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+		var dropdown = document.getElementsByClassName("profile");
+		var i;
+
+		for (i = 0; i < dropdown.length; i++) {
+			dropdown[i].addEventListener("click", function () {
+				this.classList.toggle("active");
+				var dropdownContent = this.nextElementSibling;
+				if (dropdownContent.style.display === "block") {
+					dropdownContent.style.display = "none";
+				} else {
+					dropdownContent.style.display = "block";
+				}
+			});
+		}
+
+	</script>
+
+</body>
+
+</html>

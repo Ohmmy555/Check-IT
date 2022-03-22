@@ -1,16 +1,7 @@
 <?php
 ob_start();
 session_start();
-include('server.php');
 $_SESSION['error_signin'] = "";
-
-//Cookies
-if ($_COOKIE['cookie_user'] != "") {
-    echo "<script>location.replace('login_db.php');</script>";
-}
-if(isset($_SESSION['username'])){
-    echo "<script>location.replace('index.php');</script>";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +26,7 @@ if(isset($_SESSION['username'])){
                 </a>
             </div>
             <div class="menu-login">
-                <a href="../../TA/sign-in/register.php">
+                <a href="../sign-in/register.php">
                     <p id="sign-up-bt">Sign Up</p>
                 </a>
             </div>

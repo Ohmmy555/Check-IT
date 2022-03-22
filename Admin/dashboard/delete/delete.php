@@ -1,6 +1,6 @@
 <?php
-include('../../../Route/route_admin.php');
-include('../conn.php');
+//include('../../../Route/route_admin.php');
+//include('../conn.php');
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ include('../conn.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>วิชาที่ลบ</title>
-  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="../popup.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Bootstrap CSS -->
@@ -146,46 +146,37 @@ include('../conn.php');
 
   <div class="content">
     <h2>วิชาที่ลบ</h2>
-    //ยังไม่เสร็จ'j;',kd w,jws;'
 
     <?php
     include('delete_day_db.php');
-    $sql = "SELECT * FROM Subject JOIN Subject_detail1 ON(subject.idSubject=Subject_detail1.idSubject) JOIN ta ON(ta.idTA=Subject_detail1.idTA) JOIN term ON(term.idterm=Subject_detail1.idterm) WHERE Subject_detail1.idAdmin='$Admin[0]' AND Subject_detail1.delete_at<>'0000-00-00 00:00:00'";
+    include('../../../Databast/database.php');
+    $Admin = mysqli_query($conn, "SELECT idAdmin FROM Admin WHERE Admin_username='mamean888'");
+    $rs = mysqli_fetch_array($Admin);
+    $sql = "SELECT * FROM Subject JOIN Subject_detail ON(Subject.idSubject=Subject_detail.idSubject) JOIN Term ON(Subject_detail.idTerm=Term.idTerm) JOIN TA_has_Subject ON(Subject_detail.idSubject=TA_has_Subject.idSubject) JOIN TA ON(TA_has_Subject.idTA=TA.idTA) WHERE Subject_detail.idAdmin='$rs[0]' AND Subject_detail.delete_at='0000-00-00 00:00:00'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
       while ($subj_delete = mysqli_fetch_assoc($result)) {
         $totalday = Calday($subj_delete['delete_at']);
         echo '<div class="detail1">
 
-        <div class="text">
-          <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
-        </div>
-        <div class="content1">
-          <p><span>วิชา :' . $subj_delete['Subject_name'] . '</p>
-          <p><span>ผู้สอน : </span> ' . $subj_delete['TA_fname'] . ' ' . $subj_delete['TA_lname'] . '</p>
-          <p><span>ปีการศึกษา : </span> ' . $subj_delete['idyear'] . ' &nbsp; <span>ภาคเรียน : </span>' . $subj_delete['term_num'] . '</p>
-          <p class="date">' . $totalday . ' วัน</p>
-        </div>
-  
-        <div class="btn1">
-          <a href="recovery_db.php?idSubject="' . $subj_delete['idSubject'] . '"&idyear="' . $subj_delete['idyear'] . '"&term_num="' . $subj_delete['term_num'] . '" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> กู้คืน</a>
-          <a href="#" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
-        </div>
-      </div>
-  
-      <div id="line"></div>
+    <div class="text">
+      <img class="roundpic" src="../img/E4eLarNVEAM7n4T.jfif" alt="pic">
+    </div>
+    <div class="content1">
+      <p><span>วิชา :' . $subj_delete['Subject_name'] . '</p>
+      <p><span>ผู้สอน : </span> ' . $subj_delete['TA_fname'] . ' ' . $subj_delete['TA_lname'] . '</p>
+      <p><span>ปีการศึกษา : </span> ' . $subj_delete['year'] . ' &nbsp; <span>ภาคเรียน : </span>' . $subj_delete['term_num'] . '</p>
+      <p class="date">' . $totalday . ' วัน</p>
+    </div>
 
-      <div class="cd-popup" role="alert">
-      <div class="cd-popup-container">
-        <h2>ยืนยันการลบวิชาหรือไม่</h2>
-        <p>342233/2564 Database Analysis and Design </p>
-        <ul class="cd-buttons">
-          <li><a href="delete_real.php?idSubject="' . $subj_delete['idSubject'] . '"&idyear="' . $subj_delete['idyear'] . '"&term_num="' . $subj_delete['term_num'] . '">ยืนยัน</a></li>
-          <li><a href="#0">ยกเลิก</a></li>
-        </ul>
-        <a href="#0" class="cd-popup-close img-replace">Close</a>
-      </div> <!-- cd-popup-container -->
-    </div>';
+    <div class="btn1">
+      <a href="recovery_db.php?idSubject="' . $subj_delete['idSubject'] . '"&year="' . $subj_delete['year'] . '"&term_num="' . $subj_delete['term_num'] . '" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> กู้คืน</a>
+      <a href="#" data-toggle="modal" class="btn btn-danger cd-popup-trigger"><span class="glyphicon glyphicon-trash"></span> ลบวิชา</a>
+    </div>
+  </div>
+
+  <div id="line"></div>
+';
       }
     } else {
       echo "ไม่มีรายวิชาที่เคยลบ";
@@ -194,7 +185,7 @@ include('../conn.php');
     <!-- <div class="detail1">
 
       <div class="text">
-        <img class="roundpic" src="img/E4eLarNVEAM7n4T.jfif" alt="pic">
+        <img class="roundpic" src="../img/E4eLarNVEAM7n4T.jfif" alt="pic">
       </div>
       <div class="content1">
         <p><span>วิชา :' . $subj_delete['Subject_name'] . '</p>
@@ -214,7 +205,7 @@ include('../conn.php');
 
 
 
-    //ปิดแท็กcontent
+    <!-- //ปิดแท็กcontent -->
   </div>
 
 
@@ -230,7 +221,22 @@ include('../conn.php');
     </div>  cd-popup-container 
   </div> -->
 
-
+<?php 
+$sql = "SELECT * FROM Subject JOIN Subject_detail ON(Subject.idSubject=Subject_detail.idSubject) JOIN Term ON(Subject_detail.idTerm=Term.idTerm) JOIN TA_has_Subject ON(Subject_detail.idSubject=TA_has_Subject.idSubject) JOIN TA ON(TA_has_Subject.idTA=TA.idTA) WHERE Subject_detail.idAdmin='$rs[0]' AND Subject_detail.delete_at='0000-00-00 00:00:00'";
+$result = mysqli_query($conn, $sql);
+$subj_delete1 = mysqli_fetch_array($result);
+echo '<div class="cd-popup" role="alert">
+<div class="cd-popup-container">
+  <h2>ยืนยันการลบวิชาหรือไม่</h2>
+  <p>342233/2564 Database Analysis and Design </p>
+  <ul class="cd-buttons">
+    <li><a href="delete_real.php?idSubject="' . $subj_delete1['idSubject'] . '"&year="' . $subj_delete1['year'] . '"&term_num="' . $subj_delete1['term_num'] . '">ยืนยัน</a></li>
+    <li><a href="#0">ยกเลิก</a></li>
+  </ul>
+  <a href="#0" class="cd-popup-close img-replace">Close</a>
+</div> <!-- cd-popup-container -->
+</div>';
+?>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>

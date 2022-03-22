@@ -1,6 +1,6 @@
 <?php 
-include('conn.php');
-$sql = "UPDATE Subject_detail SET delete_at='0000-00-00 00:00:00' WHERE  idSubject='".$_GET['idSubject']."'"."AND term_num='".$_GET['term_num']."'"."AND idyear='".$_GET['idyear']."'";
+include('../../../Databast/database.php');
+$sql = "UPDATE Subject_detail SET delete_at='0000-00-00 00:00:00' WHERE  idSubject='".$_GET['idSubject']."'"."AND term_num='".$_GET['term_num']."'"."AND year='".$_GET['year']."'";
 $query = mysqli_query($conn,$sql);
 if ($query) {
     echo 

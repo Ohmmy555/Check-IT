@@ -1,15 +1,15 @@
 <?php
 ob_start();
 session_start();
-include('server.php');
+include('../../Databast/database.php');
 $_SESSION['error_signin'] = "";
 
 //Cookies
 if ($_COOKIE['cookie_user'] != "") {
     echo "<script>location.replace('login_db.php');</script>";
 }
-if(isset($_SESSION['username'])){
-    echo "<script>location.replace('index.php');</script>";
+if(isset($_SESSION['Admin_username'])){
+    echo "<script>location.replace('../dashboard/firstpage.php');</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ if(isset($_SESSION['username'])){
 
 <body>
     <div id="header-bar">
-        <a href="../main.php">
+        <a href="../../main.php">
             <h1>Check IT</h1>
         </a>
         <div id="login-bar">

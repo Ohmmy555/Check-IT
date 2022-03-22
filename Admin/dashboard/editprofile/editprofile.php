@@ -1,6 +1,6 @@
 <?php
-include('../../../Route/route_admin.php');
-include('../conn.php');
+// include('../../../Route/route_admin.php');
+// include('../conn.php');
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ include('../conn.php');
               <div class="row justify-content-center g-0 col-md-5 mt-5 ">
                 <div class="profile-pic-div">
                     <img src="../img/test.jpg" id="photo">
-                    <input type="file" id="file">
+                    <input type="file" id="file" name="imgfile">
                     <label for="file" id="uploadBtn">Choose Photo</label>
                 </div>
               </div>
@@ -35,7 +35,7 @@ include('../conn.php');
               <!-- edit form column -->
               <div class="col-7 personal-info">
                 <h1>Edit Profile</h1>              
-                  <form class="form-horizontal" role="form" action="" method="post">
+                  <form class="form-horizontal" role="form" action="" method="post" action="edit_model.php">
                         <div class="form-group">
                           <div class="row">
                                 <div class="col-md-5 mt-3">
