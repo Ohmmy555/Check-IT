@@ -23,7 +23,7 @@
             $password = md5($password_1);
             $sql = "INSERT INTO Admin (idAdmin,Admin_fname,Admin_lname,Admin_username,Admin_password) VALUES ('$admin_id','$fname','$lname','$username','$password')";
             mysqli_query($conn,$sql);
-            echo "<script>location.replace('../log-in/login.php')</script>";
+            echo "<script>location.replace('../log-in/loginfinished.php')</script>";
             $_SESSION['error_signin']="Wrong username or password try again";
             //echo "<script>location.replace('./register.php')</script>";
         }

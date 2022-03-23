@@ -59,9 +59,9 @@
 
 <body>
     <div id="con">
-        <img src="img/logo.png" alt="logo">
+        <img src="../log-in/logo.png" alt="logo">
         <h2>ลงทะเบียนสำเร็จ</h2>
-        <button> <a href="#">เข้าสู่ระบบ</a> </button>
+        <button> <a href="login.php">เข้าสู่ระบบ</a> </button>
    
     </div>
 </body>
