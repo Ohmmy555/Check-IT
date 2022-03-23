@@ -222,7 +222,7 @@
   </div> -->
 
 <?php 
-$sql = "SELECT * FROM Subject JOIN Subject_detail ON(Subject.idSubject=Subject_detail.idSubject) JOIN Term ON(Subject_detail.idTerm=Term.idTerm) JOIN TA_has_Subject ON(Subject_detail.idSubject=TA_has_Subject.idSubject) JOIN TA ON(TA_has_Subject.idTA=TA.idTA) WHERE Subject_detail.idAdmin='$rs[0]' AND Subject_detail.delete_at='0000-00-00 00:00:00'";
+$sql = "SELECT * FROM Subject JOIN Subject_detail ON(Subject.idSubject=Subject_detail.idSubject) JOIN Term ON(Subject_detail.idTerm=Term.idTerm) JOIN TA_has_Subject ON(Subject_detail.idSubject=TA_has_Subject.idSubject) JOIN TA ON(TA_has_Subject.idTA=TA.idTA) WHERE Subject_detail.idAdmin='$rs[0]' AND Subject_detail.delete_at<>'0000-00-00 00:00:00'";
 $result = mysqli_query($conn, $sql);
 $subj_delete1 = mysqli_fetch_array($result);
 echo '<div class="cd-popup" role="alert">
