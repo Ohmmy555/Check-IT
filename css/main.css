@@ -77,3 +77,31 @@ h2{
     margin-left: 20%;
     
 }
+@media (max-width:576px){
+    .login-icon {
+        width: 20px;
+        height: auto;
+        margin-right: 2%;
+        float: left;
+    }
+    .menu-login {
+        display: inline-flex;
+        padding: 12px 51px;
+        width: 142px;
+    }
+    .menu-login p {
+        width: 106px;
+        font-size: 15px;
+    }
+    h2 {
+        font-size: 26pt;
+        width: 306px;
+        line-height: 61px;
+    }
+    #paragraph p {
+        font-size: 14pt;
+        width: 277px;
+    }
+    
+
+}
