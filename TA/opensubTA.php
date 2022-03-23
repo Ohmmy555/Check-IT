@@ -112,12 +112,11 @@ include('../Route/route_ta.php');
 
 
   <div class="content">
-    <h2>วิชาที่เปิดสอน</h2>
+    <h2>วิชาที่สอน</h2>
     <?php
     include('../Databast/database.php');
-    session_start();
     $stdid = $_SESSION['stdid'];
-    $sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num 
+    $sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num,TA_has_Subject.idSubject 
     FROM TA_has_Subject JOIN Subject_detail ON (TA_has_Subject.idSubject = Subject_detail.idSubject) 
     JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
     JOIN Teacher ON (Subject_detail.idTeacher = Teacher.idTeacher) 
@@ -129,6 +128,7 @@ include('../Route/route_ta.php');
     } else {
       foreach ($result as $data) {
     ?>
+    <a href="./subject-homepage-after-TA.php?sub_id=<?php echo $data["idSubject"];?>">
         <div class="detail1">
           <div class="text">
             <img class="roundpic" src="../img/logo.png" alt="pic">
@@ -139,7 +139,7 @@ include('../Route/route_ta.php');
             <p><span>ปีการศึกษา : </span><?php echo $data["year"];  ?> &nbsp; <span>ภาคเรียน : </span><?php echo $data["term_num"];  ?> </p>
           </div>
         </div>
-
+        </a>
         <div id="line"></div>
   </div>
 

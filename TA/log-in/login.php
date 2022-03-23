@@ -1,8 +1,3 @@
-<?php
-ob_start();
-session_start();
-$_SESSION['error_signin'] = "";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,12 +30,6 @@ $_SESSION['error_signin'] = "";
     <div>
         <h2>Login</h2>
         <form action="login_db.php" method="post">
-            <?php
-            session_start();
-            if ($_SESSION['error_login'] != "") {
-                echo '<p>' . $_SESSION["error_login"] . ' </p>';
-            }
-            ?>
             <input id="username" type="text" class="form-control" name="username" aria-describedby="username" placeholder="Username" required> <br>
             <input id="password" type="password" class="form-control" name="password" placeholder="Password" required> <br>
 

@@ -58,7 +58,6 @@ include('../Route/route_ta.php');
 
 <?php
 include('../Databast/database.php');
-session_start();
 $stdid = $_SESSION['stdid'];
 $sub_id = $_GET['sub_id'];
 $sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num,Subject.Subject_description 

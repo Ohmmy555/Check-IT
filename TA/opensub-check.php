@@ -115,9 +115,8 @@ include('../Route/route_ta.php');
     <h2>เช็คชื่อ</h2>
     <?php
     include('../Databast/database.php');
-    session_start();
     $stdid = $_SESSION['stdid'];
-    $sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num,TA_has_Subject.section 
+    $sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num,TA_has_Subject.idSection 
     FROM TA_has_Subject JOIN Subject_detail ON (TA_has_Subject.idSubject = Subject_detail.idSubject) 
     JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
     JOIN Teacher ON (Subject_detail.idTeacher = Teacher.idTeacher) 
@@ -129,7 +128,7 @@ include('../Route/route_ta.php');
     } else {
       foreach ($result as $data) {
     ?>
-    <a href="./subject-check.php?sub_id=<?php echo $data["idSubject"];?>&sub_term=<?php echo $data["term_num"];?>&sub_sec=<?php echo $data["section"];?>">
+    <a href="./subject-check.php">
         <div class="detail1">
           <div class="text">
             <img class="roundpic" src="../img/logo.png" alt="pic">
@@ -144,9 +143,9 @@ include('../Route/route_ta.php');
         <div id="line"></div>
 
 <?php
-          $_SESSION['sub_id'] = $data["idSubject"];
+          /*$_SESSION['sub_id'] = $data["idSubject"];
           $_SESSION['sub_term'] = $data["term_num"];
-          $_SESSION['sub_sec'] = $data["section"];
+          $_SESSION['sub_sec'] = $data["idSection"];*/
           ?>
   </div>
 
