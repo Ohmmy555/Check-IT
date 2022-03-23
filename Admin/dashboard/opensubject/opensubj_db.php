@@ -2,10 +2,10 @@
 include('../../../Databast/database.php');
 
 
-//session_start();
+session_start();
 
-//if (isset($_SESSION['username'])) {
- // $username = $_SESSION['username'];
+if (isset($_SESSION['username'])) {
+ $username = $_SESSION['username'];
   $Admin = mysqli_query($conn, "SELECT idAdmin FROM Admin WHERE Admin_username='mamean888'");
   $rs = mysqli_fetch_array($Admin);
   $query_subj = mysqli_query($conn, "SELECT * FROM Subject JOIN Subject_detail ON(Subject.idSubject=Subject_detail.idSubject) JOIN Term ON(Subject_detail.idTerm=Term.idTerm) JOIN TA_has_Subject ON(Subject_detail.idSubject=TA_has_Subject.idSubject) JOIN TA ON(TA_has_Subject.idTA=TA.idTA) WHERE Subject_detail.idAdmin='$rs[0]'");
@@ -24,5 +24,5 @@ include('../../../Databast/database.php');
     
         <div id="line"></div>';
   }
-//}
+}
 ?>
