@@ -84,7 +84,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
     <main class="form-signin black">
-        <form method="post" action="./respond.php">
+        <form method="post" action="/Student/respond.php">
             <img class="mb-1" src="logo.png" width="160">
             <h1 class="h3 mb-3 fw-normal">Check Name</h1>
             <div id="liveAlertPlaceholder"></div>
