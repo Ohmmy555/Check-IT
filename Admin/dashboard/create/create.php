@@ -60,12 +60,11 @@
       width: 200px;
       position: relative;
       left: 250px;
-      top: 100px;
+      top: 60px;
     }
 
     .text1 {
       position: relative;
-
       top: 10px;
     }
 
@@ -83,6 +82,13 @@
       border-radius: 50%;
     }
 
+    .detail2{
+      margin-top: 4%;
+    }
+
+    .detail2:hover{
+      background-color: #634dce2c;
+    }
   </style>
 
 </head>

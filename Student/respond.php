@@ -8,7 +8,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="shortcut icon" type="image/x-icon" href="./HCI.png">
-    <title>HCI Check Name</title>
+    <title>Check It</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -52,9 +52,27 @@ $errors = array();
     $fullName = mysqli_real_escape_string($conn, $_POST['name']);
     $stdid = mysqli_real_escape_string($conn, $_POST['stdID']);
     $sec = mysqli_real_escape_string($conn, $_POST['section']);
-    $ip = date("Y-m-d H:i", $t);
-    $sqli = "SELECT * FROM $sec";
-    $result1 = mysqli_query($conn, $sqli);
+    $subject = mysqli_real_escape_string($conn, $_POST['subject']);
+    $trem = mysqli_real_escape_string($conn, $_POST['trem']);
+    $teacher = mysqli_real_escape_string($conn, $_POST['teacher']);
+    $sql2 = "SELECT * FROM Enroll WHERE idSubject = '$sub_id'AND idTrem = '$sub_term' AND idSection = '$sub_sec' AND idStudent = '$stdid'";
+    $sql3 = "SELECT * FROM Student WHERE idStudent = '$stdid'";
+    $sql1 = "INSERT INTO Student(idStudent,Student_name,idMajor) VALUES ('$stdid','$fullName',1)";
+    $sql4 = "INSERT INTO Enroll(idSubject,idTerm,idSection,idTeacher,idStudent) VALUES ('$subject','$trem','$sec','$teacher','$stdid')";
+    $result1 = mysqli_query($conn, $sql2);
+    $result2 = mysqli_query($conn, $sql3);
+    if(mysqli_num_rows($result1) == 0 AND mysqli_num_rows($result2) == 0){
+        mysqli_query($conn, $sql1);
+        mysqli_query($conn, $sql4);
+    }
+    if(mysqli_num_rows($result2) != 0 AND mysqli_num_rows($result1) == 0){
+        mysqli_query($conn, $sql4);
+    }else{
+        echo "<script>alert('".$fullName." ได้ลงทะเบียนไปแล้ว!!"."')</script>";
+        echo "<script>location.replace('index.php');</script>";
+    }
+    /*$sqli = "SELECT * FROM $sec";
+    
     $result2 = mysqli_query($conn2, $sqli);
     while($rs1 = mysqli_fetch_array($result2)){
         if($rs1['stdid']==$stdid){
@@ -82,7 +100,7 @@ $errors = array();
         }elseif($num==2){
             echo "<script>alert('".$fullName." ไม่มีในฐานข้อมูลของSectionนี้!! ให้เช็คชื่ออีกครั้ง หรือติดต่อพี่ TA"."')</script>";
             echo "<script>location.replace('index.php');</script>";
-        }
+        }*/
 ?>
 
 <main class="form-signin black">
@@ -109,16 +127,12 @@ $errors = array();
                     <td><?php echo $_POST['section'] ?></td>
                 </tr>
                 <tr>
-                    <td style="text-align:start;">เวลาเช็คชื่อ :</td>
+                    <td style="text-align:start;">เวลาลงทะเบียน :</td>
                     <td><?php echo date("Y-m-d H:i", $t) ?></td>
                 </tr>
             </table>
         </form>
-        <br>
-        <footer>
-            <p style="font-size: 13px; font-weight: 200; text-align: center;" class="text-muted">©2021 HCI-check V.7 ALL
-                RIGHTS RESERVED. DESIGN BY SUPPHITAN PAKSAWAD
-        </footer>
+
     </main>
 
     

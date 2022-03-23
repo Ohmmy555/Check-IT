@@ -84,7 +84,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
     <main class="form-signin black">
-        <form method="post" action="/Student/respond.php">
+        <form method="post" action="./Student/respond.php">
             <img class="mb-1" src="logo.png" width="160">
             <h1 class="h3 mb-3 fw-normal">Check Name</h1>
             <div id="liveAlertPlaceholder"></div>
@@ -97,40 +97,31 @@
                 <label for="floatingPassword">ชื่อ-นามสกุล</label>
             </div>
             <div style="margin: 10px 0;">
-                <input type="radio" name="section" id="sec1" value="section1" required><label for="sec1" style="margin-right: 30px; margin-left: 5px;"> Sec.1</label>
-                <input type="radio" name="section" id="sec2" value="section2" required><label for="sec2" style="margin-right: 30px;margin-left: 5px;"> Sec.2</label>
-                <input type="radio" name="section" id="sec3" value="section3" required><label for="sec3" style="margin-left: 5px;"> Sec.3</label>
+<?php
+$idSubject = $_GET['subject'];
+$idTrem = $_GET['trem'];
+$teacher = $_GET['teacher'];
+?>
+
+
+            Section : <select name="section">
+                <?php
+                    include('../Databast/database.php');
+                    $sql = "SELECT COUNT(section) FROM Subject_detail WHERE idSubject = '$idSubject' AND idTerm = '$idTerm' AND section";
+                    $re = mysqli_query($conn,$sql);
+                    while($re == 0){
+                        echo "<option value='$re'>$re</option>";
+                        $re = $re - 1;
+                    }
+                ?>
+                </select>
+                
             </div>
-            <?php
-            function get_client_ip()
-            {
-                $ipaddress = '';
-                if (isset($_SERVER['HTTP_CLIENT_IP']))
-                    $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-                else if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
-                    $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-                else if (isset($_SERVER['HTTP_X_FORWARDED']))
-                    $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
-                else if (isset($_SERVER['HTTP_FORWARDED_FOR']))
-                    $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
-                else if (isset($_SERVER['HTTP_FORWARDED']))
-                    $ipaddress = $_SERVER['HTTP_FORWARDED'];
-                else if (isset($_SERVER['REMOTE_ADDR']))
-                    $ipaddress = $_SERVER['REMOTE_ADDR'];
-                else
-                    $ipaddress = 'UNKNOWN';
-                return $ipaddress;
-            }
-            ?>
-            <input type="hidden" name="ip" value="<?php echo get_client_ip() ?>">
+            <input type="hidden" name="trem" value="<?php $idTrem ?>">
+            <input type="hidden" name="teacher" value="<?php $teacher ?>">
             <button class="w-100 btn btn-lg" style="background-color: #624DCE; color: #fff;" type="submit" id="liveAlertBtn" name="reg_user">Check!!</button>
-            
+            <?php echo $re ?>
         </form>
-        <p style="margin-top: 13px;">มีปัญหาในการเช็คชื่อ <a href="https://www.facebook.com/messages/t/ohmmy.2001/" target="_blank" style="text-decoration: none; color: #624DCE">คลิก</a></p>
-        <footer>
-            <p style="font-size: 13px; font-weight: 200; text-align: center;">©2021 HCI-check V.10 ALL
-                RIGHTS RESERVED. DESIGN BY <a style="text-decoration: none; color: #624DCE" href="https://www.facebook.com/ohmmy.2001" target="_blank">SUPPHITAN PAKSAWAD</a></p>
-        </footer>
     </main>
 
 

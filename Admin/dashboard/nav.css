@@ -157,11 +157,9 @@ color: #FFFFFF;
 .action .menu a{
   text-decoration: none;
   color: #8C8C8C;
-  text-align: center;
 }
 .sign-out{
   margin-top: 10px;
-  margin-left: 35px;
   background-color: #FFFFFF;
   border-color:#624DCE;
   color: #624DCE;
@@ -170,9 +168,7 @@ color: #FFFFFF;
   text-decoration: none;
   font-size: 20px;
 }
-#edit{
-  margin-left: 50px;
-}
+
 .sign-out:hover{
   background-color: #624DCE;
   color: white;
@@ -181,6 +177,7 @@ color: #FFFFFF;
   background-color: white;
   color: #624DCE;
 }
+/* ------------------------------------------------ */
 
 
 /* Some media queries for responsiveness */
