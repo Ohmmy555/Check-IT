@@ -92,7 +92,7 @@ $data = mysqli_fetch_array($result);
       <div id="side-box">
         <div id="all-link-boxs">
           <div class="link-boxs">
-            <a href="./ta_std.php?sub_id=<?php echo $sub_id ?>&sub_term=<?php echo $data["term_num"];?>&sub_sec=<?php echo $data["section"];?>&sub_name<?php echo $data["Subject_name"];  ?>" class="side-link">
+            <a href="./ta_std.php?sub_id=<?php echo $sub_id ?>&sub_term=<?php echo $data["term_num"];?>&sub_sec=<?php echo $data["section"];?>&sub_name=<?php echo $data["Subject_name"];  ?>" class="side-link">
               <p id="student-box"><span class="small">รายชื่อ </span><br> นักศึกษา </p>
             </a>
           </div>
