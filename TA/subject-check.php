@@ -89,16 +89,17 @@ include('../Databast/database.php');
 
           <?php
           /******************************************************** */
-          /*$_SESSION['sub_id'] = $_GET['sub_id'];
-          $_SESSION['sub_term'] = $_GET['sub_term'];
-          $_SESSION['sub_sec'] = $_GET['sub_sec'];
-          $sub_id = $_GET['sub_id'];
-          $sub_term = $_GET['sub_term'];
-          $sub_sec = $_GET['sub_sec'];*/
+          /*$_SESSION["sub_id"] = $_GET['sub_id'];
+          $_SESSION["sub_term"] = $_GET['sub_term'];
+          $_SESSION["sub_sec"] = $_GET['sub_sec'];
+          */
+          $sub_id = $_SESSION["sub_id"];
+          $sub_term = $_SESSION["sub_term"];
+          $sub_sec = $_SESSION["sub_sec"];
 
-          $sub_id = 342233;
+          /*$sub_id = 342233;
           $sub_term = 1;
-          $sub_sec = 1;
+          $sub_sec = 1;*/
 
           $date = $_POST['date'];
           if (isset($_POST['sub_date'])) {

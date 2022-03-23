@@ -142,6 +142,12 @@ include('../Route/route_ta.php');
         </div>
         </a>
         <div id="line"></div>
+
+<?php
+          $_SESSION['sub_id'] = $data["idSubject"];
+          $_SESSION['sub_term'] = $data["term_num"];
+          $_SESSION['sub_sec'] = $data["section"];
+          ?>
   </div>
 
 <?php
