@@ -108,7 +108,7 @@ $teacher = $_GET['teacher'];
             Section : <select name="section">
                 <?php
                     include('../Databast/database.php');
-                    $sql = "SELECT COUNT(idSection) FROM Subject_detail WHERE idSubject = '$idSubject' AND idTerm = $idTerm";
+                    $sql = "SELECT COUNT(idSecject) FROM Subject_detail WHERE idSubject = '$idSubject' AND idTerm = $idTerm";
                     $re = mysqli_query($conn,$sql);
                     $numSection = mysqli_fetch_assoc($re);
                     foreach($numSection as $data){
