@@ -233,16 +233,16 @@
         <th>ลบ</th>
       </thead>
       <tbody>
-        <?php
-            include('conn.php');
-            
-            $query=mysqli_query($conn,"select * from room");
+      <?php
+            include('../../../Databast/database.php');
+            $sql="SELECT * from TA_has_Subject JOIN TA ON (TA_has_Subject.idTA = TA.idTA) WHERE idSubject = '342233'";
+            $query=mysqli_query($conn,$sql);
             while($row=mysqli_fetch_array($query)){
               ?>
         <tr>
-          <td>ออม<?php echo $row['Username']; ?></td>
-          <td>ออม<?php echo $row['name']; ?></td>
-          <td>1<?php echo $row['Section']; ?></td>
+          <td><?php echo $row['TA_username']; ?></td>
+          <td><?php echo $row['TA_fname'].' '.$row['TA_lname']; ?></td>
+          <td><?php echo $row['idSection']; ?></td>
 
           <td>
             <a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal"
