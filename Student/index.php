@@ -99,16 +99,18 @@
             <div style="margin: 10px 0;">
 <?php
 $idSubject = $_GET['subject'];
-$idTrem = $_GET['trem'];
+$idTerm = $_GET['term'];
 $teacher = $_GET['teacher'];
 ?>
+
 
 
             Section : <select name="section">
                 <?php
                     include('../Databast/database.php');
-                    $sql = "SELECT COUNT(section) FROM Subject_detail WHERE idSubject = '$idSubject' AND idTerm = '$idTerm' AND section";
+                    $sql = "SELECT COUNT(section) as countSection FROM Subject_detail WHERE idSubject = '$idSubject' AND idTerm = $idTerm";
                     $re = mysqli_query($conn,$sql);
+                    $numSection = mysqli_fetch_assoc($re);
                     while($re == 0){
                         echo "<option value='$re'>$re</option>";
                         $re = $re - 1;
@@ -120,7 +122,6 @@ $teacher = $_GET['teacher'];
             <input type="hidden" name="trem" value="<?php $idTrem ?>">
             <input type="hidden" name="teacher" value="<?php $teacher ?>">
             <button class="w-100 btn btn-lg" style="background-color: #624DCE; color: #fff;" type="submit" id="liveAlertBtn" name="reg_user">Check!!</button>
-            <?php echo $re ?>
         </form>
     </main>
 
