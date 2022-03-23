@@ -184,6 +184,7 @@
     </div>
     <div class="menu">
       <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
+<<<<<<< Updated upstream
       <h3 class="username"><?php session_start();
 
         if (isset($_SESSION['username'])) {
@@ -192,6 +193,11 @@
         } ?></h3>
 <a href="./editprofile.html" id="edit">Edit Profile</a><br>
 <a href="../../log-out/logout.php"><button class="sign-out" type="button">Sign out</button></a>
+=======
+      <h3 class="username">พิชามล บุญศรี</h3>
+      <a href="../editprofile/editprofile.php" id="edit">Edit Profile</a><br>
+      <button class="sign-out" type="button">Sign out</button>
+>>>>>>> Stashed changes
     </div>
 
   </div>
@@ -263,24 +269,24 @@
     </div>
     <div id="all-link-boxs">
         <div class="link-boxs">
-            <a href="#" class="side-link">
+            <a href="../userAdmin/teacher.html" class="side-link">
                 <p id="techer-box"><span class="small">รายชื่อ </span><br> อาจารย์ </p>
             </a>
         </div>
         <div class="link-boxs">
-            <a href="#" class="side-link">
+            <a href="../userAdmin/ta.html" class="side-link">
                 <p id="ta-box"><span class="small">รายชื่อ </span><br> TA </p>
             </a>
         </div>
         <div class="link-boxs">
-            <a href="#" class="side-link">
+            <a href="../userAdmin/std.html" class="side-link">
                 <p id="student-box"><span class="small">รายชื่อ </span><br> นักศึกษา </p>
             </a>
         </div>
     </div>
     
     <div id="delete-box">
-        <a href="#" class="side-link">
+        <a href="../delete/delete.php" class="side-link">
             <p id="delete-botton">ลบวิชา</p>
         </a>
     </div>
