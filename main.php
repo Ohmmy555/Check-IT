@@ -1,4 +1,5 @@
-<?php include('server.php');
+<?php 
+
 
 session_start();
 $_SESSION['error_login'] = "";
