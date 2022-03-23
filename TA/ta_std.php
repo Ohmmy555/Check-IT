@@ -212,7 +212,16 @@
   
 </div>
 
-  <h3>342233/2564 Database Analysis and Design </h3>
+
+<?php
+$sub_id = $_GET['sub_id'];
+$sub_term = $_GET['sub_term'];
+$sub_sec = $_GET['sub_sec'];
+$sub_name = $_GET['sub_name'];
+
+?>
+
+  <h3><?php echo $sub_id."/".$sub_term." ".$sub_name;  ?></h3>
   <div class="content">
     <p class="text">รายชื่อนักศึกษา</p>
     <?php include('roomaction.php'); ?>
@@ -226,30 +235,24 @@
       </thead>
       <tbody>
         <?php
-        $sub_id = $_GET['sub_id'];
-        $sub_term = $_GET['sub_term'];
-        $sub_sec = $_GET['sub_sec'];
-        $sub_name = $_GET['sub_name'];
             include('../Databast/database.php');
-            $sql2 = "SELECT Student.Student_name,Enroll.idStudent,Enroll.idSection FROM Enroll
-            JOIN Student ON (Enroll.idStudent=Student.idStudent) WHERE Enroll.idSubject = '$sub_id'AND Enroll.trem = '$sub_term' AND Enroll.idSection = '$sub_sec'";
-              $result = mysqli_query($conn, $sql2);
-            while($row=mysqli_fetch_array($result)){
+            $sql1 = "SELECT Student.Student_name,Student.idStudent,Enroll.idSection FROM Enroll JOIN Student ON (Enroll.idStudent=Student.idStudent) WHERE Enroll.idSubject = '$sub_id' AND Enroll.idTerm = $sub_term AND Enroll.idSection = $sub_sec";
+                $result = mysqli_query($conn, $sql1);
+              $num = 1;
+              $row=mysqli_fetch_array($result);
+            foreach($row as $data){
               ?>
         <tr>
-            <td><?php echo $row['number']; ?></td>
-          <td><?php echo $row['idStudent']; ?></td>
-          <td><?php echo $row['Student_name']; ?></td>
-          <td><?php echo $row['idSection']; ?></td>
+            <td><?php echo $num; ?></td>
+          <td><?php echo $data['idStudent']; ?></td>
+          <td><?php echo $data['Student_name']; ?></td>
+          <td><?php echo $data['idSection']; ?></td>
         </tr>
         <?php
+        $num = $num + 1;
             }
-          
           ?>
-          
       </tbody>
-
-
     </table>
 
   </div>

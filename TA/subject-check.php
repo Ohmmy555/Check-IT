@@ -71,9 +71,6 @@ include('../Databast/database.php');
       </button>
       </form>
     </div>
-    <div id="next-bar">
-      <input type="text" id="date-now" placeholder="วันที่" value="<?php $_POST['date']?>" readonly><a id="show" href="#">show</a> <a href="#" id="excel"><img src="../img/excel.png" class="icon" alt="excel icon"></a>
-    </div>
     <div id="table-check">
       <form action="./subject-check.php" method="POST">
         <table>
@@ -89,17 +86,15 @@ include('../Databast/database.php');
 
           <?php
           /******************************************************** */
-          /*$_SESSION["sub_id"] = $_GET['sub_id'];
-          $_SESSION["sub_term"] = $_GET['sub_term'];
-          $_SESSION["sub_sec"] = $_GET['sub_sec'];
-          */
-          $sub_id = $_SESSION["sub_id"];
-          $sub_term = $_SESSION["sub_term"];
-          $sub_sec = $_SESSION["sub_sec"];
-
-          /*$sub_id = 342233;
+          //$_SESSION["sub_id"] = $_GET['sub_id'];
+          //$_SESSION["sub_term"] = $_GET['sub_term'];
+          //$_SESSION["sub_sec"] = $_GET['sub_sec'];
+          //$sub_id = $_SESSION["sub_id"];
+          //$sub_term = $_SESSION["sub_term"];
+          //$sub_sec = $_SESSION["sub_sec"];
+          $sub_id = 342233;
           $sub_term = 1;
-          $sub_sec = 1;*/
+          $sub_sec = 1;
 
           $date = $_POST['date'];
           if (isset($_POST['sub_date'])) {
