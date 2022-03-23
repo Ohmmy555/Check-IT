@@ -20,8 +20,13 @@
               <!-- left column -->
               <div class="row justify-content-center g-0 col-md-5 mt-5">
                 <div class="profile-pic-div">
+<<<<<<< Updated upstream
                     <img src="/img/test.jpg" id="photo">
                     <input type="file" id="file">
+=======
+                    <img src="../img/ta.jpg" id="photo">
+                    <input type="file" id="file" name="imgfile">
+>>>>>>> Stashed changes
                     <label for="file" id="uploadBtn">Choose Photo</label>
                 </div>
               </div>

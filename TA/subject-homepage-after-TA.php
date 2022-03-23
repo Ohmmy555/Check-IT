@@ -27,7 +27,7 @@ include('../Route/route_ta.php');
 
   <div class="sidenav">
     <div class="logo">
-      <img src="/img/logo.png" alt="Avatar" style="width:110px">
+      <img src="../img/logo.png" alt="Avatar" style="width:110px">
       <h2>check it</h2>
     </div>
 
@@ -74,11 +74,11 @@ $data = mysqli_fetch_array($result);
 
   <div class="content">
     <div class="main">
-      <h1> Database Analysis and Design </h1>
+      <h1><?php echo $data["Subject_name"];  ?></h1>
     </div>
     <div id="profile-detail">
       <div class="profile-pic-div">
-        <img src="/img/test.jpg" id="photo">
+        <img src="../img/test.jpg" id="photo">
         <input type="file" id="file">
         <label for="file" id="uploadBtn">Choose Photo</label>
       </div>
@@ -92,7 +92,7 @@ $data = mysqli_fetch_array($result);
       <div id="side-box">
         <div id="all-link-boxs">
           <div class="link-boxs">
-            <a href="#" class="side-link">
+            <a href="./ta_std.php?sub_id=<?php echo $sub_id ?>&sub_term=<?php echo $data["term_num"];?>&sub_sec=<?php echo $data["section"];?>&sub_name<?php echo $data["Subject_name"];  ?>" class="side-link">
               <p id="student-box"><span class="small">รายชื่อ </span><br> นักศึกษา </p>
             </a>
           </div>
