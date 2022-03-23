@@ -50,7 +50,7 @@
       left: 550px;
       top: -80px;
       width: 50%;
-
+      z-index: -999;
     }
 
     .text img {
@@ -96,6 +96,16 @@
       top: 50px;
       color: rgb(255, 0, 0);
     }
+
+    
+    .detail1{
+      margin-top: 4%;
+      z-index: -999;
+    }
+
+    .detail1:hover{
+      background-color: #634dce2c;
+    }
   </style>
 
 </head>
@@ -132,10 +142,10 @@
 
   <div class="action">
     <div class="profile" onclick="menuToggle();">
-      <img src="../img/test.jpg" alt="profile-pic" class="profile-pic">
+      <img src="/img/test.jpg" alt="profile-pic" class="profile-pic">
     </div>
     <div class="menu">
-      <img src="img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
+      <img src="/img/test.jpg" alt="profile-pic" class="profile-pic" style="width:180px;">
       <h3 class="username">พิชามล บุญศรี</h3>
       <a href="../editprofile/editprofile.php" id="edit">Edit Profile</a><br>
       <button class="../sign-out" type="button">Sign out</button>
