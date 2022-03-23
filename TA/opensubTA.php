@@ -91,7 +91,6 @@ include('../Route/route_ta.php');
       <a href="./firstpage.php">หน้าแรก</a>
       <a href="./opensubTA.php">วิชา</a>
       <a href="./opensub-check.php">เช็คชื่อ</a>
-      <a href="ta_std.html">นักศึกษา</a>
 
     </div>
   </div>

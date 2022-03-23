@@ -193,7 +193,6 @@
       <a href="./firstpage.php">หน้าแรก</a>
       <a href="./opensubTA.php">วิชา</a>
       <a href="./opensub-check.php">เช็คชื่อ</a>
-      <a href="ta_std.html">นักศึกษา</a>
 
     </div>
   </div>
@@ -224,8 +223,6 @@ $sub_name = $_GET['sub_name'];
   <h3><?php echo $sub_id."/".$sub_term." ".$sub_name;  ?></h3>
   <div class="content">
     <p class="text">รายชื่อนักศึกษา</p>
-    <?php include('roomaction.php'); ?>
-
     <table>
       <thead>
         <th>เลขที่</th>
@@ -236,11 +233,11 @@ $sub_name = $_GET['sub_name'];
       <tbody>
         <?php
             include('../Databast/database.php');
-            $sql1 = "SELECT Student.Student_name,Student.idStudent,Enroll.idSection FROM Enroll JOIN Student ON (Enroll.idStudent=Student.idStudent) WHERE Enroll.idSubject = '$sub_id' AND Enroll.idTerm = $sub_term AND Enroll.idSection = $sub_sec";
+            $sql1 = "SELECT Student.Student_name,Student.idStudent,Enroll.idSection FROM Enroll JOIN Student ON (Enroll.idStudent=Student.idStudent) WHERE Enroll.idSubject = '$sub_id' AND Enroll.idSection = $sub_sec";
                 $result = mysqli_query($conn, $sql1);
               $num = 1;
-              $row=mysqli_fetch_array($result);
-            foreach($row as $data){
+              //$row=mysqli_fetch_array($result);
+            foreach($result as $data){
               ?>
         <tr>
             <td><?php echo $num; ?></td>

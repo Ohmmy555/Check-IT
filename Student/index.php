@@ -99,7 +99,7 @@
             <div style="margin: 10px 0;">
 <?php
 $idSubject = $_GET['subject'];
-$idTerm = $_GET['term'];
+$idTerm = $_GET['trem'];
 $teacher = $_GET['teacher'];
 ?>
 
@@ -108,12 +108,11 @@ $teacher = $_GET['teacher'];
             Section : <select name="section">
                 <?php
                     include('../Databast/database.php');
-                    $sql = "SELECT COUNT(section) as countSection FROM Subject_detail WHERE idSubject = '$idSubject' AND idTerm = $idTerm";
+                    $sql = "SELECT COUNT(idSection) FROM Subject_detail WHERE idSubject = '$idSubject' AND idTerm = $idTerm";
                     $re = mysqli_query($conn,$sql);
                     $numSection = mysqli_fetch_assoc($re);
-                    while($re == 0){
-                        echo "<option value='$re'>$re</option>";
-                        $re = $re - 1;
+                    foreach($numSection as $data){
+                        echo "<option value='$data'>$data</option>";
                     }
                 ?>
                 </select>

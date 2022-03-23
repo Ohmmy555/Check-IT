@@ -35,7 +35,6 @@ include('../Route/route_ta.php');
       <a href="./firstpage.php">หน้าแรก</a>
       <a href="./opensubTA.php">วิชา</a>
       <a href="./opensub-check.php">เช็คชื่อ</a>
-      <a href="ta_std.html">นักศึกษา</a>
 
     </div>
   </div>
@@ -60,7 +59,7 @@ include('../Route/route_ta.php');
 include('../Databast/database.php');
 $stdid = $_SESSION['stdid'];
 $sub_id = $_GET['sub_id'];
-$sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num,Subject.Subject_description 
+$sql = "SELECT Subject.Subject_name,Teacher.Teacher_name,Term.year,Term.term_num,Subject.Subject_description,TA_has_Subject.idSection 
 FROM TA_has_Subject JOIN Subject_detail ON (TA_has_Subject.idSubject = Subject_detail.idSubject) 
 JOIN Subject ON (Subject_detail.idSubject = Subject.idSubject) 
 JOIN Teacher ON (Subject_detail.idTeacher = Teacher.idTeacher) 
@@ -91,7 +90,7 @@ $data = mysqli_fetch_array($result);
       <div id="side-box">
         <div id="all-link-boxs">
           <div class="link-boxs">
-            <a href="./ta_std.php?sub_id=<?php echo $sub_id ?>&sub_term=<?php echo $data["term_num"];?>&sub_sec=<?php echo $data["section"];?>&sub_name=<?php echo $data["Subject_name"];  ?>" class="side-link">
+            <a href="./ta_std.php?sub_id=<?php echo $sub_id ?>&sub_term=<?php echo $data["term_num"];?>&sub_sec=<?php echo $data["idSection"];?>&sub_name=<?php echo $data["Subject_name"]; ?>" class="side-link">
               <p id="student-box"><span class="small">รายชื่อ </span><br> นักศึกษา </p>
             </a>
           </div>
