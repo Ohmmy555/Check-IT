@@ -103,6 +103,7 @@ $data = mysqli_fetch_array($result);
       <b id="description-bold">คำอธิบายรายวิชา :</b><p id="sub-description">
       <?php echo $data["Subject_description"];  ?> 
       </p>
+      <p>ลิงก์ลงทะเบียน : <a href="../Student/index.php?subject=<?php echo $sub_id; ?>&trem=<?php echo $data["term_num"];?>&teacher=<?php echo $data["Teacher_name"];  ?>">คลิก</a></p>
     </div>
 
   </div>
